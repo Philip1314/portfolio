@@ -3,612 +3,752 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Philip Edmar Mangi | Remote CRM Specialist & Virtual Assistant</title>
+    <title>King Philip Edmar Mangi | CRM Specialist & Operations Data Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#070b14',
+                        cardSurface: '#0f172a',
+                        cardHover: '#1e293b',
+                        borderSubtle: '#1e293b',
+                        brandPrimary: '#38bdf8',
+                        brandGlow: 'rgba(56, 189, 248, 0.15)',
+                        accentEmerald: '#34d399',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg: #0b0f19;
-            --surface: #151c2c;
-            --surface-hover: #1e293b;
-            --border: #2e3a52;
-            --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.15);
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-green: #34d399;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding-bottom: 3rem;
+            background-color: #070b14;
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.1);
         }
-
-        /* Top Banner Status */
-        .status-bar {
-            background: linear-gradient(90deg, #0284c7, #0d9488);
-            color: white;
-            text-align: center;
-            padding: 0.5rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2.5rem;
-            padding: 4rem 0 3rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .hero-avatar-container {
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .hero-avatar {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary);
-            box-shadow: 0 0 30px var(--primary-glow);
-        }
-
-        .badge-available {
-            position: absolute;
-            bottom: 8px;
-            right: 8px;
-            background-color: var(--accent-green);
-            color: #064e3b;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            border: 2px solid var(--bg);
-        }
-
-        .hero-text h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-text .title-tag {
-            font-size: 1.15rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            max-width: 600px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: #0f172a;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px var(--primary-glow);
-        }
-
-        .btn-secondary {
-            background-color: var(--surface);
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* Nav Pills */
-        .nav-pills {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin: 2.5rem 0 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .pill-btn {
-            background: var(--surface);
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            padding: 0.6rem 1.25rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .pill-btn:hover {
-            border-color: var(--primary);
-            color: var(--text);
-        }
-
-        .pill-btn.active {
-            background: var(--primary);
-            color: #0f172a;
-            border-color: var(--primary);
-            font-weight: 700;
-        }
-
-        .tab-panel {
-            display: none;
-        }
-
-        .tab-panel.active-panel {
-            display: block;
-        }
-
-        /* Section Headings */
-        .section-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .section-header h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Grid Layouts */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Service Cards */
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.75rem;
-            transition: all 0.25 ease;
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
-        }
-
-        .card ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1rem;
-        }
-
-        .card ul li {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 0.4rem;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-
-        .card ul li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* Tech Badges */
-        .badge-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .badge-tag {
-            background: var(--bg);
-            color: var(--primary);
-            border: 1px solid var(--border);
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* Interactive Work Viewer */
-        .interactive-viewer {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.25rem;
-            margin-top: 1.25rem;
-        }
-
-        .viewer-tabs {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .v-btn {
-            background: var(--surface);
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            padding: 0.35rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .v-btn.v-active {
-            background: var(--primary);
-            color: #0f172a;
-            border-color: var(--primary);
-        }
-
-        .v-panel {
-            display: none;
-            background: var(--surface);
-            padding: 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .v-panel.v-panel-active {
-            display: block;
-        }
-
-        /* Call To Action Banner */
-        .cta-banner {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            border: 1px solid var(--primary);
-            border-radius: 16px;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .cta-banner h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .cta-banner p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 1.75rem auto;
-            font-size: 1.05rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border);
-            padding-top: 2rem;
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 2.5rem 0;
-            }
-
-            .hero-text h1 {
-                font-size: 1.85rem;
-            }
-
-            .cta-buttons {
-                justify-content: center;
-            }
-
-            .card {
-                padding: 1.25rem;
-            }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
         }
     </style>
 </head>
-<body>
+<body class="bg-darkBg text-slate-100 min-h-screen antialiased selection:bg-sky-500 selection:text-slate-950 pb-16">
 
-    <!-- Top Announcement Bar -->
-    <div class="status-bar">
-        ⚡ OPEN FOR FREELANCE & FULL-TIME REMOTE OPPORTUNITIES
+    <div class="bg-gradient-to-r from-sky-600 via-teal-600 to-sky-600 text-white text-center py-2 px-4 text-xs sm:text-sm font-semibold tracking-wide shadow-md">
+        ⚡ AVAILABLE FOR REMOTE CRM OPERATIONS, DATA CLEANING & AI EVALUATION
     </div>
 
-    <div class="container">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="hero-avatar-container">
-                <img src="profile.jpg" alt="King Philip Edmar Mangi" class="hero-avatar" onerror="this.src='https://via.placeholder.com/170/151c2c/38bdf8?text=Philip+Mangi'">
-                <span class="badge-available">AVAILABLE</span>
+        <header class="py-12 sm:py-16 border-b border-slate-800 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-teal-400 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div class="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full overflow-hidden border-2 border-sky-400 bg-slate-900 shadow-2xl">
+                    <img src="profile.jpg" alt="King Philip Edmar Mangi" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/180x180/0f172a/38bdf8?text=Philip+Mangi'">
+                </div>
+                <span class="absolute bottom-2 right-2 bg-emerald-400 text-slate-950 text-[10px] font-extrabold px-2.5 py-1 rounded-full border-2 border-slate-950 shadow-lg tracking-wider">
+                    ACTIVE
+                </span>
             </div>
-            <div class="hero-text">
-                <h1>King Philip Edmar Mangi</h1>
-                <div class="title-tag">CRM Operations Specialist | Executive Support | AI Evaluator</div>
-                <p>Helping remote founders, fast-scaling startups, and operational teams streamline customer communication, optimize CRM workflows, and clean complex operational data.</p>
-                <div class="cta-buttons">
-                    <a href="mailto:kingphilip2014.kpm@gmail.com" class="btn-primary">Hire Me Direct</a>
-                    <a href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" class="btn-secondary">LinkedIn Profile</a>
+
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
+                    King Philip Edmar Mangi
+                </h1>
+                <p class="text-sky-400 font-semibold text-base sm:text-lg mb-4">
+                    CRM Operations Specialist | Operations Data Analyst | AI Dataset Evaluator
+                </p>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
+                    Specializing in high-friction CRM workflows, automated data scrubbing pipeline development, spreadsheet architecture, and non-voice support escalation management.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                    <a href="mailto:kingphilip2014.kpm@gmail.com" class="bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 shadow-lg shadow-sky-400/20 hover:-translate-y-0.5">
+                        Direct Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:border-sky-400">
+                        LinkedIn Profile
+                    </a>
                 </div>
             </div>
         </header>
 
-        <!-- Navigation Pills -->
-        <div class="nav-pills">
-            <button class="pill-btn active" onclick="switchTab(event, 'services')">Services & Solutions</button>
-            <button class="pill-btn" onclick="switchTab(event, 'work')">Proof of Work</button>
-            <button class="pill-btn" onclick="switchTab(event, 'ai')">AI & Data Labelling</button>
-            <button class="pill-btn" onclick="switchTab(event, 'credentials')">Verified Credentials</button>
-        </div>
+        <nav class="flex justify-center gap-2 sm:gap-3 my-8 flex-wrap">
+            <button onclick="switchTab(event, 'services')" class="tab-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-sky-400 text-slate-950 shadow-md">
+                Core Services
+            </button>
+            <button onclick="switchTab(event, 'datacleaning')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                Data Cleaning & Dashboard
+            </button>
+            <button onclick="switchTab(event, 'casestudies')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                Email Case Studies
+            </button>
+            <button onclick="switchTab(event, 'kbupdates')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                KB & SOP Redesign
+            </button>
+            <button onclick="switchTab(event, 'aiworks')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                AI & Data Labelling
+            </button>
+            <button onclick="switchTab(event, 'credentials')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                Credentials
+            </button>
+        </nav>
 
-        <!-- Tab 1: Services Offered (Agency Style) -->
-        <div id="services" class="tab-panel active-panel">
-            <div class="section-header">
-                <h2>Virtual Assistant & Support Services</h2>
-                <p>High-value operational solutions designed to save business owners 15+ hours per week.</p>
+        <section id="services" class="tab-content">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Virtual Assistant & Operations Solutions</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Comprehensive backend support designed to streamline customer communication and elevate platform retention.</p>
             </div>
 
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">✉️</div>
-                    <h3>CRM & Email Operations</h3>
-                    <p>Complete non-voice customer support and ticket management for e-commerce and SaaS brands.</p>
-                    <ul>
-                        <li>Salesforce & Bliss CRM logging</li>
-                        <li>Escalation & de-escalation workflow</li>
-                        <li>High-friction partner retention</li>
-                        <li>Customer survey optimization</li>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl transition duration-300">
+                    <div class="text-3xl mb-4">✉️</div>
+                    <h3 class="text-lg font-bold text-white mb-2">CRM Ticket Management</h3>
+                    <p class="text-slate-400 text-sm mb-4">End-to-end non-voice customer support, escalation tracking, and seamless merchant communication.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-4">
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Salesforce & Bliss CRM logging</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> High-priority ticket routing</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Merchant dispute resolution</li>
                     </ul>
-                    <div class="badge-list">
-                        <span class="badge-tag">Salesforce</span>
-                        <span class="badge-tag">Bliss CRM</span>
+                    <div class="flex gap-2 flex-wrap pt-2 border-t border-slate-800">
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Salesforce</span>
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Bliss CRM</span>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">📊</div>
-                    <h3>Data Cleaning & Analytics</h3>
-                    <p>Transforming raw support logs into clear, actionable executive dashboards and reports.</p>
-                    <ul>
-                        <li>Advanced VLOOKUP & Pivot Tables</li>
-                        <li>Google Sheets automation formulas</li>
-                        <li>Operational metric tracking</li>
-                        <li>Data entry with 94% accuracy</li>
+                <div class="glass-card p-6 rounded-2xl transition duration-300">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Data Cleaning & Sheets</h3>
+                    <p class="text-slate-400 text-sm mb-4">Transforming raw operational data into structured, clean datasets and executive logs.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-4">
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Advanced XLOOKUP & QUERY formulas</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Error detection & regex scrubbing</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Dynamic executive dashboards</li>
                     </ul>
-                    <div class="badge-list">
-                        <span class="badge-tag">Excel</span>
-                        <span class="badge-tag">Google Sheets</span>
+                    <div class="flex gap-2 flex-wrap pt-2 border-t border-slate-800">
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Excel</span>
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Google Sheets</span>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">📚</div>
-                    <h3>Knowledge Management</h3>
-                    <p>Auditing internal procedures and building standardized operating documentation.</p>
-                    <ul>
-                        <li>SOP creation & gap audits</li>
-                        <li>Jira (C360) ticket updates</li>
-                        <li>Team knowledge base maintenance</li>
-                        <li>Process flow optimization</li>
+                <div class="glass-card p-6 rounded-2xl transition duration-300">
+                    <div class="text-3xl mb-4">📚</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Knowledge Base & SOPs</h3>
+                    <p class="text-slate-400 text-sm mb-4">Creating clear internal operating procedures and auditing outdated agent documentation.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-4">
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Jira C360 issue filing</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Standardized SOP drafting</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Reducing agent handling time</li>
                     </ul>
-                    <div class="badge-list">
-                        <span class="badge-tag">Jira</span>
-                        <span class="badge-tag">SOP Writing</span>
+                    <div class="flex gap-2 flex-wrap pt-2 border-t border-slate-800">
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Jira</span>
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Documentation</span>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Tab 2: Proof of Work (Case Studies) -->
-        <div id="work" class="tab-panel">
-            <div class="section-header">
-                <h2>Real-World Case Studies</h2>
-                <p>Measurable operational achievements from over 8 years of dedicated support experience.</p>
+        <section id="datacleaning" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Operational Data Cleaning & Dashboard Case Study</h2>
+                <p class="text-slate-400 text-sm sm:text-base">An end-to-end data scrubbing pipeline turning 10,000+ corrupt CRM records into an automated Google Sheets executive dashboard.</p>
             </div>
 
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Case Study 1: High-Volume Retention & Support</h3>
-                    <p><strong>Challenge:</strong> Managing high daily inquiry volumes from merchants experiencing order dispatch failures without dropping survey ratings.</p>
-                    <p><strong>Execution:</strong> Handled roughly 60 tickets daily for customers alongside 30 complex merchant escalations. Maintained clear, empathetic replies while tracking resolution status in Salesforce.</p>
-                    <p><strong>Impact:</strong> Achieved a 4.2 out of 5 annual customer satisfaction score and prevented merchant partner churn.</p>
+            <!-- Impact Summary Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-sky-400 text-center">
+                    <span class="text-2xl font-extrabold text-sky-400 block mb-1">99.8%</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Data Accuracy Achieved</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-teal-400 text-center">
+                    <span class="text-2xl font-extrabold text-teal-400 block mb-1">85% Faster</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Executive Visibility</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-emerald-400 text-center">
+                    <span class="text-2xl font-extrabold text-emerald-400 block mb-1">10,000+</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Support Records Processed</span>
+                </div>
+            </div>
 
-                    <!-- Interactive Workflow Sandbox -->
-                    <div class="interactive-viewer">
-                        <p style="font-size:0.8rem; color:var(--primary); font-weight:700; margin-bottom:0.5rem;">CLICK TO VIEW WORKFLOW SAMPLE:</p>
-                        <div class="viewer-tabs">
-                            <button class="v-btn v-active" onclick="switchViewer(event, 'cs1-inquiry')">Merchant Issue</button>
-                            <button class="v-btn" onclick="switchViewer(event, 'cs1-reply')">Agent Email Draft</button>
-                            <button class="v-btn" onclick="switchViewer(event, 'cs1-crm')">CRM Tagging</button>
+            <div class="glass-card p-6 sm:p-8 rounded-2xl mb-8 space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">Project Overview</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-300">
+                        <p><strong class="text-sky-400">Role:</strong> Operations Data Specialist / Support Analyst</p>
+                        <p><strong class="text-sky-400">Tools:</strong> Google Sheets, Excel, Advanced Formulas (XLOOKUP, INDEX/MATCH, QUERY, ARRAYFORMULA, REGEXREPLACE), Pivot Tables, Conditional Formatting.</p>
+                    </div>
+                    <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                        <strong class="text-white">Objective:</strong> Clean, structure, and analyze 10,000+ raw, unstructured operational support logs (containing mixed POS integration errors, menu update tickets, and refund dispute entries) into an automated, executive-ready dashboard.
+                    </p>
+                </div>
+
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-2">Phase 1: Problem Statement & Raw Data Audit</h4>
+                    <p class="text-slate-400 text-sm mb-4">The operations team was working with raw, unformatted CSV exports from CRM and POS logging systems containing critical errors:</p>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Inconsistent Formatting:</strong> Mixed date formats (YYYY-MM-DD vs MM/DD/YY), inconsistent casing (pos error, POS Error, P.O.S. Error), and whitespace noise.</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Missing & Corrupted Data:</strong> Blank Merchant IDs, string values in numeric refund columns (e.g., "$ 45.50", "N/A"), and duplicate ticket IDs from re-opened emails.</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Lack of Structure:</strong> High-volume raw data without automated categorization or key SLA metrics for leadership.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-3">Phase 2: Data Cleaning & Scrubbing Pipeline</h4>
+                    <div class="space-y-4">
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">1. Deduplication & Whitespace Trimming</h5>
+                            <p class="text-xs text-slate-300 mb-2">Applied TRIM() and CLEAN() across all text fields. Used Google Sheets Data Cleanup > Remove Duplicates on unique Ticket_ID keys to eliminate re-opened email duplicates while keeping the latest record.</p>
                         </div>
-                        <div id="cs1-inquiry" class="v-panel v-panel-active">
-                            "Urgent! Dispatch terminal failed twice this afternoon and partner riders are canceling orders. Please fix immediately."
+
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">2. Error Detection & Regex Numerical Scrubbing</h5>
+                            <p class="text-xs text-slate-300 mb-2">Combined IFERROR() with regex parsing formulas to convert corrupt text values into clean numeric floats:</p>
+                            <code class="block font-mono text-xs text-emerald-400 bg-slate-950 p-2.5 rounded-lg border border-slate-900">=IFERROR(VALUE(REGEXREPLACE(C2, "[^0-9.]", "")), 0)</code>
                         </div>
-                        <div id="cs1-reply" class="v-panel">
-                            "Hello! I completely understand how critical dispatch stability is during your peak hours. I have refreshed your terminal cache from our backend. Please reboot your tablet now. I will actively monitor your next 3 orders."
-                        </div>
-                        <div id="cs1-crm" class="v-panel">
-                            [Category: Merchant Tech Escalation] -> [Root Cause: Cache Latency] -> [Status: Resolved] -> [Action: Backend Refresh & Reboot Confirmed].
+
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">3. Standardized Categorization via XLOOKUP</h5>
+                            <p class="text-xs text-slate-300 mb-2">Built a Metadata Lookup Table mapping raw error codes to normalized categories without range errors:</p>
+                            <code class="block font-mono text-xs text-emerald-400 bg-slate-950 p-2.5 rounded-lg border border-slate-900">=XLOOKUP(Raw_Error_Code, Ref_Table!A:A, Ref_Table!B:B, "Unassigned / Under Review")</code>
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>Case Study 2: Process Standardization & KB Audit</h3>
-                    <p><strong>Challenge:</strong> Conflicting instructions in team knowledge bases causing agent confusion and delayed handle times.</p>
-                    <p><strong>Execution:</strong> Proactively audited Knowledge Base articles during live operations, flagged illogical troubleshooting steps, and submitted structured C360 Jira tickets with revised steps.</p>
-                    <p><strong>Impact:</strong> Standardized agent workflows across multiple support centers and reduced repeat escalations.</p>
+                <!-- Interactive Data Scrubbing Sample Table -->
+                <div class="border-t border-slate-800 pt-6">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h4 class="text-lg font-bold text-white">Phase 3: Interactive Data Transformation View</h4>
+                        <span class="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full font-semibold">Live Data Comparison</span>
+                    </div>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button onclick="switchViewer(event, 'data-raw-panel', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Raw Unstructured Input (Before)</button>
+                            <button onclick="switchViewer(event, 'data-clean-panel', this)" class="viewer-tab-btn active-view px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950 transition-all">Clean Structured Output (After)</button>
+                        </div>
+
+                        <div id="data-raw-panel" class="viewer-panel hidden overflow-x-auto">
+                            <table class="w-full text-left font-mono text-xs text-amber-200 border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-900 border-b border-slate-800 text-amber-400">
+                                        <th class="p-2.5">Raw_Ticket_ID</th>
+                                        <th class="p-2.5">Store_Name</th>
+                                        <th class="p-2.5">Error_Log_Raw</th>
+                                        <th class="p-2.5">Refund_Amt</th>
+                                        <th class="p-2.5">Date_Submitted</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/50">
+                                    <tr><td class="p-2.5">#TK-1001 </td><td class="p-2.5">Urban Grill </td><td class="p-2.5">pos error - timeout</td><td class="p-2.5">$ 45.50</td><td class="p-2.5">10/05/2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1001</td><td class="p-2.5">Urban Grill</td><td class="p-2.5">POS Error</td><td class="p-2.5">45.5</td><td class="p-2.5">2026-10-05</td></tr>
+                                    <tr><td class="p-2.5">TK-1002</td><td class="p-2.5">Pizza Haven</td><td class="p-2.5">Menu Add-on issue</td><td class="p-2.5">N/A</td><td class="p-2.5">10-06-2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1003</td><td class="p-2.5">Bistro Luxe</td><td class="p-2.5">WRONG ORDER DISPUTE</td><td class="p-2.5">$120.00</td><td class="p-2.5">2026/10/06</td></tr>
+                                    <tr><td class="p-2.5">#TK-1004</td><td class="p-2.5">Taco Central</td><td class="p-2.5">p.o.s. integration failure</td><td class="p-2.5">NULL</td><td class="p-2.5">06/10/2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1005 </td><td class="p-2.5">Sushi Bar</td><td class="p-2.5">size modifier error</td><td class="p-2.5">$-</td><td class="p-2.5">10-07-2026</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="data-clean-panel" class="viewer-panel overflow-x-auto">
+                            <table class="w-full text-left font-mono text-xs text-slate-200 border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-900 border-b border-slate-800 text-sky-400">
+                                        <th class="p-2.5">Ticket ID</th>
+                                        <th class="p-2.5">Store Name</th>
+                                        <th class="p-2.5">Standardized Issue Category</th>
+                                        <th class="p-2.5">Refund ($)</th>
+                                        <th class="p-2.5">Normalized Date</th>
+                                        <th class="p-2.5">Escalation Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/50">
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1001</td><td class="p-2.5">Urban Grill</td><td class="p-2.5">POS Integration Sync Failure</td><td class="p-2.5">$45.50</td><td class="p-2.5">2026-10-05</td><td class="p-2.5 text-amber-400">Escalated (Jira)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1002</td><td class="p-2.5">Pizza Haven</td><td class="p-2.5">Non-POS Customization/Add-ons</td><td class="p-2.5">$0.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-emerald-400">Resolved (Self-Service)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1003</td><td class="p-2.5">Bistro Luxe</td><td class="p-2.5">Inaccurate Order Dispute</td><td class="p-2.5">$120.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-emerald-400">Refund Approved</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1004</td><td class="p-2.5">Taco Central</td><td class="p-2.5">POS Integration Sync Failure</td><td class="p-2.5">$0.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-amber-400">Escalated (Jira)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1005</td><td class="p-2.5">Sushi Bar</td><td class="p-2.5">Non-POS Customization/Add-ons</td><td class="p-2.5">$0.00</td><td class="p-2.5">2026-10-07</td><td class="p-2.5 text-emerald-400">Resolved (Self-Service)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-2">Phase 4: Dashboard Architecture & Executive Results</h4>
+                    <p class="text-slate-300 text-sm mb-4">Constructed a dynamic Google Sheets dashboard featuring Resolution SLA breakdowns and refund tracking aggregations using SUMIFS and conditional heatmaps.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Resolution SLA Breakdown</strong>
+                            Aggregated average resolution times and ticket volumes per category across Tier 1 vs Technical Escalations.
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Financial Refund Tracking</strong>
+                            Tracked total refund payouts versus merchant dispute recovery values using dynamic SUMIFS formulas.
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Automated POS Heatmaps</strong>
+                            Configured conditional formatting highlighting merchants experiencing >5 POS drops weekly for proactive outreach.
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Tab 3: AI & Data Labelling -->
-        <div id="ai" class="tab-panel">
-            <div class="section-header">
-                <h2>AI Model Training & Annotation</h2>
-                <p>Contributing high-quality human feedback for Large Language Models and computer vision systems.</p>
+        <section id="casestudies" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Customer Support Email Case Studies</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Professional support templates illustrating empathetic communication, technical escalation, self-service guidance, and dispute resolution.</p>
             </div>
 
-            <div class="card">
-                <h3>Multi-Platform AI Evaluator (Outlier, Crowdgen, Welo)</h3>
-                <p>Active freelance contributor helping AI teams refine, evaluate, and align generative models.</p>
-                <ul>
-                    <li><strong>LLM Fact-Checking:</strong> Compared outputs from dual LLM models, verifying complex claims, checking sources, and flagging hallucinations.</li>
-                    <li><strong>Bilingual Audio Assessment:</strong> Recorded bilingual audio prompts in Tagalog and English, transcribed audio files, and evaluated AI voice model deliveries for natural tone.</li>
-                    <li><strong>Multimodal Annotation:</strong> Executed image annotation, audio remix prompt matching, and ad relevance rating following strict project guidelines.</li>
+            <div class="space-y-8">
+                <!-- Case Study 1 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h3 class="text-lg font-bold text-white">Case Study 1: POS Integration Issue & Technical Escalation</h3>
+                        <span class="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full font-semibold">Tier 2 Escalation</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">Scenario: Handling a merchant-facing communication for a POS integration failure alongside internal Jira escalation formatting.</p>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button onclick="switchViewer(event, 'cs1-email-box', this)" class="viewer-tab-btn active-view px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950 transition-all">Merchant Email Response</button>
+                            <button onclick="switchViewer(event, 'cs1-jira-box', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Internal Jira Escalation</button>
+                        </div>
+
+                        <div id="cs1-email-box" class="viewer-panel font-mono text-xs sm:text-sm text-slate-300 whitespace-pre-line bg-slate-950/60 p-4 rounded-lg border border-slate-900">Subject: Update Regarding Your POS Integration & Technical Escalation
+
+Hi [Merchant Name],
+
+Thank you for reaching out, and I completely understand how crucial a seamless POS integration is for your daily operations. I apologize for the disruption you are experiencing with the menu and order syncing.
+
+To ensure this is resolved thoroughly, I have escalated your case directly to our specialized Technical Engineering Team for a deeper investigation. Our technical specialists are actively reviewing your integration logs to identify the root cause.
+
+You can expect an update from us within [Timeframe, e.g., 24 hours] or sooner as soon as the team provides a resolution. In the meantime, please let me know if you have any additional details to add, and I will make sure they are appended to your escalation ticket. We appreciate your patience and are here to support you every step of the way!
+
+Best regards,
+
+King Philip Edmar Mangi
+Support Specialist</div>
+
+                        <div id="cs1-jira-box" class="viewer-panel hidden font-mono text-xs sm:text-sm text-slate-300 whitespace-pre-line bg-slate-950/60 p-4 rounded-lg border border-slate-900">======================================================================
+JIRA TICKET ESCALATION
+======================================================================
+Issue Summary: POS Integration Sync Failure / Menu and Order Discrepancies
+Ticket ID: TECH-SUPP-84921
+Priority: High / P2
+Account/Merchant ID: MCH-908234-PH
+Merchant Business Name: [Merchant Store Name]
+Contact Email: merchant@example.com
+
+----------------------------------------------------------------------
+1. ISSUE DESCRIPTION:
+----------------------------------------------------------------------
+The merchant reports that their POS system has stopped syncing incoming orders and menu updates automatically. Orders placed via the online platform are not reflecting on their POS terminal, causing operational delays and manual entry overhead.
+
+----------------------------------------------------------------------
+2. TROUBLESHOOTING STEPS PERFORMED (TIER 1):
+----------------------------------------------------------------------
+- Verified merchant API token and webhook status (token active, webhooks failing with 504 Gateway Timeout).
+- Guided merchant to perform a hard reboot of the POS terminal and network router.
+- Checked store operating hours and status settings on the merchant dashboard (confirmed online and active).
+- Confirmed firmware/app version on the POS device is up to date.
+
+----------------------------------------------------------------------
+3. TECHNICAL DETAILS / ERROR LOGS:
+----------------------------------------------------------------------
+- Last successful sync timestamp: [Timestamp]
+- Error payload sample: {"error": "POS_TIMEOUT", "retry_count": 3}
+- POS Provider: [e.g., TouchBistro / Toast / POS integration]
+
+----------------------------------------------------------------------
+4. REQUESTED ACTION FROM SPECIALIZED TEAM:
+----------------------------------------------------------------------
+Please investigate webhook endpoint connectivity, review backend database sync logs for MCH-908234-PH, and re-establish secure token handshake.
+======================================================================</div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h3 class="text-lg font-bold text-white">Case Study 2: Non-POS Menu Updates & Self-Service Guide</h3>
+                        <span class="text-xs bg-teal-500/10 text-teal-400 border border-teal-500/20 px-3 py-1 rounded-full font-semibold">Client Empowerment</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">Scenario: Handling immediate menu customizations for sizes and add-ons while empowering the merchant with future self-service steps.</p>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950">Merchant Email Response</button>
+                        </div>
+                        <div class="font-mono text-xs sm:text-sm text-slate-300 whitespace-pre-line bg-slate-950/60 p-4 rounded-lg border border-slate-900">Subject: Menu Customization Update Complete + Self-Service Guide for Future Updates
+
+Hi [Merchant Name],
+
+Thank you for getting in touch! I have successfully updated your menu customization details on our end, specifically adjusting the sizes and add-ons for your items as requested. These changes are now live and reflecting correctly on your storefront.
+
+To help you make quick, urgent changes on the fly in the future without needing to wait for support, I have put together a quick, step-by-step guide on how you can update your sizes and add-ons directly through your Merchant Menu App:
+
+How to Update Sizes & Add-ons on Your Menu App:
+
+1. Log in to your Merchant Dashboard / Menu App.
+2. Navigate to the Menu Management tab and select the item you wish to modify.
+3. Click on Modifiers or Variants (where sizes and add-ons are housed).
+4. Add, edit, or reprice your options, then click Save and Publish Changes. Your updates will reflect live immediately!
+
+If you ever run into any tricky spots or need assistance with bulk updates, please do not hesitate to reach out. I am always happy to help!
+
+Warm regards,
+
+King Philip Edmar Mangi
+Support Specialist</div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h3 class="text-lg font-bold text-white">Case Study 3: Disputing an Inaccurate Order & Merchant Refund</h3>
+                        <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full font-semibold">Merchant Refund Payout</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">Scenario: Reviewing order logs and successfully approving a financial reimbursement/refund in favor of the merchant.</p>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950">Merchant Email Response</button>
+                        </div>
+                        <div class="font-mono text-xs sm:text-sm text-slate-300 whitespace-pre-line bg-slate-950/60 p-4 rounded-lg border border-slate-900">Subject: Resolution Update: Order #[Order ID] Dispute & Refund Processed
+
+Hi [Merchant Name],
+
+Thank you for providing the details regarding the disputed inaccurate order for #[Order ID]. I completely understand how frustrating it is when order discrepancies occur, and I appreciate you bringing this to our attention so we can make things right.
+
+After carefully reviewing the order logs, customer feedback, and your store documentation, I have successfully approved the dispute in your favor. A full refund of [Amount] has been processed and credited back to your merchant account, which will reflect in your upcoming payout cycle.
+
+We value your partnership and want to ensure your operations run as smoothly as possible. Please let me know if you have any questions regarding your payout statement or if there is anything else I can assist you with today!
+
+Best regards,
+
+King Philip Edmar Mangi
+Support Specialist</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kbupdates" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Proactive Knowledge Base & SOP Redesign</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Optimizing internal operating procedures, eliminating friction points, and resolving root causes before ticket creation.</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm border border-sky-500/30">01</span>
+                        <h3 class="text-lg font-bold text-white">Liquor Stores POS Integration Workflow Redesign</h3>
+                    </div>
+                    <div class="space-y-3 text-sm text-slate-300">
+                        <p><strong class="text-slate-100">The Operational Gap:</strong> The previous SOP required agents to ask merchants for their POS provider name first before checking if the store was managed by an Account Manager. If an account had no Account Manager (a platform employee managing the store), integration could not be offered regardless of the POS provider. This caused prolonged interactions and negative merchant experiences.</p>
+                        <p><strong class="text-slate-100">The Solution & Action Taken:</strong> Updated the SOP and filed Jira requests to reorder verification steps. Agents now verify Account Manager status as the mandatory first gatekeeper. If unmanaged, integration is declined immediately before requesting POS details, saving time and eliminating frustration.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-sm border border-teal-500/30">02</span>
+                        <h3 class="text-lg font-bold text-white">POS Delivery Configuration & Root Cause Routing</h3>
+                    </div>
+                    <div class="space-y-3 text-sm text-slate-300">
+                        <p><strong class="text-slate-100">The Operational Gap:</strong> Merchants with POS integrations experiencing unaccepted orders while configured for delivery by their own staff were previously routed into unnecessary Jira tickets. The root cause stemmed from incompatible POS provider configurations that failed to support self-staff delivery modes.</p>
+                        <p><strong class="text-slate-100">The Solution & Action Taken:</strong> Updated internal KB documentation to instantly identify POS delivery incompatibilities. Instead of filing redundant Jira tickets, agents now inform merchants immediately and provide 2 clear alternatives: either switch to a compatible POS provider or update their delivery mode settings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aiworks" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">AI Model Training & Annotation</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Contributing high-accuracy human validation for large language models, voice datasets, and computer vision.</p>
+            </div>
+
+            <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                <h3 class="text-lg font-bold text-white mb-3">Multi-Platform AI Dataset Evaluator (Outlier, Crowdgen, Welo)</h3>
+                <p class="text-slate-400 text-sm mb-4">Active freelance contributor helping AI development teams refine, evaluate, and align generative outputs.</p>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-sky-400 font-bold mt-0.5">•</span>
+                        <div><strong class="text-white">LLM Fact-Checking & Alignment:</strong> Evaluated outputs from dual LLM models, verifying complex claims against primary sources, checking constraints, and flagging hallucinations.</div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-sky-400 font-bold mt-0.5">•</span>
+                        <div><strong class="text-white">Bilingual Audio Assessment:</strong> Recorded bilingual audio prompts in Tagalog and English, transcribed voice files, and evaluated AI voice model deliveries for natural intonation.</div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-sky-400 font-bold mt-0.5">•</span>
+                        <div><strong class="text-white">Multimodal Annotation:</strong> Executed precise image bounding box annotation, audio remix prompt matching, and ad relevance rating following strict rubric standards.</div>
+                    </li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Tab 4: Verified Credentials -->
-        <div id="credentials" class="tab-panel">
-            <div class="section-header">
-                <h2>Education & Certifications</h2>
-                <p>Verified academic qualifications and modern skill certifications.</p>
+        <section id="credentials" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Education & Certifications</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Verified academic background and professional competency accreditations.</p>
             </div>
 
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Academic Qualification</h3>
-                    <p><strong>Bachelor of Science in Office Administration</strong><br>Major in Corporate Transcription</p>
-                    <p>Polytechnic University of the Philippines</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2">Academic Qualification</h3>
+                    <p class="text-sky-400 font-semibold text-sm">Bachelor of Science in Office Administration</p>
+                    <p class="text-slate-300 text-sm mb-1">Major in Corporate Transcription</p>
+                    <p class="text-slate-400 text-xs">Polytechnic University of the Philippines</p>
                 </div>
 
-                <div class="card">
-                    <h3>Verified Certificates</h3>
-                    <ul>
-                        <li><strong>EF SET English Certificate:</strong> C2 Proficient (Score: 90/100, March 2026)</li>
-                        <li><strong>Introduction to Bookkeeping:</strong> TESDA Online Program (Completed October 2026 | Code: 33FGt7BRuC)</li>
-                        <li><strong>NDIS Worker Orientation Module:</strong> Quality, Safety and You (Completed October 2026)</li>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2">Verified Certificates</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li>
+                            <strong class="text-white block">EF SET English Certificate</strong>
+                            <span class="text-slate-400 text-xs">C2 Proficient (Score: 90/100, March 2026)</span>
+                        </li>
+                        <li>
+                            <strong class="text-white block">Introduction to Bookkeeping</strong>
+                            <span class="text-slate-400 text-xs">TESDA Online Program (Code: 33FGt7BRuC)</span>
+                        </li>
+                        <li>
+                            <strong class="text-white block">NDIS Worker Orientation Module</strong>
+                            <span class="text-slate-400 text-xs">Quality, Safety and You</span>
+                        </li>
                     </ul>
                 </div>
             </div>
+        </section>
+
+        <section id="datacleaning" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Google Sheets Operational Data Cleaning & Dashboard Case Study</h2>
+                <p class="text-slate-400 text-sm sm:text-base">An end-to-end data scrubbing pipeline turning 10,000+ corrupt CRM records into an automated Google Sheets executive dashboard.</p>
+            </div>
+
+            <!-- Impact Summary Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-sky-400 text-center">
+                    <span class="text-2xl font-extrabold text-sky-400 block mb-1">99.8%</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Data Accuracy Achieved</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-teal-400 text-center">
+                    <span class="text-2xl font-extrabold text-teal-400 block mb-1">85% Faster</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Executive Visibility</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-emerald-400 text-center">
+                    <span class="text-2xl font-extrabold text-emerald-400 block mb-1">10,000+</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Support Records Processed</span>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 sm:p-8 rounded-2xl mb-8 space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">Project Overview</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-300">
+                        <p><strong class="text-sky-400">Role:</strong> Operations Data Specialist / Support Analyst</p>
+                        <p><strong class="text-sky-400">Tools:</strong> Google Sheets, Advanced Formulas (<code class="text-sky-300">XLOOKUP</code>, <code class="text-sky-300">QUERY</code>, <code class="text-sky-300">ARRAYFORMULA</code>, <code class="text-sky-300">REGEXREPLACE</code>, <code class="text-sky-300">IFERROR</code>), Pivot Tables, Conditional Formatting, Data Validation, Data Cleanup tools.</p>
+                    </div>
+                    <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                        <strong class="text-white">Objective:</strong> Clean, structure, and analyze 10,000+ raw, unstructured operational support logs (containing mixed POS integration errors, menu update tickets, and refund dispute entries) into an automated, executive-ready Google Sheets dashboard.
+                    </p>
+                </div>
+
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-2">Phase 1: Problem Statement & Raw Data Audit</h4>
+                    <p class="text-slate-400 text-sm mb-4">The operations team was working with raw, unformatted CSV exports from CRM and POS logging systems containing critical errors:</p>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Inconsistent Formatting:</strong> Mixed date formats (e.g., <code class="text-amber-300">YYYY-MM-DD</code> vs <code class="text-amber-300">MM/DD/YY</code>), inconsistent casing (e.g., <code class="text-amber-300">pos error</code>, <code class="text-amber-300">POS Error</code>, <code class="text-amber-300">P.O.S. Error</code>), and leading/trailing whitespace.</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Missing & Corrupted Data:</strong> Blank Merchant IDs, text strings in numeric refund columns (e.g., <code class="text-amber-300 font-mono">$ 45.50</code> or <code class="text-amber-300 font-mono">N/A</code>), and duplicate ticket IDs caused by re-opened support threads.</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Lack of Structure:</strong> High-volume raw data without automated categorization or central aggregation metrics for leadership.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-3">Phase 2: Data Cleaning & Scrubbing Pipeline</h4>
+                    <div class="space-y-4">
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">1. Deduplication & Whitespace Trimming</h5>
+                            <p class="text-xs text-slate-300 mb-2">Applied <code class="text-emerald-400 font-mono">=ARRAYFORMULA(TRIM(CLEAN(A2:A)))</code> across text columns to automatically remove extra whitespace and unprintable control characters. Used Google Sheets native menu pathway <strong class="text-white">Data > Data cleanup > Remove duplicates</strong> anchored on unique <code class="text-sky-300 font-mono">Ticket_ID</code> keys to eliminate duplicate CRM entries while retaining the latest record.</p>
+                        </div>
+
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">2. Error Handling & Standardized Formulas</h5>
+                            <p class="text-xs text-slate-300 mb-2">Combined <code class="text-emerald-400 font-mono">IFERROR()</code> with <code class="text-emerald-400 font-mono">REGEXREPLACE()</code> to strip non-numeric characters (like currency symbols and text) and convert corrupted text strings into clean decimal floats:</p>
+                            <code class="block font-mono text-xs text-emerald-400 bg-slate-950 p-2.5 rounded-lg border border-slate-900 mb-2">=IFERROR(VALUE(REGEXREPLACE(C2, "[^0-9.]", "")), 0)</code>
+                            <p class="text-xs text-slate-300">Standardized date fields into standard ISO dates (<code class="text-sky-300 font-mono">YYYY-MM-DD</code>) using <code class="text-emerald-400 font-mono">=DATEVALUE()</code> and explicit column formatting (<strong class="text-white">Format > Number > Custom date and time</strong>) for accurate time-series analysis.</p>
+                        </div>
+
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">3. Dynamic Categorization via XLOOKUP</h5>
+                            <p class="text-xs text-slate-300 mb-2">Created a dedicated Metadata Lookup Sheet (<code class="text-sky-300 font-mono">Ref_Table</code>) mapping raw vendor strings and error codes to normalized operational categories (<code class="text-slate-200">Integration Handshake Failure</code>, <code class="text-slate-200">Non-POS Menu Customization</code>, <code class="text-slate-200">Inaccurate Order Refund Dispute</code>). Implemented <code class="text-emerald-400 font-mono">XLOOKUP</code> across master rows for dynamic lookups without index breakage risk:</p>
+                            <code class="block font-mono text-xs text-emerald-400 bg-slate-950 p-2.5 rounded-lg border border-slate-900">=XLOOKUP(Raw_Error_Code, Ref_Table!A:A, Ref_Table!B:B, "Unassigned / Under Review")</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Data Scrubbing Sample Table -->
+                <div class="border-t border-slate-800 pt-6">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h4 class="text-lg font-bold text-white">Phase 3: Interactive Data Transformation View</h4>
+                        <span class="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full font-semibold">Live Google Sheets Data Comparison</span>
+                    </div>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button onclick="switchViewer(event, 'data-raw-panel', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Raw Unstructured Input (Before)</button>
+                            <button onclick="switchViewer(event, 'data-clean-panel', this)" class="viewer-tab-btn active-view px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950 transition-all">Clean Structured Output (After)</button>
+                        </div>
+
+                        <div id="data-raw-panel" class="viewer-panel hidden overflow-x-auto">
+                            <table class="w-full text-left font-mono text-xs text-amber-200 border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-900 border-b border-slate-800 text-amber-400">
+                                        <th class="p-2.5">Raw_Ticket_ID</th>
+                                        <th class="p-2.5">Store_Name</th>
+                                        <th class="p-2.5">Error_Log_Raw</th>
+                                        <th class="p-2.5">Refund_Amt</th>
+                                        <th class="p-2.5">Date_Submitted</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/50">
+                                    <tr><td class="p-2.5">#TK-1001 </td><td class="p-2.5">Urban Grill </td><td class="p-2.5">pos error - timeout</td><td class="p-2.5">$ 45.50</td><td class="p-2.5">10/05/2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1001</td><td class="p-2.5">Urban Grill</td><td class="p-2.5">POS Error</td><td class="p-2.5">45.5</td><td class="p-2.5">2026-10-05</td></tr>
+                                    <tr><td class="p-2.5">TK-1002</td><td class="p-2.5">Pizza Haven</td><td class="p-2.5">Menu Add-on issue</td><td class="p-2.5">N/A</td><td class="p-2.5">10-06-2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1003</td><td class="p-2.5">Bistro Luxe</td><td class="p-2.5">WRONG ORDER DISPUTE</td><td class="p-2.5">$120.00</td><td class="p-2.5">2026/10/06</td></tr>
+                                    <tr><td class="p-2.5">#TK-1004</td><td class="p-2.5">Taco Central</td><td class="p-2.5">p.o.s. integration failure</td><td class="p-2.5">NULL</td><td class="p-2.5">06/10/2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1005 </td><td class="p-2.5">Sushi Bar</td><td class="p-2.5">size modifier error</td><td class="p-2.5">$-</td><td class="p-2.5">10-07-2026</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="data-clean-panel" class="viewer-panel overflow-x-auto">
+                            <table class="w-full text-left font-mono text-xs text-slate-200 border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-900 border-b border-slate-800 text-sky-400">
+                                        <th class="p-2.5">Ticket ID</th>
+                                        <th class="p-2.5">Store Name</th>
+                                        <th class="p-2.5">Standardized Issue Category</th>
+                                        <th class="p-2.5">Refund ($)</th>
+                                        <th class="p-2.5">Normalized Date</th>
+                                        <th class="p-2.5">Escalation Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/50">
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1001</td><td class="p-2.5">Urban Grill</td><td class="p-2.5">POS Integration Sync Failure</td><td class="p-2.5">45.50</td><td class="p-2.5">2026-10-05</td><td class="p-2.5 text-amber-400">Escalated (Jira)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1002</td><td class="p-2.5">Pizza Haven</td><td class="p-2.5">Non-POS Customization/Add-ons</td><td class="p-2.5">0.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-emerald-400">Resolved (Self-Service)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1003</td><td class="p-2.5">Bistro Luxe</td><td class="p-2.5">Inaccurate Order Dispute</td><td class="p-2.5">120.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-emerald-400">Refund Approved</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1004</td><td class="p-2.5">Taco Central</td><td class="p-2.5">POS Integration Sync Failure</td><td class="p-2.5">0.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-amber-400">Escalated (Jira)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1005</td><td class="p-2.5">Sushi Bar</td><td class="p-2.5">Non-POS Customization/Add-ons</td><td class="p-2.5">0.00</td><td class="p-2.5">2026-10-07</td><td class="p-2.5 text-emerald-400">Resolved (Self-Service)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-2">Phase 4: Structured Reporting & Dashboard Architecture</h4>
+                    <p class="text-slate-300 text-sm mb-4">Constructed an automated Executive Operations Dashboard using Google Sheets Pivot Tables and dynamic array summaries.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Resolution SLA Breakdown (Pivot Table)</strong>
+                            Rows set to Standardized Issue Category, Columns set to Escalation Status, aggregating Average Resolution Time (Hours) and Case Count.
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Financial Refund Tracking (SUMIFS & Charts)</strong>
+                            Dynamically calculated merchant dispute payouts versus recovered logistics fees using multi-criteria SUMIFS formulas and stacked bar charts.
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Automated Risk Heatmaps (Conditional Formatting)</strong>
+                            Configured custom rules (<strong class="text-white">Format > Conditional formatting</strong>) highlighting stores with &gt;5 recurring POS drops per week for proactive outreach.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <div class="mt-16 glass-card p-8 sm:p-12 rounded-3xl text-center border border-sky-500/20 bg-gradient-to-b from-slate-900/80 to-slate-950">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Ready to Elevate Your Remote Operations & Data Systems?</h2>
+            <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base mb-8">
+                Whether you need dedicated CRM email specialists, rigorous automated data scrubbing pipelines, or streamlined SOP documentation, I am ready to integrate seamlessly into your team.
+            </p>
+            <a href="mailto:kingphilip2014.kpm@gmail.com" class="inline-block bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold px-8 py-3.5 rounded-xl text-sm sm:text-base transition-all shadow-xl shadow-sky-400/20 hover:-translate-y-0.5">
+                Get in Touch Directly
+            </a>
         </div>
 
-        <!-- Call to Action Banner -->
-        <div class="cta-banner">
-            <h2>Ready to Upgrade Your Operational Support?</h2>
-            <p>Whether you need dedicated CRM email support, data cleaning in Excel, or a reliable virtual assistant to keep your operations running smoothly, I am ready to help.</p>
-            <a href="mailto:kingphilip2014.kpm@gmail.com" class="btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2rem;">Book a Call / Email Me Direct</a>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2026 King Philip Edmar Mangi. Built with GitHub Pages.</p>
+        <footer class="mt-12 text-center text-xs text-slate-500 border-t border-slate-900 pt-8">
+            <p>© 2026 King Philip Edmar Mangi. All rights reserved.</p>
         </footer>
 
     </div>
 
-    <!-- JavaScript for Dynamic Interactions -->
     <script>
-        function switchTab(evt, tabName) {
-            const panels = document.querySelectorAll('.tab-panel');
-            panels.forEach(panel => panel.classList.remove('active-panel'));
+        function switchTab(evt, tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.add('hidden'));
 
-            const buttons = document.querySelectorAll('.pill-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-sky-400', 'text-slate-950', 'shadow-md');
+                b.classList.add('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+            });
 
-            document.getElementById(tabName).classList.add('active-panel');
-            evt.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.remove('hidden');
+            evt.currentTarget.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+            evt.currentTarget.classList.add('bg-sky-400', 'text-slate-950', 'shadow-md');
         }
 
-        function switchViewer(evt, panelId) {
-            const viewer = evt.target.closest('.interactive-viewer');
-            
-            const panels = viewer.querySelectorAll('.v-panel');
-            panels.forEach(p => p.classList.remove('v-panel-active'));
+        function switchViewer(evt, panelId, btnEl) {
+            const container = btnEl.closest('.glass-card, .bg-darkBg');
+            const panels = container.querySelectorAll('.viewer-panel');
+            panels.forEach(p => p.classList.add('hidden'));
 
-            const btns = viewer.querySelectorAll('.v-btn');
-            btns.forEach(b => b.classList.remove('v-active'));
+            const buttons = container.querySelectorAll('.viewer-tab-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-sky-400', 'text-slate-950');
+                b.classList.add('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+            });
 
-            viewer.querySelector('#' + panelId).classList.add('v-panel-active');
-            evt.currentTarget.classList.add('v-active');
+            document.getElementById(panelId).classList.remove('hidden');
+            btnEl.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+            btnEl.classList.add('bg-sky-400', 'text-slate-950');
         }
     </script>
 </body>
