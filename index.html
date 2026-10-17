@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a1118">
-  <meta name="description" content="King Philip Edmar Mangi — Professional Portfolio. Customer Support Professional & AI Evaluator specializing in CRM management, email operations, and web tools.">
+  <meta name="description" content="King Philip Edmar Mangi — Professional Portfolio. Customer Support Professional & AI Evaluator.">
   <title>King Philip Edmar Mangi — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +20,12 @@
       --primary-dark: #0284c7;
       --primary-glow: rgba(56, 189, 248, 0.25);
       --accent-green: #10b981;
+      --accent-purple: #a855f7;
       --code-bg: #070d14;
       --code-border: #1b2836;
       --max: 980px;
 
-      /* Compact Disclaimer Callout Colors */
+      /* Compact Disclaimer Colors */
       --callout-bg: #181512;
       --callout-border: #3b2c1d;
       --callout-title: #f59e0b;
@@ -40,6 +41,9 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -48,6 +52,7 @@
     .wrap {
       width: min(var(--max), calc(100% - 32px));
       margin-inline: auto;
+      flex: 1;
     }
 
     /* Top Announcement Banner */
@@ -62,17 +67,17 @@
       text-transform: uppercase;
     }
 
-    /* Centered Hero Section */
+    /* Header Profile Section */
     .hero-section {
-      padding: 48px 0 32px;
+      padding: 36px 0 20px;
       text-align: center;
     }
 
     .avatar-wrapper {
       position: relative;
-      width: 150px;
-      height: 150px;
-      margin: 0 auto 24px;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px;
     }
 
     .avatar-img {
@@ -87,12 +92,12 @@
     .status-badge {
       position: absolute;
       bottom: 2px;
-      right: 12px;
+      right: 10px;
       background: var(--accent-green);
       color: #000;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       font-weight: 800;
-      padding: 3px 10px;
+      padding: 3px 9px;
       border-radius: 999px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -100,26 +105,26 @@
     }
 
     h1.hero-title {
-      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
       font-weight: 800;
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       letter-spacing: -0.02em;
     }
 
     .hero-subtitle {
       color: var(--primary);
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-size: clamp(0.95rem, 2.2vw, 1.15rem);
       font-weight: 600;
-      max-width: 800px;
-      margin: 0 auto 16px;
+      max-width: 780px;
+      margin: 0 auto 14px;
       line-height: 1.4;
     }
 
     .hero-description {
       color: var(--text-muted);
-      font-size: 0.98rem;
-      max-width: 720px;
-      margin: 0 auto 28px;
+      font-size: 0.92rem;
+      max-width: 680px;
+      margin: 0 auto 24px;
     }
 
     .hero-buttons {
@@ -127,17 +132,17 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 22px;
+      padding: 9px 20px;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       transition: all 0.2s ease;
       cursor: pointer;
     }
@@ -165,14 +170,15 @@
       transform: translateY(-2px);
     }
 
-    /* Adaptive Navigation Pills Container */
+    /* Interactive Navigation Bar */
     .nav-pills-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 40px;
-      padding-top: 10px;
+      gap: 8px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .nav-pill {
@@ -185,6 +191,7 @@
       font-weight: 600;
       transition: all 0.2s ease;
       cursor: pointer;
+      user-select: none;
     }
 
     .nav-pill:hover {
@@ -197,33 +204,43 @@
       color: #0b131c;
       border-color: var(--primary);
       font-weight: 700;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+
+    /* Tab View Visibility */
+    .tab-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .tab-view.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Section Styling */
-    section.content-block {
-      padding: 40px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
     .section-header {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .section-title {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       font-weight: 800;
-      margin: 0 0 8px;
+      margin: 0 0 6px;
     }
 
     .section-desc {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       max-width: 600px;
       margin: 0 auto;
     }
 
-    /* Cards Grid */
+    /* Cards Grid Layouts */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -256,7 +273,7 @@
     }
 
     .card h3 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin: 0 0 8px;
       font-weight: 700;
     }
@@ -264,10 +281,10 @@
     .card p {
       color: var(--text-muted);
       font-size: 0.88rem;
-      margin: 0 0 14px;
+      margin: 0 0 12px;
+      line-height: 1.5;
     }
 
-    /* Bullet list */
     .card-list {
       list-style: none;
       padding: 0;
@@ -290,7 +307,54 @@
       font-weight: bold;
     }
 
-    /* Sample Blocks */
+    /* How I Think / Philosophy Box */
+    .mindset-card {
+      background: linear-gradient(135deg, rgba(17, 29, 41, 0.9), rgba(15, 23, 36, 0.95));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mindset-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent-purple));
+    }
+
+    .mindset-tagline {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .mindset-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 0 12px;
+      color: var(--text-main);
+    }
+
+    .mindset-quote {
+      font-size: 1rem;
+      font-style: italic;
+      color: #e2e8f0;
+      margin-bottom: 16px;
+      border-left: 2px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    /* Samples Formatting */
     .sample-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -351,15 +415,15 @@
       overflow-x: auto;
     }
 
-    /* Compact Callout Note (Placed at section bottom) */
+    /* Compact Disclaimer Callout Note */
     .compact-callout {
       background: var(--callout-bg);
       border: 1px solid var(--callout-border);
       border-radius: 10px;
-      padding: 10px 14px;
+      padding: 12px 16px;
       color: var(--callout-text);
       font-size: 0.8rem;
-      line-height: 1.45;
+      line-height: 1.5;
       margin-top: 24px;
     }
 
@@ -370,15 +434,15 @@
 
     /* Footer */
     footer {
-      padding: 32px 0;
+      padding: 28px 0;
       border-top: 1px solid var(--card-border);
       text-align: center;
       color: var(--text-muted);
       font-size: 0.82rem;
-      margin-top: 40px;
+      margin-top: auto;
     }
 
-    /* Responsive */
+    /* Responsive adjustments */
     @media (max-width: 820px) {
       .grid-3 { grid-template-columns: 1fr; }
       .grid-2 { grid-template-columns: 1fr; }
@@ -392,9 +456,9 @@
     ⚡ Open to Remote Roles: Customer Support, AI Evaluation & CRM Operations
   </div>
 
-  <main class="wrap">
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
+  <div class="wrap">
+    <!-- Header Hero Profile -->
+    <header class="hero-section">
       <div class="avatar-wrapper">
         <img src="profile.jpg" alt="King Philip Edmar Mangi" class="avatar-img" onerror="this.src='https://via.placeholder.com/150/111d29/38bdf8?text=Philip'">
         <span class="status-badge">Active</span>
@@ -415,79 +479,122 @@
         <a href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn Profile</a>
       </div>
 
-      <!-- Adaptive Navigation Pills (Wraps cleanly without horizontal scroll) -->
-      <nav class="nav-pills-container" aria-label="Section shortcuts">
-        <a href="#services" class="nav-pill">Core Services</a>
-        <a href="#samples" class="nav-pill">Work Case Studies</a>
-        <a href="#apps" class="nav-pill">Tech & Tools Lab</a>
-        <a href="#ai" class="nav-pill">AI Evaluation & Data</a>
-        <a href="#credentials" class="nav-pill">Credentials</a>
+      <!-- Interactive View Selector Navigation -->
+      <nav class="nav-pills-container" aria-label="Portfolio Views">
+        <button class="nav-pill active" onclick="switchTab('services')">Core Services</button>
+        <button class="nav-pill" onclick="switchTab('mindset')">How I Think</button>
+        <button class="nav-pill" onclick="switchTab('samples')">Work Case Studies</button>
+        <button class="nav-pill" onclick="switchTab('apps')">Tech & Tools Lab</button>
+        <button class="nav-pill" onclick="switchTab('ai')">AI Evaluation</button>
+        <button class="nav-pill" onclick="switchTab('credentials')">Credentials</button>
       </nav>
-    </section>
+    </header>
 
-    <!-- CORE SERVICES -->
-    <section class="content-block" id="services">
-      <div class="section-header">
-        <h2 class="section-title">Customer Support & Remote Operations Solutions</h2>
-        <p class="section-desc">Comprehensive customer support, email operations, CRM inbox triage, and data quality assurance tailored for scaling teams.</p>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <span class="card-icon">✉️</span>
-          <h3>Email Support & CRM</h3>
-          <p>Managing high-volume inbox queues with clear, empathetic, and resolution-focused communication.</p>
-          <ul class="card-list">
-            <li>Salesforce & Bliss inbox triage</li>
-            <li>Policy-compliant ticket resolution</li>
-            <li>Customer retention & escalation</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <span class="card-icon">⚙️</span>
-          <h3>Engineering Escalations</h3>
-          <p>Bridging customer issues with technical bug reporting for engineering teams.</p>
-          <ul class="card-list">
-            <li>Jira bug issue drafting</li>
-            <li>Step-by-step issue reproduction</li>
-            <li>Console log & payload attachment</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <span class="card-icon">📝</span>
-          <h3>KB & SOP Redesign</h3>
-          <p>Authoring internal knowledge bases and standardized procedures for support teams.</p>
-          <ul class="card-list">
-            <li>Macro response optimization</li>
-            <li>Internal agent guidebooks</li>
-            <li>Help Center article drafting</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- WORK CASE STUDIES -->
-    <section class="content-block" id="samples">
-      <div class="section-header">
-        <h2 class="section-title">Work Case Studies & Escalations</h2>
-        <p class="section-desc">Demonstrating practical support workflows, technical engineering handoffs, and operational guidelines.</p>
-      </div>
-
-      <!-- Sample 1 -->
-      <div class="sample-card">
-        <div class="sample-head">
-          <h3 style="margin: 0; font-size: 1rem;">1. Email Support & Payment Refund Resolution</h3>
-          <span class="sample-badge">Customer Communication</span>
+    <main>
+      <!-- TAB 1: CORE SERVICES -->
+      <section id="tab-services" class="tab-view active">
+        <div class="section-header">
+          <h2 class="section-title">Customer Support & Remote Operations Solutions</h2>
+          <p class="section-desc">Comprehensive customer support, email operations, CRM inbox triage, and data quality assurance tailored for scaling teams.</p>
         </div>
-        <div class="email-box">
-          <div class="email-meta">
-            Subject: Re: Duplicate Charge Inquiry - Order #84920<br>
-            To: Sarah Miller &lt;client@example.com&gt;<br>
-            From: King Philip Mangi - Support Operations
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="card-icon">✉️</span>
+            <h3>Email Support & CRM</h3>
+            <p>Managing high-volume inbox queues with clear, empathetic, and resolution-focused communication.</p>
+            <ul class="card-list">
+              <li>Salesforce & Bliss inbox triage</li>
+              <li>Policy-compliant ticket resolution</li>
+              <li>Customer retention & escalation</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="card-icon">⚙️</span>
+            <h3>Engineering Escalations</h3>
+            <p>Bridging customer issues with technical bug reporting for engineering teams.</p>
+            <ul class="card-list">
+              <li>Jira bug issue drafting</li>
+              <li>Step-by-step issue reproduction</li>
+              <li>Console log & payload attachment</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="card-icon">📝</span>
+            <h3>KB & SOP Redesign</h3>
+            <p>Authoring internal knowledge bases and standardized procedures for support teams.</p>
+            <ul class="card-list">
+              <li>Macro response optimization</li>
+              <li>Internal agent guidebooks</li>
+              <li>Help Center article drafting</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- TAB 2: HOW I THINK / MINDSET -->
+      <section id="tab-mindset" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title">Mindset & Operational Philosophy</h2>
+          <p class="section-desc">A peak into how I break down complex customer friction points and systematically approach operational support.</p>
+        </div>
+
+        <div class="mindset-card">
+          <span class="mindset-tagline">Curious Mind & Strategic Thinker</span>
+          <h3 class="mindset-title">Approaching Support with First-Principles & Root-Cause Logic</h3>
+          <p class="mindset-quote">"Customer support isn't just about answering tickets—it's about understanding human behavior, identifying systemic friction, and translating customer pain points into actionable system improvements."</p>
+          
+          <div class="grid-2" style="margin-top: 20px;">
+            <div>
+              <h4 style="color: var(--primary); margin: 0 0 6px; font-size: 0.95rem;">1. Root Cause Over Quick Band-Aids</h4>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                When an issue recurs, resolving the single ticket is only step one. I look for underlying software bugs, UI confusion, or macro gaps that need structural fixes.
+              </p>
+            </div>
+            <div>
+              <h4 style="color: var(--primary); margin: 0 0 6px; font-size: 0.95rem;">2. Empathetic Clarity</h4>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                High-friction interactions require clarity without jargon. I bridge the gap between technical engineering details and user-friendly, empathetic explanations.
+              </p>
+            </div>
+            <div>
+              <h4 style="color: var(--primary); margin: 0 0 6px; font-size: 0.95rem;">3. Process & Automation Mindset</h4>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                If a task is performed 50 times a day manually, I evaluate spreadsheet formulas, keyboard shortcuts, or CRM rules to optimize turnaround times.
+              </p>
+            </div>
+            <div>
+              <h4 style="color: var(--primary); margin: 0 0 6px; font-size: 0.95rem;">4. Uncompromising Data Precision</h4>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Whether evaluating AI output accuracy or logging Jira tickets, I rely on clear baselines, reproducible evidence, and meticulous attention to details.
+              </p>
+            </div>
           </div>
-          <div style="white-space: pre-line;">Hi Sarah,
+        </div>
+      </section>
+
+      <!-- TAB 3: WORK CASE STUDIES -->
+      <section id="tab-samples" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title">Work Case Studies & Escalations</h2>
+          <p class="section-desc">Demonstrating practical support workflows, technical engineering handoffs, and operational guidelines.</p>
+        </div>
+
+        <!-- Sample 1 -->
+        <div class="sample-card">
+          <div class="sample-head">
+            <h3 style="margin: 0; font-size: 1rem;">1. Email Support & Payment Refund Resolution</h3>
+            <span class="sample-badge">Customer Communication</span>
+          </div>
+          <div class="email-box">
+            <div class="email-meta">
+              Subject: Re: Duplicate Charge Inquiry - Order #84920<br>
+              To: Sarah Miller &lt;client@example.com&gt;<br>
+              From: King Philip Mangi - Support Operations
+            </div>
+            <div style="white-space: pre-line;">Hi Sarah,
 
 Thank you for reaching out, and I apologize for the double charge on your recent purchase.
 
@@ -499,16 +606,16 @@ If you have any further questions, please let me know.
 
 Best regards,
 King Philip Mangi</div>
+          </div>
         </div>
-      </div>
 
-      <!-- Sample 2 -->
-      <div class="sample-card">
-        <div class="sample-head">
-          <h3 style="margin: 0; font-size: 1rem;">2. Jira Bug Escalation (iOS Verification Issue)</h3>
-          <span class="sample-badge">Engineering Ticket</span>
-        </div>
-        <div class="code-box">Project: Web App Operations [OPS]
+        <!-- Sample 2 -->
+        <div class="sample-card">
+          <div class="sample-head">
+            <h3 style="margin: 0; font-size: 1rem;">2. Jira Bug Escalation (iOS Verification Issue)</h3>
+            <span class="sample-badge">Engineering Ticket</span>
+          </div>
+          <div class="code-box">Project: Web App Operations [OPS]
 Issue Type: Bug Escalation
 Summary: [iOS Safari] 2FA SMS Verification code field fails to render during checkout
 
@@ -527,103 +634,104 @@ Expected Result: 6-digit input field appears ready for input.
 Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeError: Cannot read properties of null".</div>
         </div>
 
-      <!-- Compact Disclaimer at Section Bottom -->
-      <div class="compact-callout">
-        <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured here are synthetic case studies created to illustrate operational problem-solving. No real client or private company data is used.
-      </div>
-    </section>
+        <!-- Compact Disclaimer at Bottom -->
+        <div class="compact-callout">
+          <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured here are synthetic case studies created to illustrate operational problem-solving. No real client or private company data is used.
+        </div>
+      </section>
 
-    <!-- LIVE WEB TOOLS & APPS -->
-    <section class="content-block" id="apps">
-      <div class="section-header">
-        <h2 class="section-title">Tech & Tools Lab</h2>
-        <p class="section-desc">Practical web tools built for financial analytics, trading calculations, and workflow automation.</p>
-      </div>
+      <!-- TAB 4: LIVE WEB TOOLS & APPS -->
+      <section id="tab-apps" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title">Tech & Tools Lab</h2>
+          <p class="section-desc">Practical web tools built for financial analytics, trading calculations, and workflow automation.</p>
+        </div>
 
-      <div class="grid-3">
-        <article class="card">
-          <span class="card-icon">🧮</span>
-          <h3>Margin Calculator</h3>
-          <p>Calculation tool for position sizing, risk preferences, take-profit levels, and margin comparison.</p>
-          <a href="https://philip1314.github.io/Margin-Calculator/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
-        </article>
+        <div class="grid-3">
+          <article class="card">
+            <span class="card-icon">🧮</span>
+            <h3>Margin Calculator</h3>
+            <p>Calculation tool for position sizing, risk preferences, take-profit levels, and margin comparison.</p>
+            <a href="https://philip1314.github.io/Margin-Calculator/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
+          </article>
 
-        <article class="card">
-          <span class="card-icon">📈</span>
-          <h3>Trading Journal</h3>
-          <p>Trade logging and analytics app with flexible filtering for parameters, dates, and strategies.</p>
-          <a href="https://philip1314.github.io/myTradingJournal/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
-        </article>
+          <article class="card">
+            <span class="card-icon">📈</span>
+            <h3>Trading Journal</h3>
+            <p>Trade logging and analytics app with flexible filtering for parameters, dates, and strategies.</p>
+            <a href="https://philip1314.github.io/myTradingJournal/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
+          </article>
 
-        <article class="card">
-          <span class="card-icon">💰</span>
-          <h3>Personal Finance Tracker</h3>
-          <p>Dashboard for tracking expenses, monthly budgets, savings goals, and cash flow.</p>
-          <a href="https://philip1314.github.io/finances/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
-        </article>
-      </div>
+          <article class="card">
+            <span class="card-icon">💰</span>
+            <h3>Personal Finance Tracker</h3>
+            <p>Dashboard for tracking expenses, monthly budgets, savings goals, and cash flow.</p>
+            <a href="https://philip1314.github.io/finances/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
+          </article>
+        </div>
 
-      <!-- Compact Disclaimer at Section Bottom -->
-      <div class="compact-callout">
-        <strong>Privacy & Data Safeguards:</strong> Real customer transactions, personal financial records, and confidential user information are strictly excluded from all public work samples, demonstrations, and web tools.
-      </div>
-    </section>
+        <!-- Compact Disclaimer at Bottom -->
+        <div class="compact-callout">
+          <strong>Privacy & Data Safeguards:</strong> Real customer transactions, personal financial records, and confidential user information are strictly excluded from all public work samples, demonstrations, and web tools.
+        </div>
+      </section>
 
-    <!-- AI EVALUATION & DATA -->
-    <section class="content-block" id="ai">
-      <div class="section-header">
-        <h2 class="section-title">AI Evaluation & Data Quality</h2>
-        <p class="section-desc">Rigorous LLM evaluation, factual verification, audio transcription review, and data pipeline cleanup.</p>
-      </div>
+      <!-- TAB 5: AI EVALUATION & DATA -->
+      <section id="tab-ai" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title">AI Evaluation & Data Quality</h2>
+          <p class="section-desc">Rigorous LLM evaluation, factual verification, audio transcription review, and data pipeline cleanup.</p>
+        </div>
 
-      <div class="grid-3">
-        <article class="card">
-          <span class="card-icon">🤖</span>
-          <h3>LLM Output Rating</h3>
-          <p>Evaluating generative model outputs against rubrics for accuracy, adherence, and clarity.</p>
-        </article>
+        <div class="grid-3">
+          <article class="card">
+            <span class="card-icon">🤖</span>
+            <h3>LLM Output Rating</h3>
+            <p>Evaluating generative model outputs against rubrics for accuracy, adherence, and clarity.</p>
+          </article>
 
-        <article class="card">
-          <span class="card-icon">🎧</span>
-          <h3>Audio & Transcription</h3>
-          <p>Precision verbatim transcription review and speech-to-text data evaluation.</p>
-        </article>
+          <article class="card">
+            <span class="card-icon">🎧</span>
+            <h3>Audio & Transcription</h3>
+            <p>Precision verbatim transcription review and speech-to-text data evaluation.</p>
+          </article>
 
-        <article class="card">
-          <span class="card-icon">📊</span>
-          <h3>Data Cleanup Pipelines</h3>
-          <p>Google Sheets, XLOOKUP, data mapping, and automated validation spreadsheet workflows.</p>
-        </article>
-      </div>
+          <article class="card">
+            <span class="card-icon">📊</span>
+            <h3>Data Cleanup Pipelines</h3>
+            <p>Google Sheets, XLOOKUP, data mapping, and automated validation spreadsheet workflows.</p>
+          </article>
+        </div>
 
-      <!-- Compact Disclaimer at Section Bottom -->
-      <div class="compact-callout">
-        <strong>Portfolio Integrity:</strong> All content displayed is original work created specifically for portfolio demonstration. Proprietary client material, NDA-restricted guidelines, and private screenshots are never shared or republished.
-      </div>
-    </section>
+        <!-- Compact Disclaimer at Bottom -->
+        <div class="compact-callout">
+          <strong>Portfolio Integrity:</strong> All content displayed is original work created specifically for portfolio demonstration. Proprietary client material, NDA-restricted guidelines, and private screenshots are never shared or republished.
+        </div>
+      </section>
 
-    <!-- CREDENTIALS & BACKGROUND -->
-    <section class="content-block" id="credentials">
-      <div class="section-header">
-        <h2 class="section-title">Credentials & Education</h2>
-        <p class="section-desc">Academic background, language proficiency, and technical skill sets.</p>
-      </div>
+      <!-- TAB 6: CREDENTIALS & BACKGROUND -->
+      <section id="tab-credentials" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title">Credentials & Education</h2>
+          <p class="section-desc">Academic background, language proficiency, and technical skill sets.</p>
+        </div>
 
-      <div class="grid-2">
-        <article class="card">
-          <span class="card-icon">🎓</span>
-          <h3>BS in Office Administration</h3>
-          <p style="margin-bottom: 0;">Polytechnic University of the Philippines. Major in Corporate Transcription.</p>
-        </article>
+        <div class="grid-2">
+          <article class="card">
+            <span class="card-icon">🎓</span>
+            <h3>BS in Office Administration</h3>
+            <p style="margin-bottom: 0;">Polytechnic University of the Philippines. Major in Corporate Transcription.</p>
+          </article>
 
-        <article class="card">
-          <span class="card-icon">📜</span>
-          <h3>EF SET English Certificate — C2 Proficient</h3>
-          <p style="margin-bottom: 0;">Score: 90/100 · Proficient in advanced written and spoken English communication.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+          <article class="card">
+            <span class="card-icon">📜</span>
+            <h3>EF SET English Certificate — C2 Proficient</h3>
+            <p style="margin-bottom: 0;">Score: 90/100 · Proficient in advanced written and spoken English communication.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <footer>
     <div class="wrap">
@@ -633,6 +741,25 @@ Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeE
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function switchTab(tabId) {
+      // Hide all tabs
+      const tabs = document.querySelectorAll('.tab-view');
+      tabs.forEach(tab => tab.classList.remove('active'));
+
+      // Deactivate all pills
+      const pills = document.querySelectorAll('.nav-pill');
+      pills.forEach(pill => pill.classList.remove('active'));
+
+      // Activate selected tab & pill
+      const targetTab = document.getElementById('tab-' + tabId);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      // Highlight active pill
+      event.currentTarget.classList.add('active');
+    }
   </script>
 </body>
 </html>
