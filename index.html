@@ -3,449 +3,512 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f7f8">
-  <meta name="description" content="King Philip Edmar Mangi — Professional Portfolio. Customer support operations, AI response evaluation, data quality, and practical web tools.">
-  <meta property="og:title" content="King Philip Edmar Mangi | Professional Portfolio">
-  <meta property="og:description" content="A practical portfolio of support operations, engineering escalations, AI evaluation, and web applications.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://philip1314.github.io/portfolio/">
-  <meta property="og:image" content="https://philip1314.github.io/portfolio/profile.jpg">
-  <title>King Philip Edmar Mangi — Support Operations & Practical Web Apps</title>
+  <meta name="theme-color" content="#0a1118">
+  <meta name="description" content="King Philip Edmar Mangi — Professional Portfolio. Customer Support Professional & AI Evaluator specializing in CRM management, email operations, and web tools.">
+  <title>King Philip Edmar Mangi — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f7f8;
-      --paper: #ffffff;
-      --ink: #172a3a;
-      --muted: #5b6b78;
-      --line: #dfe7eb;
-      --brand: #087f8c;
-      --brand-dark: #08616b;
-      --brand-soft: #e3f4f3;
-      --accent: #d48b45;
-      --shadow: 0 16px 44px rgba(23,42,58,.07);
-      --radius: 20px;
-      --max: 1120px;
-      --code-bg: #1e293b;
-      --code-ink: #e2e8f0;
+      --bg: #0b131c;
+      --card-bg: #111d29;
+      --card-border: #1d2d3e;
+      --text-main: #f0f6fc;
+      --text-muted: #8b9eb0;
+      --primary: #38bdf8;
+      --primary-dark: #0284c7;
+      --primary-glow: rgba(56, 189, 248, 0.25);
+      --accent-green: #10b981;
+      --code-bg: #070d14;
+      --code-border: #1b2836;
+      --max: 980px;
 
-      /* Compact Callout banner colors */
-      --callout-bg: #2b2319;
-      --callout-border: #4a3a29;
-      --callout-title: #f1b36e;
-      --callout-text: #d8cebf;
+      /* Compact Disclaimer Callout Colors */
+      --callout-bg: #181512;
+      --callout-border: #3b2c1d;
+      --callout-title: #f59e0b;
+      --callout-text: #d1c2b0;
     }
+
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 130px; }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font-family: "DM Sans", sans-serif; line-height: 1.65;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; }
+
+    a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    :focus-visible { outline: 3px solid #e1a25d; outline-offset: 3px; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
 
-    /* Top Announcement */
-    .announcement {
-      background: var(--ink); color: #f5fbfc; font-size: .8rem;
-      text-align: center; padding: 9px 16px; letter-spacing: .035em;
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin-inline: auto;
     }
-    .announcement span { color: #8ee0d9; font-weight: 700; }
 
-    /* Header & Navigation */
-    .site-header {
-      position: sticky; top: 0; z-index: 20; background: rgba(245,247,248,.96);
-      backdrop-filter: blur(14px); border-bottom: 1px solid rgba(223,231,235,.9);
-      padding: 12px 0 14px;
-    }
-    .nav-top-row {
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(223,231,235,.5);
-    }
-    .brandmark { 
-      text-decoration: none; 
-      font: 800 1.3rem "Manrope", sans-serif; 
-      letter-spacing: -.035em; 
-      color: var(--ink);
-      display: inline-flex;
-      align-items: center;
-      cursor: pointer;
-      user-select: none;
-    }
-    .brandmark span { color: var(--brand); }
-
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-    .theme-toggle { 
-      display: inline-flex; align-items: center; gap: 6px; 
-      border: 1px solid var(--line); background: var(--paper); color: var(--ink); 
-      border-radius: 999px; padding: 7px 14px; font: 600 .82rem "DM Sans", sans-serif; cursor: pointer;
-      transition: all .2s ease;
-    }
-    .theme-toggle:hover { border-color: var(--brand); color: var(--brand); }
-
-    .nav-cta, .button {
-      display: inline-flex; justify-content: center; align-items: center; gap: 8px;
-      border: 1px solid var(--brand); border-radius: 999px; padding: 8px 16px;
-      text-decoration: none; font-weight: 700; font-size: .85rem; transition: .2s ease; cursor: pointer;
-    }
-    .nav-cta, .button.primary { background: var(--brand); color: white; }
-    .nav-cta:hover, .button.primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
-    .button.secondary { color: var(--ink); border-color: var(--line); background: white; }
-    .button.secondary:hover { border-color: var(--brand); color: var(--brand); }
-
-    /* Button Bar Navigation (Directly below top row, fully wrapping & adaptive) */
-    .nav-bar-container {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-    .nav-button {
-      border: 1px solid var(--line);
-      background: var(--paper);
-      color: var(--muted);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: .82rem;
+    /* Top Announcement Banner */
+    .announcement-banner {
+      background: linear-gradient(90deg, #0284c7, #2563eb);
+      color: #ffffff;
+      font-size: 0.8rem;
       font-weight: 700;
-      text-decoration: none;
-      transition: all .15s ease;
-      cursor: pointer;
-      flex: 0 1 auto;
+      text-align: center;
+      padding: 8px 16px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    /* Centered Hero Section */
+    .hero-section {
+      padding: 48px 0 32px;
       text-align: center;
     }
-    .nav-button:hover {
-      border-color: var(--brand);
-      color: var(--brand);
-    }
-    .nav-button.active {
-      background: var(--brand-soft);
-      border-color: var(--brand);
-      color: var(--brand-dark);
+
+    .avatar-wrapper {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 24px;
     }
 
-    /* Hero Section */
-    .hero { padding: 36px 0 20px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(260px,.75fr); gap: 48px; align-items: center; }
-    .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--brand-dark); background: var(--brand-soft); border-radius: 999px; padding: 7px 14px; font-size: .78rem; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #159a8c; box-shadow: 0 0 0 4px rgba(21,154,140,.12); }
-    h1, h2, h3, h4 { font-family: "Manrope", sans-serif; line-height: 1.2; letter-spacing: -.035em; }
-    h1 { font-size: clamp(2.3rem, 4.5vw, 4rem); margin: 18px 0 16px; max-width: 760px; font-weight: 800; }
-    h1 .highlight { color: var(--brand); }
-    .hero-copy { color: var(--muted); font-size: 1.05rem; max-width: 670px; margin: 0 0 24px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .quick-facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
-    .chip { display: inline-flex; align-items: center; background: white; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: .78rem; color: #405461; font-weight: 600; }
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 25px var(--primary-glow);
+    }
 
-    /* Compact Callout Note Cards */
-    .callout-card {
+    .status-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 12px;
+      background: var(--accent-green);
+      color: #000;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    h1.hero-title {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 800;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      color: var(--primary);
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 600;
+      max-width: 800px;
+      margin: 0 auto 16px;
+      line-height: 1.4;
+    }
+
+    .hero-description {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #0b131c;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Adaptive Navigation Pills Container */
+    .nav-pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      padding-top: 10px;
+    }
+
+    .nav-pill {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-pill:hover {
+      border-color: var(--primary);
+      color: var(--text-main);
+    }
+
+    .nav-pill.active {
+      background: var(--primary);
+      color: #0b131c;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Section Styling */
+    section.content-block {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin: 0 0 8px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Cards Grid */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin: 0 0 14px;
+    }
+
+    /* Bullet list */
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card-list li {
+      font-size: 0.84rem;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .card-list li::before {
+      content: "•";
+      color: var(--primary);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* Sample Blocks */
+    .sample-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .sample-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .sample-badge {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .email-box {
+      background: #080f17;
+      border: 1px solid #1a2837;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .email-meta {
+      border-bottom: 1px solid #1b2a3a;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .code-box {
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 10px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    /* Compact Callout Note (Placed at section bottom) */
+    .compact-callout {
       background: var(--callout-bg);
       border: 1px solid var(--callout-border);
-      border-radius: 12px;
-      padding: 10px 16px;
+      border-radius: 10px;
+      padding: 10px 14px;
       color: var(--callout-text);
-      font-size: .82rem;
+      font-size: 0.8rem;
       line-height: 1.45;
-      margin-top: 32px;
-      margin-bottom: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      margin-top: 24px;
     }
-    .callout-card strong {
+
+    .compact-callout strong {
       color: var(--callout-title);
       font-weight: 700;
     }
 
-    /* Profile Card */
-    .profile-card { background: var(--paper); border: 1px solid var(--line); border-radius: 28px; padding: 18px; box-shadow: var(--shadow); transform: rotate(1deg); position: relative; }
-    .profile-card::before { content: ""; position: absolute; inset: -10px 14px 14px -10px; border: 1px solid var(--brand); border-radius: 28px; opacity: .25; z-index: -1; }
-    .profile-photo { aspect-ratio: 4 / 4.4; overflow: hidden; border-radius: 19px; background: linear-gradient(145deg,#d9eeee,#e8eef1); }
-    .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
-    .profile-meta { padding: 16px 5px 5px; }
-    .profile-meta strong { display: block; font: 800 1.05rem "Manrope", sans-serif; }
-    .profile-meta span { display: block; color: var(--muted); font-size: .88rem; margin-top: 3px; }
-    .profile-status { margin-top: 14px; display: inline-flex; gap: 7px; align-items: center; font-size: .78rem; color: #26755e; font-weight: 800; }
-    .profile-status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2fa77a; }
-
-    /* Trust Strip & Layout Units */
-    .trust-strip { border-block: 1px solid var(--line); background: rgba(255,255,255,.55); margin-top: 20px; }
-    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); }
-    .trust-item { padding: 20px 16px; border-right: 1px solid var(--line); }
-    .trust-item:last-child { border-right: 0; }
-    .trust-item strong { display: block; font: 800 .95rem "Manrope", sans-serif; }
-    .trust-item span { color: var(--muted); font-size: .8rem; }
-
-    section.content-section { padding: 50px 0; }
-    .section-heading { max-width: 720px; margin-bottom: 26px; }
-    .section-kicker { color: var(--brand); font-size: .77rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
-    h2 { font-size: clamp(1.8rem,3vw,2.5rem); margin: 8px 0 12px; }
-    .section-intro { color: var(--muted); margin: 0; max-width: 690px; font-size: 1rem; }
-
-    .cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 4px 18px rgba(23,42,58,.025); }
-    .card-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--brand-soft); color: var(--brand-dark); font-size: 1.25rem; margin-bottom: 18px; }
-    h3 { font-size: 1.18rem; margin: 0 0 10px; }
-    .card p { color: var(--muted); font-size: .91rem; margin: 0 0 16px; }
-
-    .clean-list { list-style: none; padding: 0; margin: 0; }
-    .clean-list li { position: relative; padding-left: 20px; margin: 8px 0; color: #3e515e; font-size: .88rem; }
-    .clean-list li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-weight: 800; }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
-    .tag { background: #f2f6f7; border: 1px solid #e4ecef; border-radius: 8px; padding: 4px 9px; color: #526570; font-size: .74rem; font-weight: 700; }
-
-    /* Work Showcase Component Styling */
-    .sample-box {
-      background: var(--paper); border: 1px solid var(--line);
-      border-radius: 18px; padding: 24px; margin-top: 24px;
-    }
-    .sample-header {
-      display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;
-    }
-    .sample-tag {
-      font-size: .75rem; font-weight: 800; padding: 4px 12px; border-radius: 999px;
-      background: var(--brand-soft); color: var(--brand-dark); text-transform: uppercase; letter-spacing: .05em;
-    }
-    .email-container {
-      background: #fafbfc; border: 1px solid #e1e8ed; border-radius: 12px; padding: 20px; font-size: .91rem;
-    }
-    .email-meta { font-size: .84rem; color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 14px; }
-    .email-meta div { margin-bottom: 4px; }
-    .email-body { color: var(--ink); white-space: pre-line; font-size: .92rem; line-height: 1.65; }
-
-    .code-block {
-      background: var(--code-bg); color: var(--code-ink); border-radius: 12px; padding: 18px 22px;
-      font-family: "JetBrains Mono", monospace; font-size: .84rem; line-height: 1.65; overflow-x: auto; white-space: pre-wrap;
+    /* Footer */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 40px;
     }
 
-    .app-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-    .app-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; min-height: 270px; transition: transform .2s ease, border-color .2s ease; }
-    .app-card:hover { transform: translateY(-4px); border-color: var(--brand); }
-    .app-card .app-icon { width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand-dark); font-size: 1.45rem; margin-bottom: 18px; }
-    .app-card p { color: var(--muted); font-size: .91rem; flex: 1; }
-
-    .credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .credential { display: flex; gap: 15px; background: white; border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
-    .credential-icon { flex: 0 0 42px; width: 42px; height: 42px; display: grid; place-items: center; background: #f2f6f7; border-radius: 12px; font-size: 1.1rem; }
-    .credential h3 { font-size: 1rem; margin-bottom: 5px; }
-    .credential p { margin: 0; color: var(--muted); font-size: .85rem; }
-
-    .tool-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
-    .tool-group { background: white; border: 1px solid var(--line); border-radius: 15px; padding: 19px; }
-    .tool-group h3 { font-size: .95rem; margin-top: 0; }
-    .tool-group p { color: var(--muted); font-size: .83rem; margin: 0; }
-
-    .contact-panel { background: var(--brand); color: white; border-radius: 28px; padding: clamp(28px,5vw,52px); display: flex; justify-space-between; gap: 30px; align-items: center; }
-    .contact-panel h2 { margin-top: 0; max-width: 650px; color: white; }
-    .contact-panel p { color: #e0f5f4; margin-bottom: 0; }
-    .contact-panel .button { background: white; border-color: white; color: var(--brand-dark); white-space: nowrap; }
-
-    footer { padding: 28px 0 36px; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--line); margin-top: 40px; }
-    .footer-row { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
-    .footer-links { display: flex; gap: 18px; }
-    .footer-links a { text-decoration: none; cursor: pointer; }
-    .footer-links a:hover { color: var(--brand); }
-
-    /* Page View Switching */
-    .page-view { display: none; animation: pageIn .22s ease both; }
-    .page-view.active { display: block; }
-    @keyframes pageIn { from { opacity: .45; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* Dark Mode Overrides */
-    body.dark {
-      --bg: #101820; --paper: #17232d; --ink: #edf4f7; --muted: #a7b7c2; --line: #2b3b47;
-      --brand: #50c5c3; --brand-dark: #7edbd7; --brand-soft: #1d3c42; --accent: #e0a361;
-      --shadow: 0 16px 44px rgba(0,0,0,.2);
-      --code-bg: #0d151c; --code-ink: #cbd5e1;
-    }
-    body.dark .announcement { background: #091117; }
-    body.dark .site-header { background: rgba(16,24,32,.96); }
-    body.dark .site-header .nav-top-row { border-bottom-color: rgba(43,59,71,.6); }
-    body.dark .button.secondary, body.dark .chip, body.dark .theme-toggle, body.dark .nav-button { background: var(--paper); color: var(--ink); }
-    body.dark .nav-button.active { background: var(--brand-soft); color: var(--brand); }
-    body.dark .trust-strip { background: rgba(23,35,45,.6); }
-    body.dark .tag { background: #1c2b35; border-color: #30434f; color: #b8c8d2; }
-    body.dark .tool-group, body.dark .credential, body.dark .card, body.dark .app-card, body.dark .sample-box { background: var(--paper); }
-    body.dark .email-container { background: #121c24; border-color: #283743; }
-
-    @media (max-width: 900px) {
-      .hero-grid { gap: 30px; grid-template-columns: 1fr; }
-      .cards, .app-grid { grid-template-columns: 1fr 1fr; }
-      .tool-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 680px) {
-      .wrap { width: min(100% - 28px, var(--max)); }
-      .trust-grid { grid-template-columns: 1fr 1fr; }
-      .cards, .app-grid, .credentials, .tool-grid { grid-template-columns: 1fr; }
-      .contact-panel { flex-direction: column; align-items: flex-start; }
-      .nav-button { flex: 1 1 calc(50% - 8px); }
+    /* Responsive */
+    @media (max-width: 820px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="announcement"><span>CURIOUS MIND. DETAIL-DRIVEN WORK.</span> · Support Operations · AI Evaluation · Practical Tools</div>
-  
-  <header class="site-header">
-    <div class="wrap">
-      <div class="nav-top-row">
-        <a class="brandmark" href="#home" data-page-link="home" aria-label="King Philip Mangi homepage">
-          PHILIP<span>.</span>
-        </a>
 
-        <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">☾ <span>Dark mode</span></button>
-          <a class="nav-cta" href="mailto:kingphilip2014.kpm@gmail.com">Let’s connect ↗</a>
-        </div>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-banner">
+    ⚡ Open to Remote Roles: Customer Support, AI Evaluation & CRM Operations
+  </div>
+
+  <main class="wrap">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="avatar-wrapper">
+        <img src="profile.jpg" alt="King Philip Edmar Mangi" class="avatar-img" onerror="this.src='https://via.placeholder.com/150/111d29/38bdf8?text=Philip'">
+        <span class="status-badge">Active</span>
       </div>
 
-      <!-- Button Row Navigation Bar - Directly below top row & fully responsive wrapping -->
-      <nav class="nav-bar-container" aria-label="Main navigation">
-        <button class="nav-button active" data-page-link="home">Home</button>
-        <button class="nav-button" data-page-link="work">Selected Work</button>
-        <button class="nav-button" data-page-link="apps">Web Apps</button>
-        <button class="nav-button" data-page-link="ai">AI & Data</button>
-        <button class="nav-button" data-page-link="background">Background</button>
+      <h1 class="hero-title">King Philip Edmar Mangi</h1>
+      
+      <div class="hero-subtitle">
+        Customer Support Professional & AI Evaluator | Email Operations, CRM Management (Salesforce & Bliss) & Data Quality
+      </div>
+
+      <p class="hero-description">
+        Dedicated Customer Support Professional and AI Evaluator specializing in high-friction CRM inbox management (Salesforce & Bliss), email operations, data quality assurance, automated cleaning pipelines, spreadsheet management, and SOP documentation.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="mailto:kingphilip2014.kpm@gmail.com" class="btn btn-primary">Hire Me Direct</a>
+        <a href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn Profile</a>
+      </div>
+
+      <!-- Adaptive Navigation Pills (Wraps cleanly without horizontal scroll) -->
+      <nav class="nav-pills-container" aria-label="Section shortcuts">
+        <a href="#services" class="nav-pill">Core Services</a>
+        <a href="#samples" class="nav-pill">Work Case Studies</a>
+        <a href="#apps" class="nav-pill">Tech & Tools Lab</a>
+        <a href="#ai" class="nav-pill">AI Evaluation & Data</a>
+        <a href="#credentials" class="nav-pill">Credentials</a>
       </nav>
-    </div>
-  </header>
+    </section>
 
-  <main id="main-content">
-    <!-- HOME PAGE -->
-    <div class="page-view active" data-page="home" id="page-home">
-      <section class="hero">
-        <div class="wrap hero-grid">
-          <div>
-            <span class="eyebrow">7+ years in customer support</span>
-            <h1>I make complex work feel <span class="highlight">clearer.</span></h1>
-            <p class="hero-copy">I’m Philip — a customer support professional who enjoys untangling problems, documenting key details, and creating reliable support workflows. My experience connects empathetic written communication with technical ticket escalation and AI response evaluation.</p>
-            <div class="hero-actions">
-              <button class="button primary" data-page-link="work">View support samples ↗</button>
-              <button class="button secondary" data-page-link="apps">Explore live web apps</button>
-            </div>
-            <div class="quick-facts" aria-label="Areas of focus">
-              <span class="chip">Email operations</span>
-              <span class="chip">Jira escalations</span>
-              <span class="chip">KB & SOP drafting</span>
-              <span class="chip">AI evaluation</span>
-            </div>
-          </div>
-          <aside class="profile-card" aria-label="Profile">
-            <div class="profile-photo">
-              <img src="profile.jpg" alt="Portrait of King Philip Edmar Mangi" onerror="this.style.display='none'">
-            </div>
-            <div class="profile-meta">
-              <strong>King Philip Edmar Mangi</strong>
-              <span>Support operations · AI & data quality</span>
-              <div class="profile-status">Open to remote support & operations roles</div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <div class="trust-strip">
-        <div class="wrap trust-grid">
-          <div class="trust-item"><strong>Customer support</strong><span>Clear, useful written communication</span></div>
-          <div class="trust-item"><strong>Process thinking</strong><span>Structured handoffs & SOPs</span></div>
-          <div class="trust-item"><strong>Practical tools</strong><span>Browser-based utility tools</span></div>
-          <div class="trust-item"><strong>Quality mindset</strong><span>Factual, detail-oriented review</span></div>
-        </div>
+    <!-- CORE SERVICES -->
+    <section class="content-block" id="services">
+      <div class="section-header">
+        <h2 class="section-title">Customer Support & Remote Operations Solutions</h2>
+        <p class="section-desc">Comprehensive customer support, email operations, CRM inbox triage, and data quality assurance tailored for scaling teams.</p>
       </div>
 
-      <section class="content-section">
-        <div class="wrap">
-          <div class="section-heading">
-            <div class="section-kicker">Core Capabilities</div>
-            <h2>Operational skills grounded in clarity and quality.</h2>
-            <p class="section-intro">Combining front-line customer advocacy with technical documentation and process precision.</p>
-          </div>
-          <div class="cards">
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">✉</div>
-              <h3>Email Support & Ticket Operations</h3>
-              <p>Direct communication with customers and partners, careful queue triage, and empathetic issue resolution.</p>
-              <ul class="clean-list">
-                <li>Professional email responses</li><li>Ticket triage & detail tags</li><li>Policy-driven troubleshooting</li>
-              </ul>
-              <div class="tag-row"><span class="tag">Email support</span><span class="tag">CRM</span><span class="tag">Escalations</span></div>
-            </article>
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">⚙</div>
-              <h3>Engineering Escalations (Jira)</h3>
-              <p>Translating user friction into technical bug reports for engineering teams with clear steps to reproduce.</p>
-              <ul class="clean-list">
-                <li>Structured bug summaries</li><li>Step-by-step reproduction</li><li>Error log attachment</li>
-              </ul>
-              <div class="tag-row"><span class="tag">Jira</span><span class="tag">Bug reporting</span><span class="tag">Cross-functional</span></div>
-            </article>
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">▤</div>
-              <h3>KB Updates & SOP Drafting</h3>
-              <p>Transforming recurring support questions and product updates into clean, reusable documentation.</p>
-              <ul class="clean-list">
-                <li>Internal SOP authoring</li><li>Help center article requests</li><li>Workflow optimization</li>
-              </ul>
-              <div class="tag-row"><span class="tag">Knowledge base</span><span class="tag">SOPs</span><span class="tag">Documentation</span></div>
-            </article>
-          </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="card-icon">✉️</span>
+          <h3>Email Support & CRM</h3>
+          <p>Managing high-volume inbox queues with clear, empathetic, and resolution-focused communication.</p>
+          <ul class="card-list">
+            <li>Salesforce & Bliss inbox triage</li>
+            <li>Policy-compliant ticket resolution</li>
+            <li>Customer retention & escalation</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">⚙️</span>
+          <h3>Engineering Escalations</h3>
+          <p>Bridging customer issues with technical bug reporting for engineering teams.</p>
+          <ul class="card-list">
+            <li>Jira bug issue drafting</li>
+            <li>Step-by-step issue reproduction</li>
+            <li>Console log & payload attachment</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">📝</span>
+          <h3>KB & SOP Redesign</h3>
+          <p>Authoring internal knowledge bases and standardized procedures for support teams.</p>
+          <ul class="card-list">
+            <li>Macro response optimization</li>
+            <li>Internal agent guidebooks</li>
+            <li>Help Center article drafting</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORK CASE STUDIES -->
+    <section class="content-block" id="samples">
+      <div class="section-header">
+        <h2 class="section-title">Work Case Studies & Escalations</h2>
+        <p class="section-desc">Demonstrating practical support workflows, technical engineering handoffs, and operational guidelines.</p>
+      </div>
+
+      <!-- Sample 1 -->
+      <div class="sample-card">
+        <div class="sample-head">
+          <h3 style="margin: 0; font-size: 1rem;">1. Email Support & Payment Refund Resolution</h3>
+          <span class="sample-badge">Customer Communication</span>
         </div>
-      </section>
-    </div>
-
-    <!-- WORK SAMPLES PAGE -->
-    <div class="page-view" data-page="work" id="page-work">
-      <section class="content-section">
-        <div class="wrap">
-          <div class="section-heading">
-            <div class="section-kicker">Selected Work</div>
-            <h2>Practical support & operational samples.</h2>
-            <p class="section-intro">Detailed examples illustrating how I handle customer communication, structure Jira bug escalations, and draft Knowledge Base updates.</p>
+        <div class="email-box">
+          <div class="email-meta">
+            Subject: Re: Duplicate Charge Inquiry - Order #84920<br>
+            To: Sarah Miller &lt;client@example.com&gt;<br>
+            From: King Philip Mangi - Support Operations
           </div>
+          <div style="white-space: pre-line;">Hi Sarah,
 
-          <!-- Sample 1: Email Support -->
-          <div class="sample-box">
-            <div class="sample-header">
-              <h3>1. Email Support & Customer Communication</h3>
-              <span class="sample-tag">Customer Email</span>
-            </div>
-            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;"><strong>Scenario:</strong> Customer charged twice due to a payment gateway timeout during checkout.</p>
-            
-            <div class="email-container">
-              <div class="email-meta">
-                <div><strong>Subject:</strong> Re: Duplicate Charge Inquiry - Order #84920</div>
-                <div><strong>To:</strong> Sarah Miller &lt;client@example.com&gt;</div>
-                <div><strong>From:</strong> King Philip Mangi - Support Operations</div>
-              </div>
-              <div class="email-body">Hi Sarah,
+Thank you for reaching out, and I apologize for the double charge on your recent purchase.
 
-Thank you for reaching out, and I sincerely apologize for the confusion caused by the double charge on your recent purchase.
+I reviewed your transaction history for Order #84920 and confirmed that a temporary duplicate charge occurred due to a gateway timeout during checkout. I have immediately processed a refund of $49.50 back to your card.
 
-I’ve reviewed your transaction history for Order #84920 and confirmed that a temporary processing duplicate occurred due to a brief payment gateway timeout during checkout. I have immediately processed a refund of $49.50 back to your original payment method.
+Depending on your issuer, the credit will reflect within 3 to 5 business days. Your original order is confirmed and shipping normally.
 
-Depending on your card issuer, you should see the credit reflected in your account within 3 to 5 business days. Your original order has been fully confirmed and is processing normally.
-
-If you have any further questions or if the refund doesn't appear by Friday, please reply directly to this email and I will happily look into it for you.
+If you have any further questions, please let me know.
 
 Best regards,
-King Philip Mangi
-Support Operations Specialist</div>
-            </div>
-          </div>
+King Philip Mangi</div>
+        </div>
+      </div>
 
-          <!-- Sample 2: Jira Escalation -->
-          <div class="sample-box">
-            <div class="sample-header">
-              <h3>2. Engineering Escalation Ticket (Jira Format)</h3>
-              <span class="sample-tag">Jira Issue</span>
-            </div>
-            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;"><strong>Scenario:</strong> Reporting a repeatable checkout authentication bug affecting Safari users on iOS.</p>
-            
-            <div class="code-block">Project: Web App Operations [OPS]
+      <!-- Sample 2 -->
+      <div class="sample-card">
+        <div class="sample-head">
+          <h3 style="margin: 0; font-size: 1rem;">2. Jira Bug Escalation (iOS Verification Issue)</h3>
+          <span class="sample-badge">Engineering Ticket</span>
+        </div>
+        <div class="code-box">Project: Web App Operations [OPS]
 Issue Type: Bug Escalation
 Summary: [iOS Safari] 2FA SMS Verification code field fails to render during checkout
 
@@ -453,275 +516,122 @@ Impact: High (Prevents mobile Safari users from completing purchases)
 Reporter: King Philip Mangi (Support Ops)
 
 Description:
-Multiple customers reporting inability to complete order verification on iOS Safari (v17.4+). The 6-digit OTP modal renders as an empty white box after clicking 'Send Code'.
+Multiple customers reporting inability to complete order verification on iOS Safari (v17.4+). The 6-digit OTP modal renders as an empty box after clicking 'Send Code'.
 
 Steps to Reproduce:
-1. Add any item to cart and proceed to Checkout.
+1. Add item to cart and proceed to Checkout.
 2. Select Credit Card payment and trigger 2FA SMS verification.
-3. Observe modal load on Safari Mobile (iOS 17.4).
+3. Observe modal load on Safari Mobile.
 
 Expected Result: 6-digit input field appears ready for input.
-Actual Result: Modal iframe fails to render, throwing JS console error: "Uncaught TypeError: Cannot read properties of null (reading 'focus')".
-
-Workaround provided to user: Advised switching to Chrome Mobile or desktop browser temporarily.
-Logs/Payload Attached: console_log_2026_03_12.txt</div>
-          </div>
-
-          <!-- Sample 3: KB Update Request -->
-          <div class="sample-box">
-            <div class="sample-header">
-              <h3>3. Knowledge Base & SOP Request</h3>
-              <span class="sample-tag">KB Update</span>
-            </div>
-            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;"><strong>Scenario:</strong> Drafting an internal SOP update for new subscription cancellation policy guidelines.</p>
-            
-            <div class="code-block">KB Article Title: Internal SOP - Processing Partial Refunds & Subscription Adjustments
-Target Audience: Tier 1 & Tier 2 Support Agents
-Status: Proposed Revision
-
-Summary of Changes:
-Updated self-service cancellation grace period from 24 hours to 48 hours per revised Q1 policy.
-
-Agent Instructions:
-1. Verify account verification credentials.
-2. Check account cancellation timestamps in CRM.
-3. If account request fell within 48 hours of billing cycle:
-   - Issue prorated credit voucher via Billing Console -> Refunds.
-   - Tag ticket with #grace_period_refund.
-4. Send Macro Response: [Billing - Prorated Grace Refund].</div>
-          </div>
-
-          <!-- Compact Callout at bottom of Selected Work Page -->
-          <div class="callout-card">
-            <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured here are synthetic case studies created to demonstrate operational problem-solving. No real client or private company data is used.
-          </div>
-
+Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeError: Cannot read properties of null".</div>
         </div>
-      </section>
-    </div>
 
-    <!-- WEB APPS PAGE -->
-    <div class="page-view" data-page="apps" id="page-apps">
-      <section class="content-section">
-        <div class="wrap">
-          <div class="section-heading">
-            <div class="section-kicker">App Lab</div>
-            <h2>Practical tools built for real workflows.</h2>
-            <p class="section-intro">Browser-based web applications built to simplify tracking, calculations, and decision-making.</p>
-          </div>
+      <!-- Compact Disclaimer at Section Bottom -->
+      <div class="compact-callout">
+        <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured here are synthetic case studies created to illustrate operational problem-solving. No real client or private company data is used.
+      </div>
+    </section>
 
-          <div class="app-grid">
-            <article class="app-card">
-              <div class="app-icon" aria-hidden="true">🧮</div>
-              <h3>Margin Calculator</h3>
-              <p>Calculation tool for position sizing, risk management preferences, take-profit levels, and margin comparisons.</p>
-              <div class="tag-row" style="margin-bottom: 16px;"><span class="tag">Tool</span><span class="tag">JavaScript</span></div>
-              <a class="button primary" href="https://philip1314.github.io/Margin-Calculator/" target="_blank" rel="noopener noreferrer">Launch live app ↗</a>
-            </article>
-            <article class="app-card">
-              <div class="app-icon" aria-hidden="true">📈</div>
-              <h3>Trading Journal</h3>
-              <p>Trade logging and analytics app with flexible filtering for trade parameters, dates, and strategies.</p>
-              <div class="tag-row" style="margin-bottom: 16px;"><span class="tag">Analytics</span><span class="tag">Web App</span></div>
-              <a class="button primary" href="https://philip1314.github.io/myTradingJournal/" target="_blank" rel="noopener noreferrer">Launch live app ↗</a>
-            </article>
-            <article class="app-card">
-              <div class="app-icon" aria-hidden="true">💰</div>
-              <h3>Personal Finance Tracker</h3>
-              <p>Personal finance dashboard for tracking expenses, managing monthly budgets, savings goals, and cash flow.</p>
-              <div class="tag-row" style="margin-bottom: 16px;"><span class="tag">Budgeting</span><span class="tag">Dashboard</span></div>
-              <a class="button primary" href="https://philip1314.github.io/finances/" target="_blank" rel="noopener noreferrer">Launch live app ↗</a>
-            </article>
-          </div>
+    <!-- LIVE WEB TOOLS & APPS -->
+    <section class="content-block" id="apps">
+      <div class="section-header">
+        <h2 class="section-title">Tech & Tools Lab</h2>
+        <p class="section-desc">Practical web tools built for financial analytics, trading calculations, and workflow automation.</p>
+      </div>
 
-          <!-- Compact Callout at bottom of Apps Page -->
-          <div class="callout-card">
-            <strong>Privacy & Data Safeguards:</strong> Real customer transactions, personal financial records, and confidential account details are strictly excluded from all public web tools and demonstrations.
-          </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="card-icon">🧮</span>
+          <h3>Margin Calculator</h3>
+          <p>Calculation tool for position sizing, risk preferences, take-profit levels, and margin comparison.</p>
+          <a href="https://philip1314.github.io/Margin-Calculator/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
+        </article>
 
-        </div>
-      </section>
-    </div>
+        <article class="card">
+          <span class="card-icon">📈</span>
+          <h3>Trading Journal</h3>
+          <p>Trade logging and analytics app with flexible filtering for parameters, dates, and strategies.</p>
+          <a href="https://philip1314.github.io/myTradingJournal/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
+        </article>
 
-    <!-- AI & DATA PAGE -->
-    <div class="page-view" data-page="ai" id="page-ai">
-      <section class="content-section">
-        <div class="wrap">
-          <div class="section-heading">
-            <div class="section-kicker">AI & Data Quality</div>
-            <h2>Rigorous criteria evaluation & judgment.</h2>
-            <p class="section-intro">Reviewing AI responses and structured data with strict adherence to task guidelines, factual verification, and consistency.</p>
-          </div>
+        <article class="card">
+          <span class="card-icon">💰</span>
+          <h3>Personal Finance Tracker</h3>
+          <p>Dashboard for tracking expenses, monthly budgets, savings goals, and cash flow.</p>
+          <a href="https://philip1314.github.io/finances/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
+        </article>
+      </div>
 
-          <div class="cards">
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">✓</div>
-              <h3>LLM Output Rating</h3>
-              <p>Evaluating model responses against explicit rubrics covering accuracy, instruction-following, safety, and conciseness.</p>
-            </article>
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">◉</div>
-              <h3>Audio & Transcription</h3>
-              <p>Reviewing transcribed audio files against verbatim guidelines with high precision and attention to detail.</p>
-            </article>
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">▧</div>
-              <h3>Annotation & Data Cleanup</h3>
-              <p>Structuring spreadsheet records, mapping lookup tables, and flagging ambiguous entries systematically.</p>
-            </article>
-          </div>
+      <!-- Compact Disclaimer at Section Bottom -->
+      <div class="compact-callout">
+        <strong>Privacy & Data Safeguards:</strong> Real customer transactions, personal financial records, and confidential user information are strictly excluded from all public work samples, demonstrations, and web tools.
+      </div>
+    </section>
 
-          <!-- Compact Callout at bottom of AI Page -->
-          <div class="callout-card">
-            <strong>Portfolio Integrity:</strong> All content displayed is original work created specifically for portfolio demonstration. Proprietary client material, NDA-restricted guidelines, and private screenshots are never shared or republished.
-          </div>
+    <!-- AI EVALUATION & DATA -->
+    <section class="content-block" id="ai">
+      <div class="section-header">
+        <h2 class="section-title">AI Evaluation & Data Quality</h2>
+        <p class="section-desc">Rigorous LLM evaluation, factual verification, audio transcription review, and data pipeline cleanup.</p>
+      </div>
 
-        </div>
-      </section>
-    </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="card-icon">🤖</span>
+          <h3>LLM Output Rating</h3>
+          <p>Evaluating generative model outputs against rubrics for accuracy, adherence, and clarity.</p>
+        </article>
 
-    <!-- BACKGROUND PAGE -->
-    <div class="page-view" data-page="background" id="page-background">
-      <section class="content-section">
-        <div class="wrap">
-          <div class="section-heading">
-            <div class="section-kicker">Background</div>
-            <h2>Education, certifications, and capabilities.</h2>
-            <p class="section-intro">A foundation built on office administration, customer communication, and continuous professional development.</p>
-          </div>
-          <div class="credentials">
-            <article class="credential">
-              <div class="credential-icon" aria-hidden="true">🎓</div>
-              <div>
-                <h3>BS in Office Administration</h3>
-                <p>Polytechnic University of the Philippines. Major in Corporate Transcription.</p>
-              </div>
-            </article>
-            <article class="credential">
-              <div class="credential-icon" aria-hidden="true">📜</div>
-              <div>
-                <h3>EF SET English Certificate — C2 Proficient</h3>
-                <p>Score: 90/100 · High professional written and spoken English fluency.</p>
-              </div>
-            </article>
-            <article class="credential">
-              <div class="credential-icon" aria-hidden="true">📚</div>
-              <div>
-                <h3>Introduction to Bookkeeping</h3>
-                <p>TESDA Online Program · Accounting and recordkeeping fundamentals.</p>
-              </div>
-            </article>
-            <article class="credential">
-              <div class="credential-icon" aria-hidden="true">🛡️</div>
-              <div>
-                <h3>NDIS Worker Orientation Module</h3>
-                <p>Quality, Safety and You Certification.</p>
-              </div>
-            </article>
-          </div>
+        <article class="card">
+          <span class="card-icon">🎧</span>
+          <h3>Audio & Transcription</h3>
+          <p>Precision verbatim transcription review and speech-to-text data evaluation.</p>
+        </article>
 
-          <div style="margin-top: 36px;">
-            <h2 style="font-size: 1.5rem;">Working Toolkit</h2>
-            <div class="tool-grid" style="margin-top: 16px;">
-              <div class="tool-group"><h3>Support & CRM</h3><p>Email queues, ticket triage, Bliss, escalation management.</p></div>
-              <div class="tool-group"><h3>Issue Tracking</h3><p>Jira bug reporting, status updates, cross-team handoffs.</p></div>
-              <div class="tool-group"><h3>Documentation</h3><p>SOP drafting, Knowledge Base updates, process mapping.</p></div>
-              <div class="tool-group"><h3>Spreadsheets</h3><p>Google Sheets, XLOOKUP, data cleanup, validation.</p></div>
-            </div>
-          </div>
+        <article class="card">
+          <span class="card-icon">📊</span>
+          <h3>Data Cleanup Pipelines</h3>
+          <p>Google Sheets, XLOOKUP, data mapping, and automated validation spreadsheet workflows.</p>
+        </article>
+      </div>
 
-          <div class="contact-panel" style="margin-top: 40px;">
-            <div>
-              <h2>Need reliable support and operations help?</h2>
-              <p>I’m open to customer support, documentation, and operational opportunities.</p>
-            </div>
-            <a class="button" href="mailto:kingphilip2014.kpm@gmail.com">Email me ↗</a>
-          </div>
-        </div>
-      </section>
-    </div>
+      <!-- Compact Disclaimer at Section Bottom -->
+      <div class="compact-callout">
+        <strong>Portfolio Integrity:</strong> All content displayed is original work created specifically for portfolio demonstration. Proprietary client material, NDA-restricted guidelines, and private screenshots are never shared or republished.
+      </div>
+    </section>
+
+    <!-- CREDENTIALS & BACKGROUND -->
+    <section class="content-block" id="credentials">
+      <div class="section-header">
+        <h2 class="section-title">Credentials & Education</h2>
+        <p class="section-desc">Academic background, language proficiency, and technical skill sets.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <span class="card-icon">🎓</span>
+          <h3>BS in Office Administration</h3>
+          <p style="margin-bottom: 0;">Polytechnic University of the Philippines. Major in Corporate Transcription.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">📜</span>
+          <h3>EF SET English Certificate — C2 Proficient</h3>
+          <p style="margin-bottom: 0;">Score: 90/100 · Proficient in advanced written and spoken English communication.</p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="wrap footer-row">
-      <span>© <span id="year"></span> King Philip Edmar Mangi · Portfolio</span>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:kingphilip2014.kpm@gmail.com">Email</a>
-        <a id="backToTop" href="#home">Back to top ↑</a>
-      </div>
+    <div class="wrap">
+      © <span id="year">2026</span> King Philip Edmar Mangi · Support Operations & AI Evaluation Portfolio
     </div>
   </footer>
 
   <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const pageButtons = document.querySelectorAll('[data-page-link]');
-    const pages = document.querySelectorAll('[data-page]');
-    const backToTopBtn = document.getElementById('backToTop');
-
-    function showPage(pageName, updateHash = true) {
-      if (!pageName || pageName === 'top') pageName = 'home';
-      if (!document.querySelector('[data-page="' + pageName + '"]')) pageName = 'home';
-      
-      pages.forEach(page => page.classList.toggle('active', page.dataset.page === pageName));
-      
-      document.querySelectorAll('.nav-bar-container [data-page-link]').forEach(btn => {
-        const active = btn.dataset.pageLink === pageName;
-        btn.classList.toggle('active', active);
-        if (active) btn.setAttribute('aria-current', 'page'); else btn.removeAttribute('aria-current');
-      });
-      
-      if (updateHash) {
-        history.replaceState(null, '', '#' + pageName);
-      }
-      
-      window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
-    }
-
-    // Page navigation event listeners
-    pageButtons.forEach(btn => btn.addEventListener('click', event => {
-      const pageName = btn.dataset.pageLink;
-      if (pageName) { 
-        event.preventDefault(); 
-        showPage(pageName); 
-      }
-    }));
-
-    // Back to top link handler
-    if (backToTopBtn) {
-      backToTopBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
-      });
-    }
-
-    // Theme switching logic
-    function setTheme(theme) {
-      document.body.classList.toggle('dark', theme === 'dark');
-      themeToggle.innerHTML = theme === 'dark' ? '☀ <span>Light mode</span>' : '☾ <span>Dark mode</span>';
-      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-      try { localStorage.setItem('portfolio-theme', theme); } catch (e) {}
-    }
-
-    themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('dark') ? 'light' : 'dark'));
-    let savedTheme = 'light';
-    try { savedTheme = localStorage.getItem('portfolio-theme') || 'light'; } catch (e) {}
-    setTheme(savedTheme);
-
-    // Hash routing logic
-    function handleHashChange() {
-      const hash = location.hash.replace('#', '');
-      if (hash === 'top' || hash === '') {
-        showPage('home', false);
-      } else if (document.querySelector('[data-page="' + hash + '"]')) {
-        showPage(hash, false);
-      }
-    }
-
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange();
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
