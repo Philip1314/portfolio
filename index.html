@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://philip1314.github.io/portfolio/">
   <meta property="og:image" content="https://philip1314.github.io/portfolio/profile.jpg">
-  <title>King Philip Edmar Mangi | Professional Portfolio</title>
+  <title>King Philip Edmar Mangi | Portfolio & Web Apps</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -65,6 +65,10 @@
     .nav-cta:hover, .button.primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
     .button.secondary { color: var(--ink); border-color: var(--line); background: white; }
     .button.secondary:hover { border-color: var(--brand); color: var(--brand); }
+    .nav-actions { display:flex; align-items:center; gap:10px; }
+    .theme-toggle { display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:999px; padding:10px 12px; font:600 .82rem "DM Sans",sans-serif; cursor:pointer; }
+    .theme-toggle:hover { border-color:var(--brand); color:var(--brand); }
+    .nav-links a.active { color:var(--brand); }
     .menu-toggle { display: none; border: 1px solid var(--line); background: white; border-radius: 12px; padding: 9px 12px; color: var(--ink); font: inherit; font-weight: 700; }
     .hero { padding: 76px 0 62px; }
     .hero-grid { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(260px,.75fr); gap: 54px; align-items: center; }
@@ -155,11 +159,41 @@
       .tool-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { gap: 13px; }
     }
+    /* Page switching keeps the site compact without removing content. */
+    .page-view { display:none; animation: pageIn .22s ease both; }
+    .page-view.active { display:block; }
+    @keyframes pageIn { from { opacity:.45; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+    .page-titlebar { padding:34px 0 0; }
+    .page-titlebar .section-heading { margin-bottom:24px; }
+    .app-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; }
+    .app-card { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:24px; display:flex; flex-direction:column; min-height:270px; }
+    .app-card .app-icon { width:48px; height:48px; border-radius:15px; display:grid; place-items:center; background:var(--brand-soft); color:var(--brand-dark); font-size:1.45rem; margin-bottom:18px; }
+    .app-card p { color:var(--muted); font-size:.91rem; flex:1; }
+    .app-card .button { align-self:flex-start; }
+    body.dark {
+      --bg:#101820; --paper:#17232d; --ink:#edf4f7; --muted:#a7b7c2; --line:#2b3b47;
+      --brand:#50c5c3; --brand-dark:#7edbd7; --brand-soft:#1d3c42; --accent:#e0a361;
+      --shadow:0 16px 44px rgba(0,0,0,.2);
+    }
+    body.dark .announcement { background:#091117; }
+    body.dark .site-header { background:rgba(16,24,32,.92); }
+    body.dark .button.secondary, body.dark .chip, body.dark .theme-toggle, body.dark .menu-toggle { background:var(--paper); color:var(--ink); }
+    body.dark .trust-strip { background:rgba(23,35,45,.6); }
+    body.dark .tag { background:#1c2b35; border-color:#30434f; color:#b8c8d2; }
+    body.dark .step, body.dark .tool-group, body.dark .credential, body.dark .project, body.dark .card, body.dark .app-card { background:var(--paper); }
+    body.dark .feature-band { background:#091117; }
+    body.dark .notice { background:#352b1d; border-color:#695033; color:#f0d2a5; }
+    @media (max-width: 900px) {
+      .app-grid { grid-template-columns:1fr 1fr; }
+    }
     @media (max-width: 680px) {
       .wrap { width: min(100% - 28px, var(--max)); }
       .nav { min-height: 62px; flex-wrap: wrap; }
       .menu-toggle { display: inline-flex; }
       .nav-cta { display: none; }
+      .nav-actions { margin-left:auto; }
+      .theme-toggle { padding:9px 10px; }
+      .theme-toggle span { display:none; }
       .nav-links { display: none; width: 100%; padding: 0 0 15px; flex-direction: column; align-items: stretch; gap: 0; }
       .nav-links.open { display: flex; }
       .nav-links a { padding: 11px 2px; border-top: 1px solid var(--line); }
@@ -173,7 +207,7 @@
       .trust-item:nth-child(2) { border-right: 0; }
       .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
       section.content-section { padding: 56px 0; }
-      .cards, .projects, .steps, .credentials { grid-template-columns: 1fr; }
+      .cards, .projects, .steps, .credentials, .app-grid { grid-template-columns: 1fr; }
       .cards .card:last-child { grid-column: auto; }
       .feature-band { grid-template-columns: 1fr; gap: 22px; }
       .tool-grid { grid-template-columns: 1fr 1fr; }
@@ -193,200 +227,115 @@
       <a class="brandmark" href="#top" aria-label="King Philip Mangi home">PHILIP<span>.</span></a>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#services">What I Do</a>
-        <a href="#work">Selected Work</a>
-        <a href="#process">Approach</a>
-        <a href="#tools">Tools</a>
-        <a href="#credentials">Background</a>
+        <a href="#home" data-page-link="home" class="active">Home</a>
+        <a href="#work" data-page-link="work">Case Studies</a>
+        <a href="#apps" data-page-link="apps">Web Apps</a>
+        <a href="#ai" data-page-link="ai">AI Evaluation</a>
+        <a href="#background" data-page-link="background">Background</a>
       </nav>
-      <a class="nav-cta" href="mailto:kingphilip2014.kpm@gmail.com">Let’s connect ↗</a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch theme">☾ <span>Dark mode</span></button>
+        <a class="nav-cta" href="mailto:kingphilip2014.kpm@gmail.com">Let’s connect ↗</a>
+      </div>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Customer Support & Remote Operations</span>
-          <h1>Clear communication.<br><span class="highlight">Reliable operations.</span></h1>
-          <p class="hero-copy">I’m King Philip Edmar Mangi, a customer support professional with a background in email operations, ticket workflows, documentation, and quality-focused work. I’m also building experience in AI evaluation and data quality through structured, guideline-led tasks and practical projects.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:kingphilip2014.kpm@gmail.com">Contact me <span aria-hidden="true">↗</span></a>
-            <a class="button secondary" href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+    <div class="page-view active" data-page="home" id="page-home">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <span class="eyebrow">Customer Support & Remote Operations</span>
+            <h1>Clear communication.<br><span class="highlight">Reliable operations.</span></h1>
+            <p class="hero-copy">I’m King Philip Edmar Mangi, a customer support professional with a background in email operations, ticket workflows, documentation, and quality-focused work. I’m also building experience in AI evaluation and data quality through structured, guideline-led tasks and practical projects.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="mailto:kingphilip2014.kpm@gmail.com">Contact me <span aria-hidden="true">↗</span></a>
+              <a class="button secondary" href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+            </div>
+            <div class="quick-facts" aria-label="Areas of focus">
+              <span class="chip">Email support</span><span class="chip">CRM & ticket handling</span><span class="chip">SOP documentation</span><span class="chip">AI evaluation</span>
+            </div>
           </div>
-          <div class="quick-facts" aria-label="Areas of focus">
-            <span class="chip">Email support</span><span class="chip">CRM & ticket handling</span><span class="chip">SOP documentation</span><span class="chip">AI evaluation</span>
-          </div>
+          <aside class="profile-card" aria-label="Profile">
+            <div class="profile-photo"><img src="profile.jpg" alt="Portrait of King Philip Edmar Mangi" onerror="this.style.display='none'"></div>
+            <div class="profile-meta"><strong>King Philip Edmar Mangi</strong><span>Customer Support · Documentation · Data Quality</span><div class="profile-status">Open to suitable remote roles</div></div>
+          </aside>
         </div>
-        <aside class="profile-card" aria-label="Profile">
-          <div class="profile-photo"><img src="profile.jpg" alt="Portrait of King Philip Edmar Mangi" onerror="this.style.display='none'"></div>
-          <div class="profile-meta">
-            <strong>King Philip Edmar Mangi</strong>
-            <span>Customer Support · Documentation · Data Quality</span>
-            <div class="profile-status">Open to suitable remote roles</div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <div class="trust-strip">
-      <div class="wrap trust-grid">
+      </section>
+      <div class="trust-strip"><div class="wrap trust-grid">
         <div class="trust-item"><strong>Customer Experience</strong><span>Clear, empathetic written support</span></div>
         <div class="trust-item"><strong>Operational Discipline</strong><span>Process and policy adherence</span></div>
         <div class="trust-item"><strong>Documentation</strong><span>Structured, usable instructions</span></div>
         <div class="trust-item"><strong>Quality Mindset</strong><span>Accuracy, consistency, review</span></div>
-      </div>
+      </div></div>
+      <section class="content-section" id="services">
+        <div class="wrap">
+          <div class="section-heading"><div class="section-kicker">What I can contribute</div><h2>Support that’s thoughtful, organized, and dependable.</h2><p class="section-intro">I bring a customer-first mindset to daily support work and a detail-oriented approach to documentation, data handling, and guideline-based evaluation.</p></div>
+          <div class="cards">
+            <article class="card"><div class="card-icon" aria-hidden="true">✉</div><h3>Email Support & Ticket Operations</h3><p>Written customer and merchant communication, queue management, case documentation, follow-ups, and escalation handling.</p><ul class="clean-list"><li>Professional, empathetic email responses</li><li>Ticket triage and accurate case notes</li><li>Policy-aligned troubleshooting and escalation</li></ul><div class="tag-row"><span class="tag">Email support</span><span class="tag">CRM workflows</span><span class="tag">Escalations</span></div></article>
+            <article class="card"><div class="card-icon" aria-hidden="true">▤</div><h3>Documentation & Process Support</h3><p>Turning instructions and recurring issues into clear steps that are easier to follow and review.</p><ul class="clean-list"><li>SOP and knowledge-base drafting</li><li>Process mapping and gap identification</li><li>Consistent records and quality checks</li></ul><div class="tag-row"><span class="tag">SOP writing</span><span class="tag">Knowledge base</span><span class="tag">QA mindset</span></div></article>
+            <article class="card"><div class="card-icon" aria-hidden="true">◎</div><h3>Data Quality & Spreadsheet Reporting</h3><p>Structured data review, spreadsheet cleaning, categorization, and reporting concepts.</p><ul class="clean-list"><li>Formula-led cleanup and validation</li><li>Lookup-based category mapping</li><li>Reporting and dashboard practice</li></ul><div class="tag-row"><span class="tag">Google Sheets</span><span class="tag">Data review</span><span class="tag">Reporting</span></div></article>
+          </div>
+          <div style="margin-top:24px"><a class="button primary" href="#work" data-page-link="work">Explore case studies ↗</a></div>
+        </div>
+      </section>
     </div>
 
-    <section class="content-section" id="services">
-      <div class="wrap">
-        <div class="section-heading">
-          <div class="section-kicker">What I can contribute</div>
-          <h2>Support that’s thoughtful, organized, and dependable.</h2>
-          <p class="section-intro">I bring a customer-first mindset to daily support work and a detail-oriented approach to documentation, data handling, and guideline-based evaluation.</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">✉</div>
-            <h3>Email Support & Ticket Operations</h3>
-            <p>Written customer and merchant communication, queue management, case documentation, follow-ups, and escalation handling.</p>
-            <ul class="clean-list"><li>Professional, empathetic email responses</li><li>Ticket triage and accurate case notes</li><li>Policy-aligned troubleshooting and escalation</li></ul>
-            <div class="tag-row"><span class="tag">Email support</span><span class="tag">CRM workflows</span><span class="tag">Escalations</span></div>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">▤</div>
-            <h3>Documentation & Process Support</h3>
-            <p>Turning instructions and recurring issues into clear steps that are easier to follow and review.</p>
-            <ul class="clean-list"><li>SOP and knowledge-base drafting</li><li>Process mapping and gap identification</li><li>Consistent records and quality checks</li></ul>
-            <div class="tag-row"><span class="tag">SOP writing</span><span class="tag">Knowledge base</span><span class="tag">QA mindset</span></div>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">◎</div>
-            <h3>AI Evaluation & Data Quality</h3>
-            <p>Guideline-led review of content and structured data, with attention to accuracy, relevance, consistency, and instruction-following.</p>
-            <ul class="clean-list"><li>Rubric-based output evaluation</li><li>Data review and spreadsheet practice</li><li>Careful handling of ambiguous cases</li></ul>
-            <div class="tag-row"><span class="tag">AI evaluation</span><span class="tag">Annotation</span><span class="tag">Data review</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="work">
-      <div class="wrap">
-        <div class="section-heading">
-          <div class="section-kicker">Selected work</div>
-          <h2>Examples of how I approach a problem.</h2>
-          <p class="section-intro">These case studies demonstrate my approach and skills. Where a scenario uses sample data or is not based on a measured workplace outcome, it should be treated as a demonstration rather than a claim of production results.</p>
-        </div>
+    <div class="page-view" data-page="work" id="page-work">
+      <section class="content-section"><div class="wrap">
+        <div class="section-heading"><div class="section-kicker">Selected work</div><h2>Case studies & practical examples.</h2><p class="section-intro">These examples demonstrate an approach to problem-solving. Sample scenarios are labeled clearly and are not presented as verified production outcomes.</p></div>
         <div class="projects">
-          <article class="project">
-            <div class="project-top"><span class="project-label">Data quality · Demonstration</span><span aria-hidden="true">01 / 03</span></div>
-            <div class="project-body">
-              <h3>Spreadsheet data-cleaning workflow</h3>
-              <p>A sample workflow for standardizing inconsistent text and dates, identifying duplicate records, mapping categories, and preparing information for reporting.</p>
-              <div class="tag-row"><span class="tag">Google Sheets</span><span class="tag">XLOOKUP</span><span class="tag">Data validation</span></div>
-              <details class="project-details">
-                <summary>View approach</summary>
-                <p><strong>Problem:</strong> Inconsistent formats and missing values make records difficult to compare. <strong>Approach:</strong> Normalize text, define a duplicate-selection rule, preserve missing values as missing, validate dates and amounts, and flag uncertain rows for manual review. <strong>Quality control:</strong> Compare before-and-after samples and document assumptions before reporting accuracy.</p>
-              </details>
-            </div>
-          </article>
-          <article class="project">
-            <div class="project-top"><span class="project-label">Email support · Sample scenario</span><span aria-hidden="true">02 / 03</span></div>
-            <div class="project-body">
-              <h3>Technical issue escalation</h3>
-              <p>A sample merchant-support scenario showing how to acknowledge an issue, summarize verified troubleshooting, set a realistic expectation, and provide a useful handoff.</p>
-              <div class="tag-row"><span class="tag">Written communication</span><span class="tag">Case notes</span><span class="tag">Escalation</span></div>
-              <details class="project-details">
-                <summary>View approach</summary>
-                <p><strong>Customer response:</strong> Acknowledge the operational impact, explain the next step without promising an unconfirmed resolution time, and ask only for information needed to progress the case. <strong>Internal handoff:</strong> Record the observed symptoms, checks completed, timestamps, error details, impact, and the specific action requested from the next team.</p>
-              </details>
-            </div>
-          </article>
-          <article class="project">
-            <div class="project-top"><span class="project-label">Process design · Concept</span><span aria-hidden="true">03 / 03</span></div>
-            <div class="project-body">
-              <h3>SOP decision-flow improvement</h3>
-              <p>A process-improvement concept that moves eligibility checks earlier so agents avoid collecting technical details before confirming whether a request can proceed.</p>
-              <div class="tag-row"><span class="tag">SOP redesign</span><span class="tag">Decision tree</span><span class="tag">Process clarity</span></div>
-              <details class="project-details">
-                <summary>View approach</summary>
-                <p><strong>Before:</strong> Gather technical details, then check eligibility. <strong>Proposed flow:</strong> Verify eligibility first; if eligible, continue to technical troubleshooting; if not, explain the applicable policy and provide the correct alternative. Any claimed time savings should be measured against a defined baseline before being presented as an achieved result.</p>
-              </details>
-            </div>
-          </article>
-          <article class="project">
-            <div class="project-top"><span class="project-label">AI evaluation · Skills overview</span><span aria-hidden="true">Focus area</span></div>
-            <div class="project-body">
-              <h3>Rubric-led content evaluation</h3>
-              <p>A quality-first approach to evaluating outputs against explicit instructions, factual support, relevance, safety, and consistency criteria.</p>
-              <div class="tag-row"><span class="tag">Instruction following</span><span class="tag">Factuality</span><span class="tag">Quality review</span></div>
-              <details class="project-details">
-                <summary>View approach</summary>
-                <p>Read the task rubric first, identify the required evidence, assess each criterion independently, distinguish factual errors from style preferences, and document the reason for the final rating. Only include samples that are independently created or explicitly authorized for public sharing.</p>
-              </details>
-            </div>
-          </article>
+          <article class="project"><div class="project-top"><span class="project-label">Data quality · Demonstration</span><span>01 / 04</span></div><div class="project-body"><h3>Spreadsheet data-cleaning workflow</h3><p>Standardize text and dates, identify duplicate records, map categories, and prepare information for reporting.</p><div class="tag-row"><span class="tag">Google Sheets</span><span class="tag">XLOOKUP</span><span class="tag">Data validation</span></div><details class="project-details"><summary>View approach</summary><p>Normalize text, define a duplicate-selection rule, preserve missing values as missing, validate dates and amounts, and flag uncertain rows for manual review. Compare before-and-after samples and document assumptions before reporting accuracy.</p></details></div></article>
+          <article class="project"><div class="project-top"><span class="project-label">Email support · Sample scenario</span><span>02 / 04</span></div><div class="project-body"><h3>Technical issue escalation</h3><p>A merchant-support scenario showing how to acknowledge an issue, summarize verified troubleshooting, and provide a useful handoff.</p><div class="tag-row"><span class="tag">Written communication</span><span class="tag">Case notes</span><span class="tag">Escalation</span></div><details class="project-details"><summary>View approach</summary><p>Acknowledge the operational impact, explain next steps without promising an unconfirmed resolution time, and request only the information needed. The internal handoff records symptoms, checks completed, timestamps, error details, impact, and requested action.</p></details></div></article>
+          <article class="project"><div class="project-top"><span class="project-label">Process design · Concept</span><span>03 / 04</span></div><div class="project-body"><h3>SOP decision-flow improvement</h3><p>Move eligibility checks earlier so agents avoid collecting technical details before confirming a request can proceed.</p><div class="tag-row"><span class="tag">SOP redesign</span><span class="tag">Decision tree</span><span class="tag">Process clarity</span></div><details class="project-details"><summary>View approach</summary><p>Verify eligibility first; if eligible, continue to troubleshooting; if not, explain the applicable policy and alternative. Measure any time savings against a defined baseline before calling it an achieved result.</p></details></div></article>
+          <article class="project"><div class="project-top"><span class="project-label">Customer support · Sample scenario</span><span>04 / 04</span></div><div class="project-body"><h3>Self-service guidance & resolution</h3><p>A concise support response that explains completed actions and guides the customer through a repeatable process for future updates.</p><div class="tag-row"><span class="tag">Customer education</span><span class="tag">Knowledge base</span><span class="tag">Clarity</span></div><details class="project-details"><summary>View approach</summary><p>Confirm what is known, state the current status, provide numbered steps, avoid claiming changes were completed unless verified, and give a clear route to further assistance.</p></details></div></article>
         </div>
-        <div class="notice"><strong>Accuracy note:</strong> Replace these demonstration labels with “Professional experience” only when the work was genuinely performed in that context. Add measured results only when you can explain the baseline, method, sample size, and period.</div>
-      </div>
-    </section>
+        <div class="notice"><strong>Accuracy note:</strong> Label actual workplace contributions as professional experience only when they genuinely occurred. Add metrics only when the baseline, method, sample size, and period can be explained.</div>
+      </div></section>
+    </div>
 
-    <section class="content-section" id="process">
-      <div class="wrap">
-        <div class="feature-band">
-          <div>
-            <div class="section-kicker">How I work</div>
-            <h2>Follow the process. Check the details. Communicate clearly.</h2>
-            <p>I aim to make each handoff understandable, each record usable, and each response appropriate to the customer’s situation and the applicable guidelines.</p>
-          </div>
-          <div class="feature-list">
-            <div class="feature-point"><div aria-hidden="true">01</div><div><b>Understand the request</b><span>Identify the actual issue, policy, constraints, and desired outcome.</span></div></div>
-            <div class="feature-point"><div aria-hidden="true">02</div><div><b>Verify before acting</b><span>Check available evidence and avoid unsupported assumptions or promises.</span></div></div>
-            <div class="feature-point"><div aria-hidden="true">03</div><div><b>Document and communicate</b><span>Leave clear notes, explain next steps, and flag unresolved uncertainty.</span></div></div>
-          </div>
+    <div class="page-view" data-page="apps" id="page-apps">
+      <section class="content-section"><div class="wrap">
+        <div class="section-heading"><div class="section-kicker">Tech enthusiast & custom web apps lab</div><h2>Small tools built to solve practical problems.</h2><p class="section-intro">Explore my browser-based calculators and tracking tools. Each app opens separately so you can try the live version.</p></div>
+        <div class="app-grid">
+          <article class="app-card"><div class="app-icon" aria-hidden="true">🧮</div><h3>Margin Calculator</h3><p>A pricing and margin calculation tool with position sizing, risk preferences, take-profit estimates, and margin comparisons.</p><div class="tag-row"><span class="tag">Calculator</span><span class="tag">JavaScript</span></div><a class="button primary" href="https://philip1314.github.io/Margin-Calculator/" target="_blank" rel="noopener noreferrer">Launch live app ↗</a></article>
+          <article class="app-card"><div class="app-icon" aria-hidden="true">📈</div><h3>Trading Journal</h3><p>A trade logging and performance tracking app with filters for date range, coin, confluences, and trade records.</p><div class="tag-row"><span class="tag">Analytics</span><span class="tag">Trade tracking</span></div><a class="button primary" href="https://philip1314.github.io/myTradingJournal/" target="_blank" rel="noopener noreferrer">Launch live app ↗</a></article>
+          <article class="app-card"><div class="app-icon" aria-hidden="true">💰</div><h3>Personal Finance Tracker</h3><p>A personal finance dashboard for reviewing expenses, budgeting, transactions, savings, and cash flow.</p><div class="tag-row"><span class="tag">Budgeting</span><span class="tag">Expense tracking</span></div><a class="button primary" href="https://philip1314.github.io/finances/" target="_blank" rel="noopener noreferrer">Launch live app ↗</a></article>
         </div>
-      </div>
-    </section>
+        <div class="notice"><strong>Privacy reminder:</strong> Keep real personal financial records, account details, and private transaction data out of public screenshots and demonstrations.</div>
+      </div></section>
+    </div>
 
-    <section class="content-section" id="tools">
-      <div class="wrap">
-        <div class="section-heading">
-          <div class="section-kicker">Tools & working knowledge</div>
-          <h2>A practical, growing toolkit.</h2>
-          <p class="section-intro">This list should reflect tools you have actually used, studied, or practiced with. Familiarity levels can be clarified during an interview.</p>
+    <div class="page-view" data-page="ai" id="page-ai">
+      <section class="content-section"><div class="wrap">
+        <div class="section-heading"><div class="section-kicker">AI evaluation & annotation</div><h2>Guideline-led review with attention to detail.</h2><p class="section-intro">I’m developing and applying skills in structured AI task work, annotation, and quality review. Public examples should only include work I am authorized to share.</p></div>
+        <div class="cards">
+          <article class="card"><div class="card-icon" aria-hidden="true">✓</div><h3>LLM output evaluation</h3><p>Review responses against explicit criteria such as factual support, instruction-following, relevance, safety, and consistency.</p><ul class="clean-list"><li>Separate factual errors from style preferences</li><li>Use rubric criteria consistently</li><li>Record concise evidence for a rating</li></ul></article>
+          <article class="card"><div class="card-icon" aria-hidden="true">◉</div><h3>Audio & language tasks</h3><p>Experience and practice with audio-related tasks, transcription, and bilingual English/Filipino content where applicable.</p><ul class="clean-list"><li>Follow task-specific transcription rules</li><li>Review text against audio evidence</li><li>Maintain consistency in formatting</li></ul></article>
+          <article class="card"><div class="card-icon" aria-hidden="true">▧</div><h3>Annotation & relevance</h3><p>Guideline-based review of visual content, search relevance, and structured labeling tasks when assigned.</p><ul class="clean-list"><li>Apply the rubric rather than assumptions</li><li>Flag ambiguous cases appropriately</li><li>Protect confidential project materials</li></ul></article>
         </div>
-        <div class="tool-grid">
-          <div class="tool-group"><h3>Support & CRM</h3><p>Email support workflows, ticket queues, Bliss, Salesforce familiarity, escalation documentation.</p></div>
-          <div class="tool-group"><h3>Spreadsheets</h3><p>Google Sheets, Excel fundamentals, formulas, data cleaning, lookups, and structured reporting practice.</p></div>
-          <div class="tool-group"><h3>Documentation</h3><p>SOPs, knowledge-base content, step-by-step instructions, case summaries, and process notes.</p></div>
-          <div class="tool-group"><h3>AI task work</h3><p>Guideline interpretation, output comparison, data annotation, relevance and quality review.</p></div>
-        </div>
-      </div>
-    </section>
+        <div class="notice"><strong>Portfolio integrity:</strong> Update this page to reflect only platforms, task types, and completion statuses you can accurately substantiate. Do not publish confidential task guidelines or client data.</div>
+      </div></section>
+    </div>
 
-    <section class="content-section" id="credentials">
-      <div class="wrap">
-        <div class="section-heading">
-          <div class="section-kicker">Background</div>
-          <h2>Education & professional development.</h2>
-          <p class="section-intro">Add official certificate names, issuing organizations, completion dates, and verification links where available. Keep this section limited to credentials you can substantiate.</p>
-        </div>
+    <div class="page-view" data-page="background" id="page-background">
+      <section class="content-section"><div class="wrap">
+        <div class="section-heading"><div class="section-kicker">Background</div><h2>Education, credentials & working toolkit.</h2><p class="section-intro">A foundation in documentation and communication, paired with ongoing development in digital operations and data quality.</p></div>
         <div class="credentials">
-          <article class="credential"><div class="credential-icon" aria-hidden="true">▣</div><div><h3>Bachelor of Science in Office Administration</h3><p>Major in Corporate Transcription. Relevant strengths include documentation, transcription, accurate records, and written communication.</p></div></article>
-          <article class="credential"><div class="credential-icon" aria-hidden="true">✓</div><div><h3>Additional training & certificates</h3><p>Add your verified English proficiency certificate and any completed, relevant training here. Include a link to the issuer’s verification page when possible.</p></div></article>
+          <article class="credential"><div class="credential-icon" aria-hidden="true">▣</div><div><h3>Bachelor of Science in Office Administration</h3><p>Major in Corporate Transcription · Polytechnic University of the Philippines. Relevant strengths include documentation, transcription, accurate records, and written communication.</p></div></article>
+          <article class="credential"><div class="credential-icon" aria-hidden="true">✓</div><div><h3>EF SET English Certificate — C2 Proficient</h3><p>Score: 90/100 · March 2026. Add the official certificate verification link when publishing.</p></div></article>
+          <article class="credential"><div class="credential-icon" aria-hidden="true">✓</div><div><h3>Introduction to Bookkeeping</h3><p>TESDA Online Program. Add the course completion evidence or verification link where available.</p></div></article>
+          <article class="credential"><div class="credential-icon" aria-hidden="true">✓</div><div><h3>NDIS Worker Orientation Module</h3><p>Quality, Safety and You. Include the issuing source or certificate verification details where available.</p></div></article>
         </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="wrap">
-        <div class="contact-panel">
-          <div><h2>Looking for a reliable support and operations teammate?</h2><p>I’m open to suitable remote opportunities in customer support, email operations, documentation, and guideline-based AI evaluation.</p></div>
-          <a class="button" href="mailto:kingphilip2014.kpm@gmail.com">Email me ↗</a>
-        </div>
-      </div>
-    </section>
+        <div style="margin-top:30px"><h2 style="font-size:1.55rem">Tools & working knowledge</h2><div class="tool-grid">
+          <div class="tool-group"><h3>Support & CRM</h3><p>Email support workflows, ticket queues, Bliss, and CRM documentation.</p></div>
+          <div class="tool-group"><h3>Spreadsheets</h3><p>Google Sheets, Excel fundamentals, formulas, lookups, and reporting practice.</p></div>
+          <div class="tool-group"><h3>Documentation</h3><p>SOPs, knowledge-base content, case summaries, and process notes.</p></div>
+          <div class="tool-group"><h3>AI task work</h3><p>Guideline interpretation, output comparison, annotation, and quality review.</p></div>
+        </div></div>
+        <div class="contact-panel" style="margin-top:30px"><div><h2>Let’s work together.</h2><p>Open to suitable remote roles in customer support, email operations, documentation, and guideline-based AI evaluation.</p></div><a class="button" href="mailto:kingphilip2014.kpm@gmail.com">Email me ↗</a></div>
+      </div></section>
+    </div>
   </main>
 
   <footer>
@@ -398,16 +347,49 @@
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
+    const themeToggle = document.getElementById('themeToggle');
+    const pageLinks = document.querySelectorAll('[data-page-link]');
+    const pages = document.querySelectorAll('[data-page]');
+    function showPage(pageName, updateHash = true) {
+      if (!document.querySelector('[data-page="' + pageName + '"]')) pageName = 'home';
+      pages.forEach(page => page.classList.toggle('active', page.dataset.page === pageName));
+      document.querySelectorAll('.nav-links [data-page-link]').forEach(link => {
+        const active = link.dataset.pageLink === pageName;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
+      });
+      if (updateHash) history.replaceState(null, '', '#' + pageName);
+      window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = 'Menu ☰';
+    }
+    pageLinks.forEach(link => link.addEventListener('click', event => {
+      const pageName = link.dataset.pageLink;
+      if (pageName) { event.preventDefault(); showPage(pageName); }
+    }));
     menuToggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', String(open));
       menuToggle.textContent = open ? 'Close ×' : 'Menu ☰';
     });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.textContent = 'Menu ☰';
-    }));
+    function setTheme(theme) {
+      document.body.classList.toggle('dark', theme === 'dark');
+      themeToggle.innerHTML = theme === 'dark' ? '☀ <span>Light mode</span>' : '☾ <span>Dark mode</span>';
+      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+      try { localStorage.setItem('portfolio-theme', theme); } catch (e) {}
+    }
+    themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('dark') ? 'light' : 'dark'));
+    let savedTheme = 'light';
+    try { savedTheme = localStorage.getItem('portfolio-theme') || 'light'; } catch (e) {}
+    setTheme(savedTheme);
+    const initialPage = location.hash.replace('#', '');
+    if (initialPage && document.querySelector('[data-page="' + initialPage + '"]')) showPage(initialPage, false);
+    window.addEventListener('hashchange', () => {
+      const name = location.hash.replace('#', '');
+      if (name && document.querySelector('[data-page="' + name + '"]')) showPage(name, false);
+    });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>

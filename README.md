@@ -1,26 +1,30 @@
-# Portfolio redesign package
+# Portfolio redesign v2 — compact page switching + dark mode
 
-This is a replacement `index.html` for the GitHub Pages portfolio at:
+Replacement for `index.html` in the GitHub Pages portfolio:
 https://philip1314.github.io/portfolio/
 
-## Design approach
-- Professional light palette with teal accents
-- Responsive layout and mobile navigation
-- Semantic HTML, keyboard focus states, and reduced-motion support
-- No JavaScript framework or build step required
-- Case studies explicitly labeled as demonstrations/sample scenarios to avoid implying unverified workplace results
+## What's included
+- Compact page-switching navigation: Home, Case Studies, Web Apps, AI Evaluation, Background
+- Light/dark theme switch; theme preference is saved in the browser when local storage is available
+- Restored live app links:
+  - Margin Calculator: https://philip1314.github.io/Margin-Calculator/
+  - Trading Journal: https://philip1314.github.io/myTradingJournal/
+  - Personal Finance Tracker: https://philip1314.github.io/finances/
+- Responsive mobile navigation and page layouts
+- Reduced-motion support and keyboard focus styling
+- Credentials restored from the published portfolio text
+- Sample case studies are explicitly labeled as demonstrations / scenarios to avoid implying unverified production results
 
 ## Install
-1. Download and unzip the package.
-2. Keep your existing `profile.jpg` in the same folder as `index.html`.
-3. Preview `index.html` locally in a browser.
-4. Review all wording and verify each claim, skill, credential, and link.
-5. Replace the existing `index.html` in your `Philip1314/portfolio` repository with this file and commit the change to the `main` branch.
-6. Wait for GitHub Pages to rebuild, then check the live page on desktop and mobile.
+1. Unzip the package.
+2. Keep your existing `profile.jpg` beside `index.html`.
+3. Preview the HTML locally.
+4. Verify your email, LinkedIn URL, credentials, skill descriptions, and all three app links.
+5. Replace the `index.html` in the `Philip1314/portfolio` GitHub repository and commit.
+6. Test the live site on desktop and mobile after GitHub Pages rebuilds.
 
-## Before publishing
-- Confirm whether Salesforce, Zendesk, and other listed tools are genuinely used; this draft deliberately avoids claiming advanced proficiency.
-- Add a real resume PDF link if you want a résumé download button.
-- Replace the sample credential description with the exact certificate title and issuer.
-- Add verified, authorized work samples if available.
-- The included `profile.jpg` reference expects the existing image file in your repository.
+## Notes
+- This is a single HTML file that behaves like a small multi-page site. It does not require a framework or build step.
+- The pages switch without a full reload; URLs use hashes such as `#apps` so individual views can be linked.
+- Dark mode is implemented with CSS variables and a theme toggle. The browser remembers the preference when local storage is available.
+- This package does not deploy changes to GitHub automatically.
