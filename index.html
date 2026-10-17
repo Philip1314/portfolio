@@ -69,6 +69,19 @@
 </head>
 <body class="bg-darkBg text-slate-100 min-h-screen antialiased selection:bg-sky-500 selection:text-slate-950 pb-16">
 
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all duration-300" onclick="closeModal(event)">
+        <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+            <!-- Close Button -->
+            <button onclick="closeModal(null)" class="absolute -top-12 right-0 sm:-right-4 text-white bg-slate-800 hover:bg-sky-500 hover:text-slate-950 rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl border border-slate-600 transition-all shadow-lg focus:outline-none">
+                ✕
+            </button>
+            <!-- Modal Image -->
+            <img id="modal-img" src="" alt="Enlarged Certificate" class="max-w-full max-h-[80vh] rounded-2xl border-2 border-sky-400/40 shadow-2xl object-contain bg-slate-950">
+            <p id="modal-caption" class="text-slate-300 text-xs sm:text-sm mt-3 font-medium text-center bg-slate-900/90 px-4 py-2 rounded-xl border border-slate-800"></p>
+        </div>
+    </div>
+
     <!-- Top Banner -->
     <div class="bg-gradient-to-r from-sky-600 via-teal-600 to-sky-600 text-white text-center py-2 px-4 text-xs sm:text-sm font-semibold tracking-wide shadow-md">
         ⚡ OPEN TO REMOTE ROLES: CUSTOMER SUPPORT, AI EVALUATION & CRM OPERATIONS
@@ -820,8 +833,9 @@ Customer Support Professional</div>
                 </div>
 
                 <div class="bg-darkBg/80 p-6 rounded-xl border border-slate-800 text-left flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-slate-950 border border-slate-800 p-3 flex-shrink-0 flex items-center justify-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/PUP.png" alt="Polytechnic University of the Philippines Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='pup-logo.png';">
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-slate-950 border border-slate-800 p-3 flex-shrink-0 flex items-center justify-center cursor-pointer group relative" onclick="openModal('https://upload.wikimedia.org/wikipedia/commons/8/8e/PUP.png', 'Polytechnic University of the Philippines Official Logo')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/PUP.png" alt="Polytechnic University of the Philippines Logo" class="w-full h-full object-contain group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='pup-logo.png';">
+                        <div class="absolute inset-0 bg-sky-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-[10px] text-sky-300 font-semibold">Click to expand</div>
                     </div>
                     <div class="flex-1 text-center sm:text-left">
                         <span class="text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full inline-block mb-3">Tertiary Education</span>
@@ -843,8 +857,9 @@ Customer Support Professional</div>
                     <!-- EF SET English Certificate -->
                     <div class="glass-card p-5 rounded-2xl flex flex-col justify-between">
                         <div>
-                            <div class="w-full h-56 sm:h-64 rounded-xl overflow-hidden bg-slate-950/80 border border-slate-800 mb-4 p-2 flex items-center justify-center">
-                                <img src="efset-cert.png" alt="EF SET English Certificate" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=EF+SET+English+Certificate'">
+                            <div class="w-full h-56 sm:h-64 rounded-xl overflow-hidden bg-slate-950/80 border border-slate-800 mb-4 p-2 flex items-center justify-center cursor-pointer group relative" onclick="openModal('efset-cert.png', 'EF SET English Certificate - C2 Proficient (Score: 90/100)')">
+                                <img src="efset-cert.png" alt="EF SET English Certificate" class="w-full h-full object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=EF+SET+English+Certificate'">
+                                <div class="absolute inset-0 bg-sky-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-xs text-sky-300 font-semibold">🔍 Click to view full certificate</div>
                             </div>
                             <span class="text-[11px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2.5 py-1 rounded-md inline-block mb-2">Language Proficiency</span>
                             <h4 class="text-base font-bold text-white mb-1">EF SET English Certificate</h4>
@@ -860,8 +875,9 @@ Customer Support Professional</div>
                     <!-- Bookkeeping Certificate -->
                     <div class="glass-card p-5 rounded-2xl flex flex-col justify-between">
                         <div>
-                            <div class="w-full h-56 sm:h-64 rounded-xl overflow-hidden bg-slate-950/80 border border-slate-800 mb-4 p-2 flex items-center justify-center">
-                                <img src="bookkeeping-cert.png" alt="Bookkeeping Certificate" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=Bookkeeping+Certificate'">
+                            <div class="w-full h-56 sm:h-64 rounded-xl overflow-hidden bg-slate-950/80 border border-slate-800 mb-4 p-2 flex items-center justify-center cursor-pointer group relative" onclick="openModal('bookkeeping-cert.png', 'TESDA Online Program - Introduction to Bookkeeping Certificate')">
+                                <img src="bookkeeping-cert.png" alt="Bookkeeping Certificate" class="w-full h-full object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=Bookkeeping+Certificate'">
+                                <div class="absolute inset-0 bg-emerald-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-xs text-emerald-300 font-semibold">🔍 Click to view full certificate</div>
                             </div>
                             <span class="text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-md inline-block mb-2">Financial Operations</span>
                             <h4 class="text-base font-bold text-white mb-1">Introduction to Bookkeeping</h4>
@@ -877,8 +893,9 @@ Customer Support Professional</div>
                     <!-- NDIS Certificate -->
                     <div class="glass-card p-5 rounded-2xl flex flex-col justify-between">
                         <div>
-                            <div class="w-full h-56 sm:h-64 rounded-xl overflow-hidden bg-slate-950/80 border border-slate-800 mb-4 p-2 flex items-center justify-center">
-                                <img src="ndis-cert.png" alt="NDIS Certificate" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=NDIS+Certificate'">
+                            <div class="w-full h-56 sm:h-64 rounded-xl overflow-hidden bg-slate-950/80 border border-slate-800 mb-4 p-2 flex items-center justify-center cursor-pointer group relative" onclick="openModal('ndis-cert.png', 'NDIS Worker Orientation Module - Quality, Safety and You Certificate')">
+                                <img src="ndis-cert.png" alt="NDIS Certificate" class="w-full h-full object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=NDIS+Certificate'">
+                                <div class="absolute inset-0 bg-sky-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-xs text-sky-300 font-semibold">🔍 Click to view full certificate</div>
                             </div>
                             <span class="text-[11px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2.5 py-1 rounded-md inline-block mb-2">Compliance & Standards</span>
                             <h4 class="text-base font-bold text-white mb-1">NDIS Worker Orientation Module</h4>
@@ -967,6 +984,31 @@ Customer Support Professional</div>
             btn.classList.remove('bg-slate-900', 'text-slate-400');
             btn.classList.add('bg-sky-400', 'text-slate-950', 'active-view');
         }
+
+        // Modal Lightbox Functions
+        function openModal(imgSrc, captionText) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalCaption = document.getElementById('modal-caption');
+
+            modalImg.src = imgSrc;
+            modalCaption.textContent = captionText || '';
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Lock background scrolling
+        }
+
+        function closeModal(evt) {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal on Escape key press
+        document.addEventListener('keydown', function(evt) {
+            if (evt.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
