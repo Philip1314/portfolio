@@ -31,14 +31,14 @@
       --code-bg: #1e293b;
       --code-ink: #e2e8f0;
 
-      /* Callout banner colors */
+      /* Compact Callout banner colors */
       --callout-bg: #2b2319;
       --callout-border: #4a3a29;
       --callout-title: #f1b36e;
-      --callout-text: #e2d9cd;
+      --callout-text: #d8cebf;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 130px; }
     body {
       margin: 0; background: var(--bg); color: var(--ink);
       font-family: "DM Sans", sans-serif; line-height: 1.65;
@@ -61,10 +61,12 @@
     .site-header {
       position: sticky; top: 0; z-index: 20; background: rgba(245,247,248,.96);
       backdrop-filter: blur(14px); border-bottom: 1px solid rgba(223,231,235,.9);
-      padding: 12px 0;
+      padding: 12px 0 14px;
     }
     .nav-top-row {
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(223,231,235,.5);
     }
     .brandmark { 
       text-decoration: none; 
@@ -97,27 +99,27 @@
     .button.secondary { color: var(--ink); border-color: var(--line); background: white; }
     .button.secondary:hover { border-color: var(--brand); color: var(--brand); }
 
-    /* Button Bar Navigation */
+    /* Button Bar Navigation (Directly below top row, fully wrapping & adaptive) */
     .nav-bar-container {
       margin-top: 10px;
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-      scrollbar-width: thin;
+      align-items: center;
     }
     .nav-button {
       border: 1px solid var(--line);
       background: var(--paper);
       color: var(--muted);
-      padding: 7px 16px;
+      padding: 6px 14px;
       border-radius: 999px;
-      font-size: .85rem;
+      font-size: .82rem;
       font-weight: 700;
       text-decoration: none;
-      white-space: nowrap;
       transition: all .15s ease;
       cursor: pointer;
+      flex: 0 1 auto;
+      text-align: center;
     }
     .nav-button:hover {
       border-color: var(--brand);
@@ -130,7 +132,7 @@
     }
 
     /* Hero Section */
-    .hero { padding: 48px 0 20px; }
+    .hero { padding: 36px 0 20px; }
     .hero-grid { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(260px,.75fr); gap: 48px; align-items: center; }
     .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--brand-dark); background: var(--brand-soft); border-radius: 999px; padding: 7px 14px; font-size: .78rem; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #159a8c; box-shadow: 0 0 0 4px rgba(21,154,140,.12); }
@@ -142,26 +144,22 @@
     .quick-facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
     .chip { display: inline-flex; align-items: center; background: white; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: .78rem; color: #405461; font-weight: 600; }
 
-    /* Callout Note Cards */
-    .callout-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin: 28px 0 10px;
-    }
+    /* Compact Callout Note Cards */
     .callout-card {
       background: var(--callout-bg);
       border: 1px solid var(--callout-border);
-      border-radius: 18px;
-      padding: 18px 24px;
+      border-radius: 12px;
+      padding: 10px 16px;
       color: var(--callout-text);
-      font-size: .95rem;
-      line-height: 1.6;
-      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      font-size: .82rem;
+      line-height: 1.45;
+      margin-top: 32px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
     }
     .callout-card strong {
       color: var(--callout-title);
-      font-weight: 800;
+      font-weight: 700;
     }
 
     /* Profile Card */
@@ -243,7 +241,7 @@
     .tool-group h3 { font-size: .95rem; margin-top: 0; }
     .tool-group p { color: var(--muted); font-size: .83rem; margin: 0; }
 
-    .contact-panel { background: var(--brand); color: white; border-radius: 28px; padding: clamp(28px,5vw,52px); display: flex; justify-content: space-between; gap: 30px; align-items: center; }
+    .contact-panel { background: var(--brand); color: white; border-radius: 28px; padding: clamp(28px,5vw,52px); display: flex; justify-space-between; gap: 30px; align-items: center; }
     .contact-panel h2 { margin-top: 0; max-width: 650px; color: white; }
     .contact-panel p { color: #e0f5f4; margin-bottom: 0; }
     .contact-panel .button { background: white; border-color: white; color: var(--brand-dark); white-space: nowrap; }
@@ -268,6 +266,7 @@
     }
     body.dark .announcement { background: #091117; }
     body.dark .site-header { background: rgba(16,24,32,.96); }
+    body.dark .site-header .nav-top-row { border-bottom-color: rgba(43,59,71,.6); }
     body.dark .button.secondary, body.dark .chip, body.dark .theme-toggle, body.dark .nav-button { background: var(--paper); color: var(--ink); }
     body.dark .nav-button.active { background: var(--brand-soft); color: var(--brand); }
     body.dark .trust-strip { background: rgba(23,35,45,.6); }
@@ -285,6 +284,7 @@
       .trust-grid { grid-template-columns: 1fr 1fr; }
       .cards, .app-grid, .credentials, .tool-grid { grid-template-columns: 1fr; }
       .contact-panel { flex-direction: column; align-items: flex-start; }
+      .nav-button { flex: 1 1 calc(50% - 8px); }
     }
   </style>
 </head>
@@ -304,7 +304,7 @@
         </div>
       </div>
 
-      <!-- Button Row Navigation Bar -->
+      <!-- Button Row Navigation Bar - Directly below top row & fully responsive wrapping -->
       <nav class="nav-bar-container" aria-label="Main navigation">
         <button class="nav-button active" data-page-link="home">Home</button>
         <button class="nav-button" data-page-link="work">Selected Work</button>
@@ -347,23 +347,6 @@
           </aside>
         </div>
       </section>
-
-      <!-- Revised Callout Disclaimer Cards for Site Visitors -->
-      <div class="wrap">
-        <div class="callout-stack">
-          <div class="callout-card">
-            <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured on this site are synthetic case studies created to illustrate operational problem-solving. No real client or private company data is used.
-          </div>
-
-          <div class="callout-card">
-            <strong>Privacy & Data Safeguards:</strong> Real customer transactions, personal financial records, and confidential user information are strictly excluded from all public work samples, demonstrations, and web tools.
-          </div>
-
-          <div class="callout-card">
-            <strong>Portfolio Integrity:</strong> All content displayed is original work created specifically for portfolio demonstration. Proprietary client material, NDA-restricted guidelines, and private screenshots are never shared or republished.
-          </div>
-        </div>
-      </div>
 
       <div class="trust-strip">
         <div class="wrap trust-grid">
@@ -421,7 +404,7 @@
           <div class="section-heading">
             <div class="section-kicker">Selected Work</div>
             <h2>Practical support & operational samples.</h2>
-            <p class="section-intro">Detailed examples illustrating how I handle customer communication, structure Jira bug escalations, and draft Knowledge Base updates. <em>(Note: All examples below are simulated case studies.)</em></p>
+            <p class="section-intro">Detailed examples illustrating how I handle customer communication, structure Jira bug escalations, and draft Knowledge Base updates.</p>
           </div>
 
           <!-- Sample 1: Email Support -->
@@ -508,6 +491,11 @@ Agent Instructions:
 4. Send Macro Response: [Billing - Prorated Grace Refund].</div>
           </div>
 
+          <!-- Compact Callout at bottom of Selected Work Page -->
+          <div class="callout-card">
+            <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured here are synthetic case studies created to demonstrate operational problem-solving. No real client or private company data is used.
+          </div>
+
         </div>
       </section>
     </div>
@@ -521,6 +509,7 @@ Agent Instructions:
             <h2>Practical tools built for real workflows.</h2>
             <p class="section-intro">Browser-based web applications built to simplify tracking, calculations, and decision-making.</p>
           </div>
+
           <div class="app-grid">
             <article class="app-card">
               <div class="app-icon" aria-hidden="true">🧮</div>
@@ -544,6 +533,12 @@ Agent Instructions:
               <a class="button primary" href="https://philip1314.github.io/finances/" target="_blank" rel="noopener noreferrer">Launch live app ↗</a>
             </article>
           </div>
+
+          <!-- Compact Callout at bottom of Apps Page -->
+          <div class="callout-card">
+            <strong>Privacy & Data Safeguards:</strong> Real customer transactions, personal financial records, and confidential account details are strictly excluded from all public web tools and demonstrations.
+          </div>
+
         </div>
       </section>
     </div>
@@ -557,6 +552,7 @@ Agent Instructions:
             <h2>Rigorous criteria evaluation & judgment.</h2>
             <p class="section-intro">Reviewing AI responses and structured data with strict adherence to task guidelines, factual verification, and consistency.</p>
           </div>
+
           <div class="cards">
             <article class="card">
               <div class="card-icon" aria-hidden="true">✓</div>
@@ -574,6 +570,12 @@ Agent Instructions:
               <p>Structuring spreadsheet records, mapping lookup tables, and flagging ambiguous entries systematically.</p>
             </article>
           </div>
+
+          <!-- Compact Callout at bottom of AI Page -->
+          <div class="callout-card">
+            <strong>Portfolio Integrity:</strong> All content displayed is original work created specifically for portfolio demonstration. Proprietary client material, NDA-restricted guidelines, and private screenshots are never shared or republished.
+          </div>
+
         </div>
       </section>
     </div>
