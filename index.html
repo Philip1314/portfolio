@@ -1,877 +1,813 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a1118">
-  <meta name="description" content="King Philip Edmar Mangi — Professional Portfolio. Customer Support Professional & AI Evaluator.">
-  <title>King Philip Edmar Mangi — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0b131c;
-      --card-bg: #111d29;
-      --card-border: #1d2d3e;
-      --text-main: #f0f6fc;
-      --text-muted: #8b9eb0;
-      --primary: #38bdf8;
-      --primary-dark: #0284c7;
-      --primary-glow: rgba(56, 189, 248, 0.25);
-      --accent-green: #10b981;
-      --accent-purple: #a855f7;
-      --code-bg: #070d14;
-      --code-border: #1b2836;
-      --max: 980px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Philip Edmar Mangi | Customer Support Professional & AI Evaluator Portfolio</title>
 
-      /* Callout Colors */
-      --callout-bg: #181512;
-      --callout-border: #3b2c1d;
-      --callout-title: #f59e0b;
-      --callout-text: #d1c2b0;
-    }
+    <!-- Primary Meta Tags & SEO -->
+    <meta name="description" content="Portfolio of King Philip Edmar Mangi - Customer Support Professional & AI Evaluator specializing in high-friction CRM management, email operations, data quality, and SOP documentation.">
+    
+    <!-- Open Graph / LinkedIn / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="King Philip Edmar Mangi | Customer Support & AI Evaluator Portfolio">
+    <meta property="og:description" content="Customer Support Professional & AI Evaluator specializing in email operations, CRM inbox triage (Salesforce & Bliss), data quality assurance, automated spreadsheets, and SOP documentation.">
+    <meta property="og:image" content="https://philip1314.github.io/portfolio/profile.jpg">
+    <meta property="og:url" content="https://philip1314.github.io/portfolio/">
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text-main);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="King Philip Edmar Mangi | Customer Support & AI Evaluator Portfolio">
+    <meta name="twitter:description" content="Customer Support Professional & AI Evaluator specializing in email operations, CRM inbox triage (Salesforce & Bliss), data quality assurance, automated spreadsheets, and SOP documentation.">
+    <meta name="twitter:image" content="https://philip1314.github.io/portfolio/profile.jpg">
 
-    a { color: inherit; text-decoration: none; }
-
-    .wrap {
-      width: min(var(--max), calc(100% - 32px));
-      margin-inline: auto;
-      flex: 1;
-    }
-
-    /* Top Announcement Banner */
-    .announcement-banner {
-      background: linear-gradient(90deg, #0284c7, #2563eb);
-      color: #ffffff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 8px 16px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    /* Header Profile Section */
-    .hero-section {
-      padding: 36px 0 20px;
-      text-align: center;
-    }
-
-    .avatar-wrapper {
-      position: relative;
-      width: 130px;
-      height: 130px;
-      margin: 0 auto 20px;
-    }
-
-    .avatar-img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--primary);
-      box-shadow: 0 0 25px var(--primary-glow);
-    }
-
-    .status-badge {
-      position: absolute;
-      bottom: 2px;
-      right: 6px;
-      background: var(--accent-green);
-      color: #000;
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 3px 9px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    }
-
-    .hero-greeting {
-      color: var(--primary);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-      letter-spacing: 0.02em;
-    }
-
-    h1.hero-title {
-      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
-      font-weight: 800;
-      margin: 0 0 10px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-subtitle {
-      color: var(--primary);
-      font-size: clamp(0.95rem, 2.2vw, 1.15rem);
-      font-weight: 600;
-      max-width: 780px;
-      margin: 0 auto 14px;
-      line-height: 1.4;
-    }
-
-    .hero-description {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      max-width: 700px;
-      margin: 0 auto 24px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 20px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #0b131c;
-      box-shadow: 0 0 15px var(--primary-glow);
-    }
-
-    .btn-primary:hover {
-      background: #7dd3fc;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    /* Adaptive Navigation Bar */
-    .nav-pills-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 32px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .nav-pill {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      padding: 8px 18px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .nav-pill:hover {
-      border-color: var(--primary);
-      color: var(--text-main);
-    }
-
-    .nav-pill.active {
-      background: var(--primary);
-      color: #0b131c;
-      border-color: var(--primary);
-      font-weight: 700;
-      box-shadow: 0 0 12px var(--primary-glow);
-    }
-
-    /* Tab Visibility */
-    .tab-view {
-      display: none;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .tab-view.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Section Styling */
-    .section-header {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin: 0 0 6px;
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    /* Cards Grid Layouts */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 22px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .card-icon {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-      display: inline-block;
-    }
-
-    .card h3 {
-      font-size: 1.05rem;
-      margin: 0 0 8px;
-      font-weight: 700;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      margin: 0 0 12px;
-      line-height: 1.5;
-    }
-
-    .card-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .card-list li {
-      font-size: 0.84rem;
-      color: #cbd5e1;
-      margin-bottom: 6px;
-      position: relative;
-      padding-left: 16px;
-    }
-
-    .card-list li::before {
-      content: "•";
-      color: var(--primary);
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-    }
-
-    /* How I Think / Philosophy Box */
-    .mindset-card {
-      background: linear-gradient(135deg, rgba(17, 29, 41, 0.9), rgba(15, 23, 36, 0.95));
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 18px;
-      padding: 28px;
-      margin-bottom: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mindset-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--primary), var(--accent-purple));
-    }
-
-    .mindset-tagline {
-      display: inline-block;
-      color: var(--primary);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .mindset-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin: 0 0 12px;
-      color: var(--text-main);
-    }
-
-    .mindset-quote {
-      font-size: 0.98rem;
-      font-style: italic;
-      color: #e2e8f0;
-      margin-bottom: 18px;
-      border-left: 2px solid var(--primary);
-      padding-left: 12px;
-    }
-
-    /* Work Samples Styling */
-    .sample-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 22px;
-      margin-bottom: 20px;
-    }
-
-    .sample-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 12px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .sample-badge {
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--primary);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .email-box {
-      background: #080f17;
-      border: 1px solid #1a2837;
-      border-radius: 10px;
-      padding: 16px;
-      font-size: 0.88rem;
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
-
-    .email-meta {
-      border-bottom: 1px solid #1b2a3a;
-      padding-bottom: 8px;
-      margin-bottom: 12px;
-      color: var(--text-muted);
-      font-size: 0.82rem;
-    }
-
-    .code-box {
-      background: var(--code-bg);
-      border: 1px solid var(--code-border);
-      border-radius: 10px;
-      padding: 16px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
-      color: #e2e8f0;
-      white-space: pre-wrap;
-      overflow-x: auto;
-    }
-
-    /* Sheet / Data Table Simulation */
-    .data-table-container {
-      overflow-x: auto;
-      background: #080f17;
-      border: 1px solid #1a2837;
-      border-radius: 10px;
-      padding: 12px;
-    }
-
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      color: #e2e8f0;
-    }
-
-    .data-table th, .data-table td {
-      border: 1px solid #1f3042;
-      padding: 8px 12px;
-      text-align: left;
-    }
-
-    .data-table th {
-      background: #112233;
-      color: var(--primary);
-    }
-
-    /* Compact Disclaimer Callout Note */
-    .compact-callout {
-      background: var(--callout-bg);
-      border: 1px solid var(--callout-border);
-      border-radius: 10px;
-      padding: 12px 16px;
-      color: var(--callout-text);
-      font-size: 0.8rem;
-      line-height: 1.5;
-      margin-top: 24px;
-    }
-
-    .compact-callout strong {
-      color: var(--callout-title);
-      font-weight: 700;
-    }
-
-    /* Footer */
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--card-border);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      margin-top: auto;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 820px) {
-      .grid-3 { grid-template-columns: 1fr; }
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-  </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#070b14',
+                        cardSurface: '#0f172a',
+                        cardHover: '#1e293b',
+                        borderSubtle: '#1e293b',
+                        brandPrimary: '#38bdf8',
+                        brandGlow: 'rgba(56, 189, 248, 0.15)',
+                        accentEmerald: '#34d399',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #070b14;
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
+        }
+        /* Mobile text wrapping and clean left alignment for code blocks */
+        .jira-box {
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            text-align: left;
+            max-width: 100%;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-darkBg text-slate-100 min-h-screen antialiased selection:bg-sky-500 selection:text-slate-950 pb-16">
 
-  <!-- Top Announcement Bar -->
-  <div class="announcement-banner">
-    ⚡ Open to Remote Roles: Customer Support, AI Evaluation & CRM Operations
-  </div>
+    <div class="bg-gradient-to-r from-sky-600 via-teal-600 to-sky-600 text-white text-center py-2 px-4 text-xs sm:text-sm font-semibold tracking-wide shadow-md">
+        ⚡ OPEN TO REMOTE ROLES: CUSTOMER SUPPORT, AI EVALUATION & CRM OPERATIONS
+    </div>
 
-  <div class="wrap">
-    <!-- Header Hero Profile -->
-    <header class="hero-section">
-      <div class="avatar-wrapper">
-        <img src="profile.jpg" alt="King Philip Edmar Mangi" class="avatar-img" onerror="this.src='https://via.placeholder.com/130/111d29/38bdf8?text=Philip'">
-        <span class="status-badge">Active</span>
-      </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="hero-greeting">Hi, I'm Philip 👋</div>
-      <h1 class="hero-title">King Philip Edmar Mangi</h1>
-      
-      <div class="hero-subtitle">
-        Customer Support Professional & AI Evaluator | Email Operations, CRM Management (Salesforce & Bliss) & Data Quality
-      </div>
-
-      <p class="hero-description">
-        Dedicated Customer Support Professional and AI Evaluator specializing in high-friction CRM inbox management (Salesforce & Bliss), email operations, data quality assurance, automated cleaning pipelines, spreadsheet management, and SOP documentation.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="mailto:kingphilip2014.kpm@gmail.com" class="btn btn-primary">Hire Me Direct</a>
-        <a href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn Profile</a>
-      </div>
-
-      <!-- Interactive View Selector Navigation -->
-      <nav class="nav-pills-container" aria-label="Portfolio Views">
-        <button class="nav-pill active" onclick="switchTab('services', event)">Core Services</button>
-        <button class="nav-pill" onclick="switchTab('mindset', event)">How I Think</button>
-        <button class="nav-pill" onclick="switchTab('samples', event)">Email & Case Studies</button>
-        <button class="nav-pill" onclick="switchTab('data', event)">Data Quality & Sheet</button>
-        <button class="nav-pill" onclick="switchTab('apps', event)">Tech & Tools Lab</button>
-        <button class="nav-pill" onclick="switchTab('ai', event)">AI Evaluation</button>
-        <button class="nav-pill" onclick="switchTab('credentials', event)">Credentials</button>
-      </nav>
-    </header>
-
-    <main>
-      <!-- TAB 1: CORE SERVICES -->
-      <section id="tab-services" class="tab-view active">
-        <div class="section-header">
-          <h2 class="section-title">Customer Support & Remote Operations Solutions</h2>
-          <p class="section-desc">Comprehensive customer support, email operations, CRM inbox triage, and data quality assurance tailored for scaling teams.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <span class="card-icon">✉️</span>
-            <h3>Email Support & CRM</h3>
-            <p>Managing high-volume inbox queues with clear, empathetic, and resolution-focused communication.</p>
-            <ul class="card-list">
-              <li>Salesforce & Bliss inbox triage</li>
-              <li>Policy-compliant ticket resolution</li>
-              <li>Customer retention & escalation</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <span class="card-icon">⚙️</span>
-            <h3>Engineering Escalations</h3>
-            <p>Bridging customer issues with technical bug reporting for engineering teams.</p>
-            <ul class="card-list">
-              <li>Jira bug issue drafting</li>
-              <li>Step-by-step issue reproduction</li>
-              <li>Console log & payload attachment</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <span class="card-icon">📝</span>
-            <h3>KB & SOP Redesign</h3>
-            <p>Authoring internal knowledge bases and standardized procedures for support teams.</p>
-            <ul class="card-list">
-              <li>Macro response optimization</li>
-              <li>Internal agent guidebooks</li>
-              <li>Help Center article drafting</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- TAB 2: HOW I THINK / MINDSET -->
-      <section id="tab-mindset" class="tab-view">
-        <div class="section-header">
-          <h2 class="section-title">Mindset & Operational Philosophy</h2>
-          <p class="section-desc">A peak into how I break down complex customer friction points and systematically approach operational support.</p>
-        </div>
-
-        <div class="mindset-card">
-          <span class="mindset-tagline">Curious Mind & Strategic Thinker</span>
-          <h3 class="mindset-title">Approaching Support with First-Principles & Root-Cause Logic</h3>
-          <p class="mindset-quote">"Customer support isn't just about answering tickets—it's about understanding human behavior, identifying systemic friction, and translating customer pain points into actionable system improvements."</p>
-          
-          <div class="grid-2" style="margin-top: 20px;">
-            <div>
-              <h4 style="color: var(--primary); margin: 0 0 6px; font-size: 0.95rem;">1. Root Cause Over Quick Band-Aids</h4>
-              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
-                When an issue recurs, resolving the single ticket is only step one. I look for underlying software bugs, UI confusion, or macro gaps that need structural fixes.
-              </p>
+        <header class="py-12 sm:py-16 border-b border-slate-800 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-teal-400 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div class="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full overflow-hidden border-2 border-sky-400 bg-slate-900 shadow-2xl">
+                    <img src="profile.jpg" alt="King Philip Edmar Mangi" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/180x180/0f172a/38bdf8?text=Philip+Mangi'">
+                </div>
+                <span class="absolute bottom-2 right-2 bg-emerald-400 text-slate-950 text-[10px] font-extrabold px-2.5 py-1 rounded-full border-2 border-slate-950 shadow-lg tracking-wider">
+                    ACTIVE
+                </span>
             </div>
-            <div>
-              <h4 style="color: var(--primary); margin: 0 0 6px; font-size: 0.95rem;">2. Empathetic Clarity</h4>
-              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
-                High-friction interactions require clarity without jargon. I bridge the gap between technical engineering details and user-friendly, empathetic explanations.
-              </p>
+
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
+                    King Philip Edmar Mangi
+                </h1>
+                <p class="text-sky-400 font-semibold text-base sm:text-lg mb-4">
+                    Customer Support Professional & AI Evaluator | Email Operations, CRM Management (Salesforce & Bliss) & Data Quality
+                </p>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
+                    Dedicated Customer Support Professional and AI Evaluator specializing in high-friction CRM inbox management (Salesforce & Bliss), email operations, data quality assurance, automated cleaning pipelines, spreadsheet management, and SOP documentation.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                    <a href="mailto:kingphilip2014.kpm@gmail.com" class="bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 shadow-lg shadow-sky-400/20 hover:-translate-y-0.5">
+                        Hire Me Direct
+                    </a>
+                    <a href="https://www.linkedin.com/in/king-philip-edmar-mangi" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:border-sky-400">
+                        LinkedIn Profile
+                    </a>
+                </div>
             </div>
-            <div>
-              <h4 style="color: var(--primary); margin: 0 0 6px; font-size: 0.95rem;">3. Process & Automation Mindset</h4>
-              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
-                If a task is performed 50 times a day manually, I evaluate spreadsheet formulas, keyboard shortcuts, or CRM rules to optimize turnaround times.
-              </p>
+        </header>
+
+        <nav class="flex justify-center gap-2 sm:gap-3 my-8 flex-wrap">
+            <button onclick="switchTab(event, 'services')" class="tab-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-sky-400 text-slate-950 shadow-md">
+                Core Services
+            </button>
+            <button onclick="switchTab(event, 'datacleaning')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                Data Quality & Dashboard
+            </button>
+            <button onclick="switchTab(event, 'casestudies')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                Email Case Studies
+            </button>
+            <button onclick="switchTab(event, 'kbupdates')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                KB & SOP Redesign
+            </button>
+            <button onclick="switchTab(event, 'aiworks')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                AI Evaluation & Annotation
+            </button>
+            <button onclick="switchTab(event, 'techprojects')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                Tech & Tools Lab
+            </button>
+            <button onclick="switchTab(event, 'credentials')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+                Credentials
+            </button>
+        </nav>
+
+        <section id="services" class="tab-content">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Customer Support & Remote Operations Solutions</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Comprehensive customer support, email operations, CRM inbox triage, and data quality assurance tailored for scaling teams.</p>
             </div>
-            <div>
-              <h4 style="color: var(--primary); margin: 0 0 6px; font-size: 0.95rem;">4. Uncompromising Data Precision</h4>
-              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
-                Whether evaluating AI output accuracy or logging Jira tickets, I rely on clear baselines, reproducible evidence, and meticulous attention to details.
-              </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl transition duration-300">
+                    <div class="text-3xl mb-4">✉️</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Email Operations & CRM Management</h3>
+                    <p class="text-slate-400 text-sm mb-4">Managing high-volume client/customer communications, email queue triage, ticket routing, and escalation management.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-4">
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Email Inbox Zero & Ticket Triage</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Salesforce, Bliss & Zendesk CRM</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Client Dispute & Escalation Resolution</li>
+                    </ul>
+                    <div class="flex gap-2 flex-wrap pt-2 border-t border-slate-800">
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Salesforce</span>
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Bliss CRM</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl transition duration-300">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Data Quality & Spreadsheet Reporting</h3>
+                    <p class="text-slate-400 text-sm mb-4">Cleaning, organizing, and auditing backend support logs to ensure pristine data quality and executive-ready reports.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-4">
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Advanced Formulas (XLOOKUP, QUERY)</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> CRM Data Scrubbing & Deduplication</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Automated Google Sheets Dashboards</li>
+                    </ul>
+                    <div class="flex gap-2 flex-wrap pt-2 border-t border-slate-800">
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Data Quality</span>
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Google Sheets</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl transition duration-300">
+                    <div class="text-3xl mb-4">🤖</div>
+                    <h3 class="text-lg font-bold text-white mb-2">AI Evaluation & SOP Documentation</h3>
+                    <p class="text-slate-400 text-sm mb-4">Evaluating LLM prompt outputs, training datasets, and creating clear internal operating procedures.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-4">
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> LLM Fact-Checking & Alignment</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Standard Operating Procedure (SOP) Drafting</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-400 font-bold">✓</span> Process Bottleneck Optimization</li>
+                    </ul>
+                    <div class="flex gap-2 flex-wrap pt-2 border-t border-slate-800">
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">AI Evaluator</span>
+                        <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">SOP Writing</span>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- TAB 3: EMAIL & CASE STUDIES -->
-      <section id="tab-samples" class="tab-view">
-        <div class="section-header">
-          <h2 class="section-title">Work Case Studies & Escalations</h2>
-          <p class="section-desc">Demonstrating practical support workflows, technical engineering handoffs, and operational guidelines.</p>
-        </div>
-
-        <!-- Sample 1 -->
-        <div class="sample-card">
-          <div class="sample-head">
-            <h3 style="margin: 0; font-size: 1rem;">1. Email Support & Payment Refund Resolution</h3>
-            <span class="sample-badge">Customer Communication</span>
-          </div>
-          <div class="email-box">
-            <div class="email-meta">
-              Subject: Re: Duplicate Charge Inquiry - Order #84920<br>
-              To: Sarah Miller &lt;client@example.com&gt;<br>
-              From: King Philip Mangi - Support Operations
+        <section id="datacleaning" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Google Sheets Operational Data Quality & Dashboard Case Study</h2>
+                <p class="text-slate-400 text-sm sm:text-base">An end-to-end data scrubbing pipeline turning 10,000+ corrupt CRM records into an automated Google Sheets executive dashboard.</p>
             </div>
-            <div style="white-space: pre-line;">Hi Sarah,
 
-Thank you for reaching out, and I apologize for the double charge on your recent purchase.
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-sky-400 text-center">
+                    <span class="text-2xl font-extrabold text-sky-400 block mb-1">99.8%</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Data Accuracy Achieved</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-teal-400 text-center">
+                    <span class="text-2xl font-extrabold text-teal-400 block mb-1">85% Faster</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Executive Visibility</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-4 border-l-emerald-400 text-center">
+                    <span class="text-2xl font-extrabold text-emerald-400 block mb-1">10,000+</span>
+                    <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Support Records Processed</span>
+                </div>
+            </div>
 
-I reviewed your transaction history for Order #84920 and confirmed that a temporary duplicate charge occurred due to a gateway timeout during checkout. I have immediately processed a refund of $49.50 back to your card.
+            <div class="glass-card p-6 sm:p-8 rounded-2xl mb-8 space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">Project Overview</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-300">
+                        <p><strong class="text-sky-400">Role:</strong> Customer Support Data Quality Analyst</p>
+                        <p><strong class="text-sky-400">Tools:</strong> Google Sheets, Advanced Formulas (<code class="text-sky-300">XLOOKUP</code>, <code class="text-sky-300">QUERY</code>, <code class="text-sky-300">ARRAYFORMULA</code>, <code class="text-sky-300">REGEXREPLACE</code>, <code class="text-sky-300">IFERROR</code>), Salesforce & Bliss Export Scrubbing, Pivot Tables.</p>
+                    </div>
+                    <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                        <strong class="text-white">Objective:</strong> Clean, structure, and analyze 10,000+ raw, unstructured operational support logs (containing mixed POS integration errors, menu update tickets, and refund dispute entries) into an automated, executive-ready Google Sheets dashboard.
+                    </p>
+                </div>
 
-Depending on your issuer, the credit will reflect within 3 to 5 business days. Your original order is confirmed and shipping normally.
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-2">Phase 1: Problem Statement & Raw Data Audit</h4>
+                    <p class="text-slate-400 text-sm mb-4">The customer support team was working with raw, unformatted CSV exports from CRM and POS logging systems containing critical errors:</p>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Inconsistent Formatting:</strong> Mixed date formats (e.g., <code class="text-amber-300">YYYY-MM-DD</code> vs <code class="text-amber-300">MM/DD/YY</code>), inconsistent casing (e.g., <code class="text-amber-300">pos error</code>, <code class="text-amber-300">POS Error</code>, <code class="text-amber-300">P.O.S. Error</code>), and leading/trailing whitespace.</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Missing & Corrupted Data:</strong> Blank Merchant IDs, text strings in numeric refund columns (e.g., <code class="text-amber-300 font-mono">$ 45.50</code> or <code class="text-amber-300 font-mono">N/A</code>), and duplicate ticket IDs caused by re-opened support threads.</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-amber-400 font-bold">•</span>
+                            <div><strong class="text-white">Lack of Structure:</strong> High-volume raw data without automated categorization or central aggregation metrics for leadership.</div>
+                        </li>
+                    </ul>
+                </div>
 
-If you have any further questions, please let me know.
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-3">Phase 2: Data Cleaning & Scrubbing Pipeline</h4>
+                    <div class="space-y-4">
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">1. Deduplication & Whitespace Trimming</h5>
+                            <p class="text-xs text-slate-300 mb-2">Applied <code class="text-emerald-400 font-mono">=ARRAYFORMULA(TRIM(CLEAN(A2:A)))</code> across text columns to automatically remove extra whitespace and unprintable control characters. Used Google Sheets native menu pathway <strong class="text-white">Data > Data cleanup > Remove duplicates</strong> anchored on unique <code class="text-sky-300 font-mono">Ticket_ID</code> keys to eliminate duplicate CRM entries while retaining the latest record.</p>
+                        </div>
+
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">2. Error Handling & Standardized Formulas</h5>
+                            <p class="text-xs text-slate-300 mb-2">Combined <code class="text-emerald-400 font-mono">IFERROR()</code> with <code class="text-emerald-400 font-mono">REGEXREPLACE()</code> to strip non-numeric characters (like currency symbols and text) and convert corrupted text strings into clean decimal floats:</p>
+                            <code class="block font-mono text-xs text-emerald-400 bg-slate-950 p-2.5 rounded-lg border border-slate-900 mb-2 overflow-x-auto">=IFERROR(VALUE(REGEXREPLACE(C2, "[^0-9.]", "")), 0)</code>
+                            <p class="text-xs text-slate-300">Standardized date fields into standard ISO dates (<code class="text-sky-300 font-mono">YYYY-MM-DD</code>) using <code class="text-emerald-400 font-mono">=DATEVALUE()</code> and explicit column formatting (<strong class="text-white">Format > Number > Custom date and time</strong>) for accurate time-series analysis.</p>
+                        </div>
+
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-sky-400 font-bold text-sm mb-1">3. Dynamic Categorization via XLOOKUP</h5>
+                            <p class="text-xs text-slate-300 mb-2">Created a dedicated Metadata Lookup Sheet (<code class="text-sky-300 font-mono">Ref_Table</code>) mapping raw vendor strings and error codes to normalized operational categories (<code class="text-slate-200">Integration Handshake Failure</code>, <code class="text-slate-200">Non-POS Menu Customization</code>, <code class="text-slate-200">Inaccurate Order Refund Dispute</code>). Implemented <code class="text-emerald-400 font-mono">XLOOKUP</code> across master rows for dynamic lookups without index breakage risk:</p>
+                            <code class="block font-mono text-xs text-emerald-400 bg-slate-950 p-2.5 rounded-lg border border-slate-900 overflow-x-auto">=XLOOKUP(Raw_Error_Code, Ref_Table!A:A, Ref_Table!B:B, "Unassigned / Under Review")</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-800 pt-6">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h4 class="text-lg font-bold text-white">Phase 3: Interactive Data Transformation View</h4>
+                        <span class="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full font-semibold">Live Google Sheets Data Comparison</span>
+                    </div>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button onclick="switchViewer(event, 'data-raw-panel', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Raw Unstructured Input (Before)</button>
+                            <button onclick="switchViewer(event, 'data-clean-panel', this)" class="viewer-tab-btn active-view px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950 transition-all">Clean Structured Output (After)</button>
+                        </div>
+
+                        <div id="data-raw-panel" class="viewer-panel hidden overflow-x-auto">
+                            <table class="w-full text-left font-mono text-xs text-amber-200 border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-900 border-b border-slate-800 text-amber-400">
+                                        <th class="p-2.5">Raw_Ticket_ID</th>
+                                        <th class="p-2.5">Store_Name</th>
+                                        <th class="p-2.5">Error_Log_Raw</th>
+                                        <th class="p-2.5">Refund_Amt</th>
+                                        <th class="p-2.5">Date_Submitted</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/50">
+                                    <tr><td class="p-2.5">#TK-1001 </td><td class="p-2.5">Urban Grill </td><td class="p-2.5">pos error - timeout</td><td class="p-2.5">$ 45.50</td><td class="p-2.5">10/05/2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1001</td><td class="p-2.5">Urban Grill</td><td class="p-2.5">POS Error</td><td class="p-2.5">45.5</td><td class="p-2.5">2026-10-05</td></tr>
+                                    <tr><td class="p-2.5">TK-1002</td><td class="p-2.5">Pizza Haven</td><td class="p-2.5">Menu Add-on issue</td><td class="p-2.5">N/A</td><td class="p-2.5">10-06-2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1003</td><td class="p-2.5">Bistro Luxe</td><td class="p-2.5">WRONG ORDER DISPUTE</td><td class="p-2.5">$120.00</td><td class="p-2.5">2026/10/06</td></tr>
+                                    <tr><td class="p-2.5">#TK-1004</td><td class="p-2.5">Taco Central</td><td class="p-2.5">p.o.s. integration failure</td><td class="p-2.5">NULL</td><td class="p-2.5">06/10/2026</td></tr>
+                                    <tr><td class="p-2.5">TK-1005 </td><td class="p-2.5">Sushi Bar</td><td class="p-2.5">size modifier error</td><td class="p-2.5">$-</td><td class="p-2.5">10-07-2026</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="data-clean-panel" class="viewer-panel overflow-x-auto">
+                            <table class="w-full text-left font-mono text-xs text-slate-200 border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-900 border-b border-slate-800 text-sky-400">
+                                        <th class="p-2.5">Ticket ID</th>
+                                        <th class="p-2.5">Store Name</th>
+                                        <th class="p-2.5">Standardized Issue Category</th>
+                                        <th class="p-2.5">Refund ($)</th>
+                                        <th class="p-2.5">Normalized Date</th>
+                                        <th class="p-2.5">Escalation Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/50">
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1001</td><td class="p-2.5">Urban Grill</td><td class="p-2.5">POS Integration Sync Failure</td><td class="p-2.5">45.50</td><td class="p-2.5">2026-10-05</td><td class="p-2.5 text-amber-400">Escalated (Jira)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1002</td><td class="p-2.5">Pizza Haven</td><td class="p-2.5">Non-POS Customization/Add-ons</td><td class="p-2.5">0.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-emerald-400">Resolved (Self-Service)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1003</td><td class="p-2.5">Bistro Luxe</td><td class="p-2.5">Inaccurate Order Dispute</td><td class="p-2.5">120.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-emerald-400">Refund Approved</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1004</td><td class="p-2.5">Taco Central</td><td class="p-2.5">POS Integration Sync Failure</td><td class="p-2.5">0.00</td><td class="p-2.5">2026-10-06</td><td class="p-2.5 text-amber-400">Escalated (Jira)</td></tr>
+                                    <tr><td class="p-2.5 font-bold text-sky-300">TK-1005</td><td class="p-2.5">Sushi Bar</td><td class="p-2.5">Non-POS Customization/Add-ons</td><td class="p-2.5">0.00</td><td class="p-2.5">2026-10-07</td><td class="p-2.5 text-emerald-400">Resolved (Self-Service)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="text-lg font-bold text-white mb-2">Phase 4: Structured Reporting & Dashboard Architecture</h4>
+                    <p class="text-slate-300 text-sm mb-4">Constructed an automated Support Operations Dashboard using Google Sheets Pivot Tables and dynamic array summaries.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Resolution SLA Breakdown (Pivot Table)</strong>
+                            Rows set to Standardized Issue Category, Columns set to Escalation Status, aggregating Average Resolution Time (Hours) and Case Count.
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Financial Refund Tracking (SUMIFS & Charts)</strong>
+                            Dynamically calculated merchant dispute payouts versus recovered logistics fees using multi-criteria SUMIFS formulas and stacked bar charts.
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-slate-800">
+                            <strong class="text-white block mb-1">Automated Risk Heatmaps (Conditional Formatting)</strong>
+                            Configured custom rules (<strong class="text-white">Format > Conditional formatting</strong>) highlighting stores with &gt;5 recurring POS drops per week for proactive outreach.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="casestudies" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Customer Support & Email Operations Case Studies</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Professional email support templates illustrating empathetic communication, technical escalation, self-service guidance, and dispute resolution.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Case Study 1 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h3 class="text-lg font-bold text-white">Case Study 1: POS Integration Issue & Technical Escalation</h3>
+                        <span class="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full font-semibold">Tier 2 Escalation</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">Scenario: Handling a merchant-facing communication for a POS integration failure alongside internal Jira escalation formatting.</p>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button onclick="switchViewer(event, 'cs1-email-box', this)" class="viewer-tab-btn active-view px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950 transition-all">Merchant Email Response</button>
+                            <button onclick="switchViewer(event, 'cs1-jira-box', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Internal Jira Escalation</button>
+                        </div>
+
+                        <div id="cs1-email-box" class="viewer-panel font-mono text-xs sm:text-sm text-slate-300 whitespace-pre-line text-left bg-slate-950/60 p-4 rounded-lg border border-slate-900 overflow-x-auto">Subject: Update Regarding Your POS Integration & Technical Escalation
+
+Hi [Merchant Name],
+
+Thank you for reaching out, and I completely understand how crucial a seamless POS integration is for your daily operations. I apologize for the disruption you are experiencing with the menu and order syncing.
+
+To ensure this is resolved thoroughly, I have escalated your case directly to our specialized Technical Engineering Team for a deeper investigation. Our technical specialists are actively reviewing your integration logs to identify the root cause.
+
+You can expect an update from us within [Timeframe, e.g., 24 hours] or sooner as soon as the team provides a resolution. In the meantime, please let me know if you have any additional details to add, and I will make sure they are appended to your escalation ticket. We appreciate your patience and are here to support you every step of the way!
 
 Best regards,
-King Philip Mangi</div>
-          </div>
+
+King Philip Edmar Mangi
+Customer Support Professional</div>
+
+                        <div id="cs1-jira-box" class="viewer-panel hidden font-mono text-xs sm:text-sm text-slate-300 text-left bg-slate-950/60 p-4 rounded-lg border border-slate-900 jira-box space-y-3">
+                            <div class="border-b border-slate-700 pb-2 text-sky-400 font-bold uppercase tracking-wider text-[11px]">JIRA TICKET ESCALATION</div>
+                            <div>
+                                <p><span class="text-slate-400">Issue Summary:</span> POS Integration Sync Failure / Menu and Order Discrepancies</p>
+                                <p><span class="text-slate-400">Ticket ID:</span> TECH-SUPP-84921</p>
+                                <p><span class="text-slate-400">Priority:</span> High / P2</p>
+                                <p><span class="text-slate-400">Account/Merchant ID:</span> MCH-908234-PH</p>
+                                <p><span class="text-slate-400">Merchant Business Name:</span> [Merchant Store Name]</p>
+                                <p><span class="text-slate-400">Contact Email:</span> merchant@example.com</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">1. ISSUE DESCRIPTION:</span>
+                                <p class="text-slate-300">The merchant reports that their POS system has stopped syncing incoming orders and menu updates automatically. Orders placed via the online platform are not reflecting on their POS terminal, causing operational delays and manual entry overhead.</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">2. TROUBLESHOOTING STEPS PERFORMED (TIER 1):</span>
+                                <ul class="list-disc list-inside space-y-1 text-slate-300">
+                                    <li>Verified merchant API token and webhook status (token active, webhooks failing with 504 Gateway Timeout).</li>
+                                    <li>Guided merchant to perform a hard reboot of the POS terminal and network router.</li>
+                                    <li>Checked store operating hours and status settings on the merchant dashboard (confirmed online and active).</li>
+                                    <li>Confirmed firmware/app version on the POS device is up to date.</li>
+                                </ul>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">3. TECHNICAL DETAILS / ERROR LOGS:</span>
+                                <p><span class="text-slate-400">Last successful sync timestamp:</span> [Timestamp]</p>
+                                <p><span class="text-slate-400">Error payload sample:</span> <code class="text-amber-300 bg-slate-900 px-1 py-0.5 rounded">{"error": "POS_TIMEOUT", "retry_count": 3}</code></p>
+                                <p><span class="text-slate-400">POS Provider:</span> [e.g., TouchBistro / Toast / POS integration]</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">4. REQUESTED ACTION FROM SPECIALIZED TEAM:</span>
+                                <p class="text-slate-300">Please investigate webhook endpoint connectivity, review backend database sync logs for MCH-908234-PH, and re-establish secure token handshake.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h3 class="text-lg font-bold text-white">Case Study 2: Non-POS Menu Updates & Self-Service Guide</h3>
+                        <span class="text-xs bg-teal-500/10 text-teal-400 border border-teal-500/20 px-3 py-1 rounded-full font-semibold">Client Empowerment</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">Scenario: Handling immediate menu customizations for sizes and add-ons while empowering the merchant with future self-service steps.</p>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950">Merchant Email Response</button>
+                        </div>
+                        <div class="font-mono text-xs sm:text-sm text-slate-300 whitespace-pre-line text-left bg-slate-950/60 p-4 rounded-lg border border-slate-900 overflow-x-auto">Subject: Menu Customization Update Complete + Self-Service Guide for Future Updates
+
+Hi [Merchant Name],
+
+Thank you for getting in touch! I have successfully updated your menu customization details on our end, specifically adjusting the sizes and add-ons for your items as requested. These changes are now live and reflecting correctly on your storefront.
+
+To help you make quick, urgent changes on the fly in the future without needing to wait for support, I have put together a quick, step-by-step guide on how you can update your sizes and add-ons directly through your Merchant Menu App:
+
+How to Update Sizes & Add-ons on Your Menu App:
+
+1. Log in to your Merchant Dashboard / Menu App.
+2. Navigate to the Menu Management tab and select the item you wish to modify.
+3. Click on Modifiers or Variants (where sizes and add-ons are housed).
+4. Add, edit, or reprice your options, then click Save and Publish Changes. Your updates will reflect live immediately!
+
+If you ever run into any tricky spots or need assistance with bulk updates, please do not hesitate to reach out. I am always happy to help!
+
+Warm regards,
+
+King Philip Edmar Mangi
+Customer Support Professional</div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h3 class="text-lg font-bold text-white">Case Study 3: Disputing an Inaccurate Order & Merchant Refund</h3>
+                        <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full font-semibold">Merchant Refund Payout</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">Scenario: Reviewing order logs and successfully approving a financial reimbursement/refund in favor of the merchant.</p>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3">
+                            <button class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950">Merchant Email Response</button>
+                        </div>
+                        <div class="font-mono text-xs sm:text-sm text-slate-300 whitespace-pre-line text-left bg-slate-950/60 p-4 rounded-lg border border-slate-900 overflow-x-auto">Subject: Resolution Update: Order #[Order ID] Dispute & Refund Processed
+
+Hi [Merchant Name],
+
+Thank you for providing the details regarding the disputed inaccurate order for #[Order ID]. I completely understand how frustrating it is when order discrepancies occur, and I appreciate you bringing this to our attention so we can make things right.
+
+After carefully reviewing the order logs, customer feedback, and your store documentation, I have successfully approved the dispute in your favor. A full refund of [Amount] has been processed and credited back to your merchant account, which will reflect in your upcoming payout cycle.
+
+We value your partnership and want to ensure your operations run as smoothly as possible. Please let me know if you have any questions regarding your payout statement or if there is anything else I can assist you with today!
+
+Best regards,
+
+King Philip Edmar Mangi
+Customer Support Professional</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kbupdates" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Proactive Knowledge Base & SOP Redesign</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Optimizing internal operating procedures, eliminating friction points, and resolving root causes before ticket creation.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Case Study 1: Liquor Stores POS Integration -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm border border-sky-500/30">01</span>
+                            <h3 class="text-lg font-bold text-white">Liquor Stores POS Integration Workflow Redesign</h3>
+                        </div>
+                        <span class="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full font-semibold">SOP & Jira Optimization</span>
+                    </div>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3 flex-wrap">
+                            <button onclick="switchViewer(event, 'kb1-gap-box', this)" class="viewer-tab-btn active-view px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950 transition-all">Operational Gap & Negative Impact</button>
+                            <button onclick="switchViewer(event, 'kb1-jira-box', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Jira Content Update Request</button>
+                            <button onclick="switchViewer(event, 'kb1-result-box', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Attained Outcomes & ROI</button>
+                        </div>
+
+                        <!-- Panel 1: Gap & Impact -->
+                        <div id="kb1-gap-box" class="viewer-panel space-y-3 text-sm text-slate-300 text-left">
+                            <p><strong class="text-white">Previous Documentation Flaw:</strong> The legacy SOP required support agents to collect the merchant's POS provider name before checking if the store was managed by an active Account Manager. Because unmanaged accounts were ineligible for POS integrations regardless of provider, agents spent valuable minutes gathering irrelevant technical details.</p>
+                            <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-900 space-y-2">
+                                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">Negative Impact Identified:</span>
+                                <ul class="space-y-1.5 text-xs text-amber-200/90 list-disc list-inside">
+                                    <li>Prolonged Average Handling Time (AHT) by ~3.2 minutes per unmanaged store interaction.</li>
+                                    <li>Elevated merchant frustration caused by false expectations before discovering integration ineligibility.</li>
+                                    <li>Unnecessary logging and clutter in Tier 1 CRM queues.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Jira Ticket (Clean Left Alignment) -->
+                        <div id="kb1-jira-box" class="viewer-panel hidden font-mono text-xs sm:text-sm text-slate-300 text-left bg-slate-950/60 p-4 rounded-lg border border-slate-900 jira-box space-y-3">
+                            <div class="border-b border-slate-700 pb-2 text-sky-400 font-bold uppercase tracking-wider text-[11px]">JIRA CONTENT UPDATE REQUEST (KNOWLEDGE BASE / SOP)</div>
+                            <div>
+                                <p><span class="text-slate-400">Ticket ID:</span> KB-DOC-50912</p>
+                                <p><span class="text-slate-400">Request Type:</span> SOP Restructuring & Agent Workflow Optimization</p>
+                                <p><span class="text-slate-400">Author:</span> King Philip Edmar Mangi (Customer Support Specialist)</p>
+                                <p><span class="text-slate-400">Target KB Article:</span> SOP-POS-LIQUOR-INT-04</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">1. SUMMARY OF REQUEST:</span>
+                                <p class="text-slate-300">Reorder the liquor store integration verification decision tree. Mandate Account Manager status verification as Step 1 before collecting POS provider details.</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">2. PROPOSED REVISION TO DOC:</span>
+                                <ul class="space-y-1 text-slate-300">
+                                    <li>• <strong class="text-amber-400">OLD:</strong> Ask POS provider name -> Check Account Manager status -> Decline/Proceed.</li>
+                                    <li>• <strong class="text-emerald-400">NEW:</strong> Verify Account Manager status first. If unmanaged, immediately decline integration and provide self-service policy notice. Skip POS data collection entirely.</li>
+                                </ul>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">3. EXPECTED OPERATIONAL BENEFIT:</span>
+                                <p class="text-slate-300">Instant screening of unmanaged accounts, reduction in agent handling time, and cleaner escalation logs.</p>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Attained Outcomes -->
+                        <div id="kb1-result-box" class="viewer-panel hidden space-y-3 text-sm text-slate-300 text-left">
+                            <p><strong class="text-white">What Was Attained After Application:</strong></p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-900">
+                                    <span class="text-sky-400 font-extrabold text-lg block mb-1">22% Faster</span>
+                                    <span class="text-xs text-slate-300">Reduction in Average Handling Time (AHT) for liquor merchant tier-1 inquiries.</span>
+                                </div>
+                                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-900">
+                                    <span class="text-teal-400 font-extrabold text-lg block mb-1">45 Hrs/Mo</span>
+                                    <span class="text-xs text-slate-300">Saved in support bandwidth by eliminating redundant technical collection steps.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: POS Delivery Configuration -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-sm border border-teal-500/30">02</span>
+                            <h3 class="text-lg font-bold text-white">POS Delivery Configuration & Root Cause Routing</h3>
+                        </div>
+                        <span class="text-xs bg-teal-500/10 text-teal-400 border border-teal-500/20 px-3 py-1 rounded-full font-semibold">Routing & Triage Fix</span>
+                    </div>
+
+                    <div class="bg-darkBg rounded-xl border border-slate-800 p-4">
+                        <div class="flex gap-2 mb-4 border-b border-slate-800 pb-3 flex-wrap">
+                            <button onclick="switchViewer(event, 'kb2-gap-box', this)" class="viewer-tab-btn active-view px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-400 text-slate-950 transition-all">Operational Gap & Negative Impact</button>
+                            <button onclick="switchViewer(event, 'kb2-jira-box', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Jira Content Update Request</button>
+                            <button onclick="switchViewer(event, 'kb2-result-box', this)" class="viewer-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-400 border border-slate-800 hover:text-white transition-all">Attained Outcomes & ROI</button>
+                        </div>
+
+                        <!-- Panel 1: Gap & Impact -->
+                        <div id="kb2-gap-box" class="viewer-panel space-y-3 text-sm text-slate-300 text-left">
+                            <p><strong class="text-white">Previous Documentation Flaw:</strong> Merchants with POS integrations experiencing unaccepted orders while configured for delivery by their own staff were incorrectly instructed to file technical engineering tickets. The root cause was actually an incompatible POS setting rather than a platform bug.</p>
+                            <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-900 space-y-2">
+                                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">Negative Impact Identified:</span>
+                                <ul class="space-y-1.5 text-xs text-amber-200/90 list-disc list-inside">
+                                    <li>Flooded engineering queues with 120+ false-positive Jira tickets monthly.</li>
+                                    <li>Delayed true backend engineering investigations due to triage backlog.</li>
+                                    <li>Extended merchant downtime (avg. 48 hours resolution) for simple configuration guidance.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Jira Ticket (Clean Left Alignment) -->
+                        <div id="kb2-jira-box" class="viewer-panel hidden font-mono text-xs sm:text-sm text-slate-300 text-left bg-slate-950/60 p-4 rounded-lg border border-slate-900 jira-box space-y-3">
+                            <div class="border-b border-slate-700 pb-2 text-sky-400 font-bold uppercase tracking-wider text-[11px]">JIRA CONTENT UPDATE REQUEST (KNOWLEDGE BASE / SOP)</div>
+                            <div>
+                                <p><span class="text-slate-400">Ticket ID:</span> KB-DOC-51428</p>
+                                <p><span class="text-slate-400">Request Type:</span> Troubleshooting Routing Correction & KB Expansion</p>
+                                <p><span class="text-slate-400">Author:</span> King Philip Edmar Mangi (Customer Support Specialist)</p>
+                                <p><span class="text-slate-400">Target KB Article:</span> SOP-DELIVERY-POS-CONFIG-12</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">1. SUMMARY OF REQUEST:</span>
+                                <p class="text-slate-300">Update troubleshooting documentation for self-staff delivery mode conflicts. Classify POS delivery incompatibility as a Tier 1 self-service resolution instead of a Tier 2 engineering bug.</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">2. PROPOSED REVISION TO DOC:</span>
+                                <ul class="space-y-1 text-slate-300">
+                                    <li>• Add immediate diagnostic check: Review merchant delivery mode settings against POS provider support matrix.</li>
+                                    <li>• Provide agents with templated dual alternatives: (A) Switch to platform delivery, or (B) Update POS provider settings. Prohibit unnecessary Jira ticket creation for known incompatible configurations.</li>
+                                </ul>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-sky-300 font-bold block mb-1">3. EXPECTED OPERATIONAL BENEFIT:</span>
+                                <p class="text-slate-300">Elimination of false-positive engineering tickets and instant first-contact resolution for merchants.</p>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Attained Outcomes -->
+                        <div id="kb2-result-box" class="viewer-panel hidden space-y-3 text-sm text-slate-300 text-left">
+                            <p><strong class="text-white">What Was Attained After Application:</strong></p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-900">
+                                    <span class="text-sky-400 font-extrabold text-lg block mb-1">65% Reduction</span>
+                                    <span class="text-xs text-slate-300">In false-positive engineering Jira escalations per month.</span>
+                                </div>
+                                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-900">
+                                    <span class="text-teal-400 font-extrabold text-lg block mb-1">89% FCR Rate</span>
+                                    <span class="text-xs text-slate-300">First Contact Resolution improved from 71% for delivery configuration inquiries.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aiworks" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">AI Model Evaluation & Annotation</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Contributing high-accuracy human validation, prompt evaluation, and data quality checks for generative AI models.</p>
+            </div>
+
+            <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                <h3 class="text-lg font-bold text-white mb-3">Multi-Platform AI Dataset Evaluator (Outlier, Crowdgen, Welo)</h3>
+                <p class="text-slate-400 text-sm mb-4">Active freelance contributor helping AI development teams refine, evaluate, and align generative outputs.</p>
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-sky-400 font-bold mt-0.5">•</span>
+                        <div><strong class="text-white">LLM Fact-Checking & Alignment:</strong> Evaluated outputs from dual LLM models, verifying complex claims against primary sources, checking constraints, and flagging hallucinations.</div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-sky-400 font-bold mt-0.5">•</span>
+                        <div><strong class="text-white">Bilingual Audio Assessment:</strong> Recorded bilingual audio prompts in Tagalog and English, transcribed voice files, and evaluated AI voice model deliveries for natural intonation.</div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-sky-400 font-bold mt-0.5">•</span>
+                        <div><strong class="text-white">Multimodal Annotation:</strong> Executed precise image bounding box annotation, audio remix prompt matching, and ad relevance rating following strict rubric standards.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="techprojects" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Tech Enthusiast & Custom Web Apps Lab</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Interactive financial calculators, trading journals, and personal finance dashboards built with AI collaboration and modern frontend design.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between transition duration-300">
+                    <div>
+                        <div class="text-3xl mb-4">🧮</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Margin Calculator</h3>
+                        <p class="text-slate-400 text-sm mb-4">A precise pricing and margin calculation tool designed for merchants and traders to analyze markups and profitability in real time.</p>
+                        <div class="flex gap-2 flex-wrap mb-4">
+                            <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Financial Tool</span>
+                            <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">JavaScript</span>
+                        </div>
+                    </div>
+                    <a href="https://philip1314.github.io/Margin-Calculator" target="_blank" class="block text-center bg-slate-900 hover:bg-sky-400 hover:text-slate-950 text-sky-400 border border-slate-800 font-semibold py-2.5 rounded-xl text-xs transition-all duration-200">
+                        Launch Live App →
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between transition duration-300">
+                    <div>
+                        <div class="text-3xl mb-4">📈</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Trading Journal</h3>
+                        <p class="text-slate-400 text-sm mb-4">A systematic trade logging and performance tracking web application built to analyze setups, win rates, and risk management.</p>
+                        <div class="flex gap-2 flex-wrap mb-4">
+                            <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Analytics</span>
+                            <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Dashboard</span>
+                        </div>
+                    </div>
+                    <a href="https://philip1314.github.io/myTradingJournal" target="_blank" class="block text-center bg-slate-900 hover:bg-sky-400 hover:text-slate-950 text-sky-400 border border-slate-800 font-semibold py-2.5 rounded-xl text-xs transition-all duration-200">
+                        Launch Live App →
+                    </a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between transition duration-300">
+                    <div>
+                        <div class="text-3xl mb-4">💰</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Personal Finances Tracker</h3>
+                        <p class="text-slate-400 text-sm mb-4">A comprehensive financial dashboard app for tracking expenses, budgeting, and monitoring monetary cashflows.</p>
+                        <div class="flex gap-2 flex-wrap mb-4">
+                            <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Budgeting</span>
+                            <span class="text-[11px] font-semibold bg-slate-900 text-sky-400 px-2.5 py-1 rounded-md border border-slate-800">Finance</span>
+                        </div>
+                    </div>
+                    <a href="https://philip1314.github.io/finances" target="_blank" class="block text-center bg-slate-900 hover:bg-sky-400 hover:text-slate-950 text-sky-400 border border-slate-800 font-semibold py-2.5 rounded-xl text-xs transition-all duration-200">
+                        Launch Live App →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="credentials" class="tab-content hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Education & Certifications</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Verified academic background and professional competency accreditations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2">Academic Qualification</h3>
+                    <p class="text-sky-400 font-semibold text-sm">Bachelor of Science in Office Administration</p>
+                    <p class="text-slate-300 text-sm mb-1">Major in Corporate Transcription</p>
+                    <p class="text-slate-400 text-xs">Polytechnic University of the Philippines</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2">Verified Certificates</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li>
+                            <strong class="text-white block">EF SET English Certificate</strong>
+                            <span class="text-slate-400 text-xs">C2 Proficient (Score: 90/100, March 2026)</span>
+                        </li>
+                        <li>
+                            <strong class="text-white block">Introduction to Bookkeeping</strong>
+                            <span class="text-slate-400 text-xs">TESDA Online Program (Code: 33FGt7BRuC)</span>
+                        </li>
+                        <li>
+                            <strong class="text-white block">NDIS Worker Orientation Module</strong>
+                            <span class="text-slate-400 text-xs">Quality, Safety and You</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="mt-16 glass-card p-8 sm:p-12 rounded-3xl text-center border border-sky-500/20 bg-gradient-to-b from-slate-900/80 to-slate-950">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Ready to Elevate Your Customer Support & Data Quality Operations?</h2>
+            <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base mb-8">
+                Whether you need dedicated Customer Support Professionals for email inbox management, Salesforce & Bliss CRM ticket triage, AI evaluation quality checks, or automated Google Sheets reporting, I am ready to integrate seamlessly into your remote team.
+            </p>
+            <a href="mailto:kingphilip2014.kpm@gmail.com" class="inline-block bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold px-8 py-3.5 rounded-xl text-sm sm:text-base transition-all shadow-xl shadow-sky-400/20 hover:-translate-y-0.5">
+                Get in Touch Directly
+            </a>
         </div>
 
-        <!-- Sample 2 -->
-        <div class="sample-card">
-          <div class="sample-head">
-            <h3 style="margin: 0; font-size: 1rem;">2. Jira Bug Escalation (iOS Verification Issue)</h3>
-            <span class="sample-badge">Engineering Ticket</span>
-          </div>
-          <div class="code-box">Project: Web App Operations [OPS]
-Issue Type: Bug Escalation
-Summary: [iOS Safari] 2FA SMS Verification code field fails to render during checkout
+        <footer class="mt-12 text-center text-xs text-slate-500 border-t border-slate-900 pt-8">
+            <p>© 2026 King Philip Edmar Mangi. All rights reserved.</p>
+        </footer>
 
-Impact: High (Prevents mobile Safari users from completing purchases)
-Reporter: King Philip Mangi (Support Ops)
-
-Description:
-Multiple customers reporting inability to complete order verification on iOS Safari (v17.4+). The 6-digit OTP modal renders as an empty box after clicking 'Send Code'.
-
-Steps to Reproduce:
-1. Add item to cart and proceed to Checkout.
-2. Select Credit Card payment and trigger 2FA SMS verification.
-3. Observe modal load on Safari Mobile.
-
-Expected Result: 6-digit input field appears ready for input.
-Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeError: Cannot read properties of null".</div>
-        </div>
-
-        <!-- Sample 3: KB / SOP Redesign -->
-        <div class="sample-card">
-          <div class="sample-head">
-            <h3 style="margin: 0; font-size: 1rem;">3. KB Article & Internal Macro SOP Redesign</h3>
-            <span class="sample-badge">Knowledge Base & Process</span>
-          </div>
-          <div class="code-box">DOCUMENT TITLE: SOP-042: Subscription Cancellation & Refund Workflow
-
-[AGENT INTERNAL GUIDELINE]
-1. Verify user account status in CRM (Salesforce / Bliss).
-2. Check request date against 14-day refund window policy.
-3. If eligible: Trigger automated refund via Stripe API extension -> Update ticket status to "Refund Approved".
-4. If outside window: Send Retention Macro #B2 with 20% renewal discount offer.
-
-[PUBLIC HELP CENTER MACRO]
-"We're sorry to see you go! Your cancellation request for account {{User.ID}} has been processed. You will retain full access until the end of your billing cycle on {{Billing.EndDate}}."</div>
-        </div>
-
-        <!-- Compact Disclaimer at Bottom -->
-        <div class="compact-callout">
-          <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured here are synthetic case studies created to illustrate operational problem-solving. No real client or private company data is used.
-        </div>
-      </section>
-
-      <!-- TAB 4: DATA QUALITY & SHEET -->
-      <section id="tab-data" class="tab-view">
-        <div class="section-header">
-          <h2 class="section-title">Data Quality & Spreadsheet Operations</h2>
-          <p class="section-desc">Automated validation workflows, duplicate cleaning, and customer data mapping in Google Sheets & Excel.</p>
-        </div>
-
-        <div class="sample-card">
-          <div class="sample-head">
-            <h3 style="margin: 0; font-size: 1rem;">Data Cleanup Pipeline & Formula Mapping</h3>
-            <span class="sample-badge">Google Sheets / Excel</span>
-          </div>
-
-          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
-            Example pipeline for cleaning inconsistent customer contact lists, removing duplicate emails, extracting domain names, and standardizing telephone numbers.
-          </p>
-
-          <div class="data-table-container">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Raw Customer Name</th>
-                  <th>Raw Email Input</th>
-                  <th>Formula Applied</th>
-                  <th>Cleaned Result / Domain</th>
-                  <th>Validation Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>John DOE </td>
-                  <td> JOHN.DOE@GMAIL.COM </td>
-                  <td><code>=PROPER(TRIM(A2)), =LOWER(TRIM(B2))</code></td>
-                  <td>john.doe@gmail.com</td>
-                  <td style="color: var(--accent-green);">VALID</td>
-                </tr>
-                <tr>
-                  <td>Sarah Smith</td>
-                  <td>sarah@company..com</td>
-                  <td><code>=REGEXMATCH(B3, "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")</code></td>
-                  <td>Domain Error (Syntax)</td>
-                  <td style="color: #f87171;">INVALID_EMAIL</td>
-                </tr>
-                <tr>
-                  <td>Michael Brown</td>
-                  <td>m.brown@techcorp.io</td>
-                  <td><code>=RIGHT(B4, LEN(B4)-FIND("@", B4))</code></td>
-                  <td>techcorp.io</td>
-                  <td style="color: var(--accent-green);">VALID</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- TAB 5: LIVE WEB TOOLS & APPS -->
-      <section id="tab-apps" class="tab-view">
-        <div class="section-header">
-          <h2 class="section-title">Tech & Tools Lab</h2>
-          <p class="section-desc">Practical web tools built for financial analytics, trading calculations, and workflow automation.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <span class="card-icon">🧮</span>
-            <h3>Margin Calculator</h3>
-            <p>Calculation tool for position sizing, risk preferences, take-profit levels, and margin comparison.</p>
-            <a href="https://philip1314.github.io/Margin-Calculator/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
-          </article>
-
-          <article class="card">
-            <span class="card-icon">📈</span>
-            <h3>Trading Journal</h3>
-            <p>Trade logging and analytics app with flexible filtering for parameters, dates, and strategies.</p>
-            <a href="https://philip1314.github.io/myTradingJournal/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
-          </article>
-
-          <article class="card">
-            <span class="card-icon">💰</span>
-            <h3>Personal Finance Tracker</h3>
-            <p>Dashboard for tracking expenses, monthly budgets, savings goals, and cash flow.</p>
-            <a href="https://philip1314.github.io/finances/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">Launch Tool ↗</a>
-          </article>
-        </div>
-
-        <!-- Compact Disclaimer at Bottom -->
-        <div class="compact-callout">
-          <strong>Privacy & Data Safeguards:</strong> Real customer transactions, personal financial records, and confidential user information are strictly excluded from all public work samples, demonstrations, and web tools.
-        </div>
-      </section>
-
-      <!-- TAB 6: AI EVALUATION & DATA -->
-      <section id="tab-ai" class="tab-view">
-        <div class="section-header">
-          <h2 class="section-title">AI Evaluation & Data Quality</h2>
-          <p class="section-desc">Rigorous LLM evaluation, factual verification, audio transcription review, and data pipeline cleanup.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <span class="card-icon">🤖</span>
-            <h3>LLM Output Rating</h3>
-            <p>Evaluating generative model outputs against rubrics for accuracy, adherence, and clarity.</p>
-          </article>
-
-          <article class="card">
-            <span class="card-icon">🎧</span>
-            <h3>Audio & Transcription</h3>
-            <p>Precision verbatim transcription review and speech-to-text data evaluation.</p>
-          </article>
-
-          <article class="card">
-            <span class="card-icon">📊</span>
-            <h3>Data Cleanup Pipelines</h3>
-            <p>Google Sheets, XLOOKUP, data mapping, and automated validation spreadsheet workflows.</p>
-          </article>
-        </div>
-
-        <!-- Compact Disclaimer at Bottom -->
-        <div class="compact-callout">
-          <strong>Portfolio Integrity:</strong> All content displayed is original work created specifically for portfolio demonstration. Proprietary client material, NDA-restricted guidelines, and private screenshots are never shared or republished.
-        </div>
-      </section>
-
-      <!-- TAB 7: CREDENTIALS & BACKGROUND -->
-      <section id="tab-credentials" class="tab-view">
-        <div class="section-header">
-          <h2 class="section-title">Credentials & Education</h2>
-          <p class="section-desc">Academic background, language proficiency, and technical skill sets.</p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <span class="card-icon">🎓</span>
-            <h3>BS in Office Administration</h3>
-            <p style="margin-bottom: 0;">Polytechnic University of the Philippines. Major in Corporate Transcription.</p>
-          </article>
-
-          <article class="card">
-            <span class="card-icon">📜</span>
-            <h3>EF SET English Certificate — C2 Proficient</h3>
-            <p style="margin-bottom: 0;">Score: 90/100 · Proficient in advanced written and spoken English communication.</p>
-          </article>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <footer>
-    <div class="wrap">
-      © <span id="year">2026</span> King Philip Edmar Mangi · Support Operations & AI Evaluation Portfolio
     </div>
-  </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <script>
+        function switchTab(evt, tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.add('hidden'));
 
-    function switchTab(tabId, evt) {
-      // Hide all tabs
-      const tabs = document.querySelectorAll('.tab-view');
-      tabs.forEach(tab => tab.classList.remove('active'));
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-sky-400', 'text-slate-950', 'shadow-md');
+                b.classList.add('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+            });
 
-      // Deactivate all pills
-      const pills = document.querySelectorAll('.nav-pill');
-      pills.forEach(pill => pill.classList.remove('active'));
+            document.getElementById(tabId).classList.remove('hidden');
+            evt.currentTarget.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+            evt.currentTarget.classList.add('bg-sky-400', 'text-slate-950', 'shadow-md');
+        }
 
-      // Activate selected tab & pill
-      const targetTab = document.getElementById('tab-' + tabId);
-      if (targetTab) {
-        targetTab.classList.add('active');
-      }
+        function switchViewer(evt, panelId, btnEl) {
+            const container = btnEl.closest('.glass-card, .bg-darkBg');
+            const panels = container.querySelectorAll('.viewer-panel');
+            panels.forEach(p => p.classList.add('hidden'));
 
-      if (evt && evt.currentTarget) {
-        evt.currentTarget.classList.add('active');
-      }
-    }
-  </script>
+            const buttons = container.querySelectorAll('.viewer-tab-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-sky-400', 'text-slate-950');
+                b.classList.add('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+            });
+
+            document.getElementById(panelId).classList.remove('hidden');
+            btnEl.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+            btnEl.classList.add('bg-sky-400', 'text-slate-950');
+        }
+    </script>
 </body>
 </html>
