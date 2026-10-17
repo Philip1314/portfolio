@@ -69,14 +69,16 @@
 </head>
 <body class="bg-darkBg text-slate-100 min-h-screen antialiased selection:bg-sky-500 selection:text-slate-950 pb-16">
 
+    <!-- Top Banner -->
     <div class="bg-gradient-to-r from-sky-600 via-teal-600 to-sky-600 text-white text-center py-2 px-4 text-xs sm:text-sm font-semibold tracking-wide shadow-md">
         ⚡ OPEN TO REMOTE ROLES: CUSTOMER SUPPORT, AI EVALUATION & CRM OPERATIONS
     </div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <!-- Header: Clicking photo or name brings user back to Front Page (Home) -->
         <header class="py-12 sm:py-16 border-b border-slate-800 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            <div class="relative group">
+            <div class="relative group cursor-pointer" onclick="goHome()" title="Return to Front Page">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-teal-400 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
                 <div class="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full overflow-hidden border-2 border-sky-400 bg-slate-900 shadow-2xl">
                     <img src="profile.jpg" alt="King Philip Edmar Mangi" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/180x180/0f172a/38bdf8?text=Philip+Mangi'">
@@ -87,7 +89,7 @@
             </div>
 
             <div class="text-center md:text-left flex-1">
-                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
+                <h1 onclick="goHome()" title="Return to Front Page" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2 cursor-pointer hover:text-sky-400 transition-colors">
                     King Philip Edmar Mangi
                 </h1>
                 <p class="text-sky-400 font-semibold text-base sm:text-lg mb-4">
@@ -104,8 +106,9 @@
             </div>
         </header>
 
+        <!-- Navigation Menu -->
         <nav class="flex justify-center gap-2 sm:gap-3 my-8 flex-wrap">
-            <button onclick="switchTab(event, 'services')" class="tab-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-sky-400 text-slate-950 shadow-md">
+            <button onclick="switchTab(event, 'services')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
                 Core Services
             </button>
             <button onclick="switchTab(event, 'datacleaning')" class="tab-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
@@ -128,38 +131,52 @@
             </button>
         </nav>
 
-        <!-- Intro Section -->
-        <section class="py-8 mb-8 border-b border-slate-800/60">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-2 tracking-tight">
-                Clear communication.<br>
-                <span class="text-teal-400">Reliable operations.</span>
-            </h2>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl mt-4">
-                I’m King Philip Edmar Mangi, a customer support professional with a background in email operations, ticket workflows, documentation, and quality-focused work. I’m also building experience in AI evaluation and data quality through structured, guideline-led tasks and practical projects.
-            </p>
+        <!-- Front / Home Page (Accessible by clicking Name or Photo) -->
+        <section id="home" class="tab-content py-8">
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-sky-500/20 mb-8">
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+                    Clear communication.<br>
+                    <span class="text-teal-400">Reliable operations.</span>
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mt-4">
+                    I’m King Philip Edmar Mangi, a customer support professional with a background in email operations, ticket workflows, documentation, and quality-focused work. I’m also building experience in AI evaluation and data quality through structured, guideline-led tasks and practical projects.
+                </p>
+
+                <!-- Quick Action Button to Explore Services -->
+                <div class="mt-8">
+                    <button onclick="switchTab(null, 'services')" class="bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all duration-200 shadow-lg shadow-sky-400/20 hover:-translate-y-0.5">
+                        Explore Core Services →
+                    </button>
+                </div>
+            </div>
             
             <!-- Quick Feature Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-5 rounded-2xl">
+                    <div class="text-2xl mb-2">💬</div>
                     <h3 class="text-sm font-bold text-white mb-1">Customer support</h3>
                     <p class="text-xs text-slate-400">Clear, useful written communication</p>
                 </div>
-                <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
+                <div class="glass-card p-5 rounded-2xl">
+                    <div class="text-2xl mb-2">⚙️</div>
                     <h3 class="text-sm font-bold text-white mb-1">Process thinking</h3>
                     <p class="text-xs text-slate-400">Structured handoffs & SOPs</p>
                 </div>
-                <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
+                <div class="glass-card p-5 rounded-2xl">
+                    <div class="text-2xl mb-2">🛠️</div>
                     <h3 class="text-sm font-bold text-white mb-1">Practical tools</h3>
                     <p class="text-xs text-slate-400">Browser-based utility tools</p>
                 </div>
-                <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
+                <div class="glass-card p-5 rounded-2xl">
+                    <div class="text-2xl mb-2">🔍</div>
                     <h3 class="text-sm font-bold text-white mb-1">Quality mindset</h3>
                     <p class="text-xs text-slate-400">Factual, detail-oriented review</p>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="tab-content">
+        <!-- Core Services Page (Separate Page) -->
+        <section id="services" class="tab-content hidden">
             <div class="text-center mb-10">
                 <h2 class="text-2xl font-bold text-white mb-2">Customer Support & Remote Operations Solutions</h2>
                 <p class="text-slate-400 text-sm sm:text-base">Comprehensive customer support, email operations, CRM inbox triage, and data quality assurance tailored for scaling teams.</p>
@@ -213,6 +230,7 @@
             </div>
         </section>
 
+        <!-- Data Quality Section -->
         <section id="datacleaning" class="tab-content hidden">
             <div class="bg-amber-950/30 border border-amber-600/30 rounded-2xl p-4 sm:p-5 text-left mb-6">
                 <p class="text-xs sm:text-sm text-amber-200/90 leading-relaxed">
@@ -373,6 +391,7 @@
             </div>
         </section>
 
+        <!-- Case Studies Section -->
         <section id="casestudies" class="tab-content hidden">
             <div class="bg-amber-950/30 border border-amber-600/30 rounded-2xl p-4 sm:p-5 text-left mb-6">
                 <p class="text-xs sm:text-sm text-amber-200/90 leading-relaxed">
@@ -523,6 +542,7 @@ Customer Support Professional</div>
             </div>
         </section>
 
+        <!-- Knowledge Base & SOP Redesign Section -->
         <section id="kbupdates" class="tab-content hidden">
             <div class="bg-amber-950/30 border border-amber-600/30 rounded-2xl p-4 sm:p-5 text-left mb-6">
                 <p class="text-xs sm:text-sm text-amber-200/90 leading-relaxed">
@@ -690,6 +710,7 @@ Customer Support Professional</div>
             </div>
         </section>
 
+        <!-- AI Evaluation Section -->
         <section id="aiworks" class="tab-content hidden">
             <div class="bg-amber-950/30 border border-amber-600/30 rounded-2xl p-4 sm:p-5 text-left mb-6">
                 <p class="text-xs sm:text-sm text-amber-200/90 leading-relaxed">
@@ -722,6 +743,7 @@ Customer Support Professional</div>
             </div>
         </section>
 
+        <!-- Tech Projects Section -->
         <section id="techprojects" class="tab-content hidden">
             <div class="text-center mb-10">
                 <h2 class="text-2xl font-bold text-white mb-2">Tech Enthusiast & Custom Web Apps Lab</h2>
@@ -779,10 +801,12 @@ Customer Support Professional</div>
             </div>
         </section>
 
+        <!-- Credentials Section -->
         <section id="credentials" class="tab-content hidden">
-            <!-- ... existing credentials content ... -->
+            <!-- credentials content placeholder -->
         </section>
 
+        <!-- Call to Action Banner -->
         <div class="mt-12 bg-teal-800/80 hover:bg-teal-800 border border-teal-600/40 p-8 sm:p-12 rounded-3xl text-left transition duration-300 shadow-xl">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
                 Let’s work together.
@@ -803,34 +827,34 @@ Customer Support Professional</div>
 
     <script>
         function switchTab(evt, tabId) {
+            // Hide all tab content sections
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(c => c.classList.add('hidden'));
 
+            // Reset tab button states
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(b => {
                 b.classList.remove('bg-sky-400', 'text-slate-950', 'shadow-md');
                 b.classList.add('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
             });
 
-            document.getElementById(tabId).classList.remove('hidden');
-            evt.currentTarget.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
-            evt.currentTarget.classList.add('bg-sky-400', 'text-slate-950', 'shadow-md');
+            // Show selected page view
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.remove('hidden');
+            }
+            
+            // Highlight active button if clicked from navigation bar
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+                evt.currentTarget.classList.add('bg-sky-400', 'text-slate-950', 'shadow-md');
+            }
         }
 
-        function switchViewer(evt, panelId, btnEl) {
-            const container = btnEl.closest('.glass-card, .bg-darkBg');
-            const panels = container.querySelectorAll('.viewer-panel');
-            panels.forEach(p => p.classList.add('hidden'));
-
-            const buttons = container.querySelectorAll('.viewer-tab-btn');
-            buttons.forEach(b => {
-                b.classList.remove('bg-sky-400', 'text-slate-950');
-                b.classList.add('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
-            });
-
-            document.getElementById(panelId).classList.remove('hidden');
-            btnEl.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
-            btnEl.classList.add('bg-sky-400', 'text-slate-950');
+        // Return to Front/Home Page
+        function goHome() {
+            switchTab(null, 'home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
