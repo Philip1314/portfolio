@@ -1,30 +1,30 @@
-# Portfolio redesign v2 — compact page switching + dark mode
+# Portfolio redesign v3 — more engaging content + compact navigation
 
-Replacement for `index.html` in the GitHub Pages portfolio:
-https://philip1314.github.io/portfolio/
+Replacement for `index.html` in the GitHub Pages portfolio: https://philip1314.github.io/portfolio/
 
-## What's included
-- Compact page-switching navigation: Home, Case Studies, Web Apps, AI Evaluation, Background
-- Light/dark theme switch; theme preference is saved in the browser when local storage is available
-- Restored live app links:
-  - Margin Calculator: https://philip1314.github.io/Margin-Calculator/
-  - Trading Journal: https://philip1314.github.io/myTradingJournal/
-  - Personal Finance Tracker: https://philip1314.github.io/finances/
-- Responsive mobile navigation and page layouts
-- Reduced-motion support and keyboard focus styling
-- Credentials restored from the published portfolio text
-- Sample case studies are explicitly labeled as demonstrations / scenarios to avoid implying unverified production results
+## What changed in v3
+- Sharper homepage headline and personal positioning based on customer-support experience, practical tools, and careful AI/data work.
+- More narrative case-study titles that explain the problem, not just the task. Demonstrations remain clearly identified as illustrative.
+- Custom CSS-only interface previews for the three web apps; these are visual illustrations, not screenshots or claims about exact app interfaces.
+- More engaging AI evaluation section centered on evidence, consistency, and clear reasoning.
+- Stronger calls to action and shorter, more purposeful page copy.
+- Retains page-switching navigation, dark/light mode, responsive mobile menu, and all three live web app links.
+
+## Included live apps
+- Margin Calculator: https://philip1314.github.io/Margin-Calculator/
+- Trading Journal: https://philip1314.github.io/myTradingJournal/
+- Personal Finance Tracker: https://philip1314.github.io/finances/
 
 ## Install
 1. Unzip the package.
 2. Keep your existing `profile.jpg` beside `index.html`.
-3. Preview the HTML locally.
-4. Verify your email, LinkedIn URL, credentials, skill descriptions, and all three app links.
-5. Replace the `index.html` in the `Philip1314/portfolio` GitHub repository and commit.
+3. Open `index.html` in a browser and test navigation, theme toggle, contact links, and app links.
+4. Verify email, LinkedIn, credentials, and descriptions before publishing.
+5. Replace `index.html` in the `Philip1314/portfolio` GitHub repository and commit.
 6. Test the live site on desktop and mobile after GitHub Pages rebuilds.
 
 ## Notes
-- This is a single HTML file that behaves like a small multi-page site. It does not require a framework or build step.
-- The pages switch without a full reload; URLs use hashes such as `#apps` so individual views can be linked.
-- Dark mode is implemented with CSS variables and a theme toggle. The browser remembers the preference when local storage is available.
+- Single-file HTML/CSS/JS site; no build step or framework required.
+- Page views switch without a full reload; hash links such as `#apps` are supported.
+- Theme choice is saved locally when browser storage is available.
 - This package does not deploy changes to GitHub automatically.
