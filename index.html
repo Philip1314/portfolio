@@ -30,9 +30,15 @@
       --max: 1120px;
       --code-bg: #1e293b;
       --code-ink: #e2e8f0;
+
+      /* Callout banner colors */
+      --callout-bg: #2b2319;
+      --callout-border: #4a3a29;
+      --callout-title: #f1b36e;
+      --callout-text: #e2d9cd;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
       margin: 0; background: var(--bg); color: var(--ink);
       font-family: "DM Sans", sans-serif; line-height: 1.65;
@@ -51,75 +57,112 @@
     }
     .announcement span { color: #8ee0d9; font-weight: 700; }
 
-    /* Site Header Navigation - Clean Layout Fix */
+    /* Header & Navigation */
     .site-header {
-      position: sticky; top: 0; z-index: 20; background: rgba(245,247,248,.94);
+      position: sticky; top: 0; z-index: 20; background: rgba(245,247,248,.96);
       backdrop-filter: blur(14px); border-bottom: 1px solid rgba(223,231,235,.9);
+      padding: 12px 0;
     }
-    .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    
+    .nav-top-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
     .brandmark { 
       text-decoration: none; 
-      font: 800 1.25rem "Manrope", sans-serif; 
+      font: 800 1.3rem "Manrope", sans-serif; 
       letter-spacing: -.035em; 
       color: var(--ink);
       display: inline-flex;
       align-items: center;
       cursor: pointer;
       user-select: none;
-      padding: 4px 0;
     }
     .brandmark span { color: var(--brand); }
 
-    .nav-center { display: flex; align-items: center; gap: 20px; }
-    .nav-links { display: flex; align-items: center; gap: 22px; margin: 0; padding: 0; list-style: none; }
-    .nav-links a { 
-      text-decoration: none; 
-      font-size: .88rem; 
-      font-weight: 600; 
-      color: var(--muted); 
-      cursor: pointer; 
-      transition: color .15s ease; 
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--brand); }
-
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
     .theme-toggle { 
-      display: inline-flex; align-items: center; gap: 7px; 
+      display: inline-flex; align-items: center; gap: 6px; 
       border: 1px solid var(--line); background: var(--paper); color: var(--ink); 
-      border-radius: 999px; padding: 8px 14px; font: 600 .82rem "DM Sans", sans-serif; cursor: pointer;
+      border-radius: 999px; padding: 7px 14px; font: 600 .82rem "DM Sans", sans-serif; cursor: pointer;
       transition: all .2s ease;
     }
     .theme-toggle:hover { border-color: var(--brand); color: var(--brand); }
 
     .nav-cta, .button {
       display: inline-flex; justify-content: center; align-items: center; gap: 8px;
-      border: 1px solid var(--brand); border-radius: 999px; padding: 10px 18px;
-      text-decoration: none; font-weight: 700; font-size: .88rem; transition: .2s ease; cursor: pointer;
+      border: 1px solid var(--brand); border-radius: 999px; padding: 8px 16px;
+      text-decoration: none; font-weight: 700; font-size: .85rem; transition: .2s ease; cursor: pointer;
     }
     .nav-cta, .button.primary { background: var(--brand); color: white; }
     .nav-cta:hover, .button.primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
     .button.secondary { color: var(--ink); border-color: var(--line); background: white; }
     .button.secondary:hover { border-color: var(--brand); color: var(--brand); }
 
-    .menu-toggle { 
-      display: none; border: 1px solid var(--line); background: white; 
-      border-radius: 12px; padding: 8px 14px; color: var(--ink); font: inherit; 
-      font-weight: 700; cursor: pointer; 
+    /* Button Bar Navigation */
+    .nav-bar-container {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+    }
+    .nav-button {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--muted);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: .85rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all .15s ease;
+      cursor: pointer;
+    }
+    .nav-button:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+    .nav-button.active {
+      background: var(--brand-soft);
+      border-color: var(--brand);
+      color: var(--brand-dark);
     }
 
     /* Hero Section */
-    .hero { padding: 60px 0 52px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(260px,.75fr); gap: 52px; align-items: center; }
+    .hero { padding: 48px 0 20px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(260px,.75fr); gap: 48px; align-items: center; }
     .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--brand-dark); background: var(--brand-soft); border-radius: 999px; padding: 7px 14px; font-size: .78rem; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #159a8c; box-shadow: 0 0 0 4px rgba(21,154,140,.12); }
     h1, h2, h3, h4 { font-family: "Manrope", sans-serif; line-height: 1.2; letter-spacing: -.035em; }
-    h1 { font-size: clamp(2.45rem, 5vw, 4.3rem); margin: 20px 0 18px; max-width: 760px; font-weight: 800; }
+    h1 { font-size: clamp(2.3rem, 4.5vw, 4rem); margin: 18px 0 16px; max-width: 760px; font-weight: 800; }
     h1 .highlight { color: var(--brand); }
-    .hero-copy { color: var(--muted); font-size: 1.08rem; max-width: 670px; margin: 0 0 27px; }
+    .hero-copy { color: var(--muted); font-size: 1.05rem; max-width: 670px; margin: 0 0 24px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .quick-facts { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 27px; }
-    .chip { display: inline-flex; align-items: center; background: white; border: 1px solid var(--line); border-radius: 999px; padding: 7px 13px; font-size: .78rem; color: #405461; font-weight: 600; }
+    .quick-facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .chip { display: inline-flex; align-items: center; background: white; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: .78rem; color: #405461; font-weight: 600; }
+
+    /* Callout Note Cards */
+    .callout-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 28px 0 10px;
+    }
+    .callout-card {
+      background: var(--callout-bg);
+      border: 1px solid var(--callout-border);
+      border-radius: 18px;
+      padding: 18px 24px;
+      color: var(--callout-text);
+      font-size: .95rem;
+      line-height: 1.6;
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    }
+    .callout-card strong {
+      color: var(--callout-title);
+      font-weight: 800;
+    }
 
     /* Profile Card */
     .profile-card { background: var(--paper); border: 1px solid var(--line); border-radius: 28px; padding: 18px; box-shadow: var(--shadow); transform: rotate(1deg); position: relative; }
@@ -135,27 +178,27 @@
     /* Trust Strip & Layout Units */
     .trust-strip { border-block: 1px solid var(--line); background: rgba(255,255,255,.55); margin-top: 20px; }
     .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); }
-    .trust-item { padding: 22px 18px; border-right: 1px solid var(--line); }
+    .trust-item { padding: 20px 16px; border-right: 1px solid var(--line); }
     .trust-item:last-child { border-right: 0; }
-    .trust-item strong { display: block; font: 800 .96rem "Manrope", sans-serif; }
+    .trust-item strong { display: block; font: 800 .95rem "Manrope", sans-serif; }
     .trust-item span { color: var(--muted); font-size: .8rem; }
 
-    section.content-section { padding: 60px 0; }
-    .section-heading { max-width: 720px; margin-bottom: 30px; }
+    section.content-section { padding: 50px 0; }
+    .section-heading { max-width: 720px; margin-bottom: 26px; }
     .section-kicker { color: var(--brand); font-size: .77rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
-    h2 { font-size: clamp(1.8rem,3.2vw,2.65rem); margin: 8px 0 12px; }
-    .section-intro { color: var(--muted); margin: 0; max-width: 690px; font-size: 1.02rem; }
+    h2 { font-size: clamp(1.8rem,3vw,2.5rem); margin: 8px 0 12px; }
+    .section-intro { color: var(--muted); margin: 0; max-width: 690px; font-size: 1rem; }
 
     .cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; box-shadow: 0 4px 18px rgba(23,42,58,.025); }
-    .card-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--brand-soft); color: var(--brand-dark); font-size: 1.3rem; margin-bottom: 19px; }
-    h3 { font-size: 1.2rem; margin: 0 0 10px; }
-    .card p { color: var(--muted); font-size: .92rem; margin: 0 0 16px; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 4px 18px rgba(23,42,58,.025); }
+    .card-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--brand-soft); color: var(--brand-dark); font-size: 1.25rem; margin-bottom: 18px; }
+    h3 { font-size: 1.18rem; margin: 0 0 10px; }
+    .card p { color: var(--muted); font-size: .91rem; margin: 0 0 16px; }
 
     .clean-list { list-style: none; padding: 0; margin: 0; }
-    .clean-list li { position: relative; padding-left: 20px; margin: 9px 0; color: #3e515e; font-size: .88rem; }
+    .clean-list li { position: relative; padding-left: 20px; margin: 8px 0; color: #3e515e; font-size: .88rem; }
     .clean-list li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-weight: 800; }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
     .tag { background: #f2f6f7; border: 1px solid #e4ecef; border-radius: 8px; padding: 4px 9px; color: #526570; font-size: .74rem; font-weight: 700; }
 
     /* Work Showcase Component Styling */
@@ -165,7 +208,7 @@
     }
     .sample-header {
       display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 18px; flex-wrap: wrap; gap: 10px;
+      border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;
     }
     .sample-tag {
       font-size: .75rem; font-weight: 800; padding: 4px 12px; border-radius: 999px;
@@ -224,8 +267,9 @@
       --code-bg: #0d151c; --code-ink: #cbd5e1;
     }
     body.dark .announcement { background: #091117; }
-    body.dark .site-header { background: rgba(16,24,32,.94); }
-    body.dark .button.secondary, body.dark .chip, body.dark .theme-toggle, body.dark .menu-toggle { background: var(--paper); color: var(--ink); }
+    body.dark .site-header { background: rgba(16,24,32,.96); }
+    body.dark .button.secondary, body.dark .chip, body.dark .theme-toggle, body.dark .nav-button { background: var(--paper); color: var(--ink); }
+    body.dark .nav-button.active { background: var(--brand-soft); color: var(--brand); }
     body.dark .trust-strip { background: rgba(23,35,45,.6); }
     body.dark .tag { background: #1c2b35; border-color: #30434f; color: #b8c8d2; }
     body.dark .tool-group, body.dark .credential, body.dark .card, body.dark .app-card, body.dark .sample-box { background: var(--paper); }
@@ -238,14 +282,6 @@
     }
     @media (max-width: 680px) {
       .wrap { width: min(100% - 28px, var(--max)); }
-      .nav { min-height: 62px; flex-wrap: wrap; }
-      .menu-toggle { display: inline-flex; }
-      .nav-cta { display: none; }
-      .nav-actions { margin-left: auto; }
-      .theme-toggle span { display: none; }
-      .nav-links { display: none; width: 100%; padding: 10px 0; flex-direction: column; align-items: stretch; gap: 0; }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 11px 2px; border-top: 1px solid var(--line); }
       .trust-grid { grid-template-columns: 1fr 1fr; }
       .cards, .app-grid, .credentials, .tool-grid { grid-template-columns: 1fr; }
       .contact-panel { flex-direction: column; align-items: flex-start; }
@@ -256,26 +292,26 @@
   <div class="announcement"><span>CURIOUS MIND. DETAIL-DRIVEN WORK.</span> · Support Operations · AI Evaluation · Practical Tools</div>
   
   <header class="site-header">
-    <div class="wrap nav">
-      <a class="brandmark" href="#home" data-page-link="home" aria-label="King Philip Mangi homepage">
-        PHILIP<span>.</span>
-      </a>
-      
-      <div class="nav-center">
-        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
-        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-          <a href="#home" data-page-link="home" class="active">Home</a>
-          <a href="#work" data-page-link="work">Selected Work</a>
-          <a href="#apps" data-page-link="apps">Web Apps</a>
-          <a href="#ai" data-page-link="ai">AI & Data</a>
-          <a href="#background" data-page-link="background">Background</a>
-        </nav>
+    <div class="wrap">
+      <div class="nav-top-row">
+        <a class="brandmark" href="#home" data-page-link="home" aria-label="King Philip Mangi homepage">
+          PHILIP<span>.</span>
+        </a>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">☾ <span>Dark mode</span></button>
+          <a class="nav-cta" href="mailto:kingphilip2014.kpm@gmail.com">Let’s connect ↗</a>
+        </div>
       </div>
 
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">☾ <span>Dark mode</span></button>
-        <a class="nav-cta" href="mailto:kingphilip2014.kpm@gmail.com">Let’s connect ↗</a>
-      </div>
+      <!-- Button Row Navigation Bar -->
+      <nav class="nav-bar-container" aria-label="Main navigation">
+        <button class="nav-button active" data-page-link="home">Home</button>
+        <button class="nav-button" data-page-link="work">Selected Work</button>
+        <button class="nav-button" data-page-link="apps">Web Apps</button>
+        <button class="nav-button" data-page-link="ai">AI & Data</button>
+        <button class="nav-button" data-page-link="background">Background</button>
+      </nav>
     </div>
   </header>
 
@@ -289,8 +325,8 @@
             <h1>I make complex work feel <span class="highlight">clearer.</span></h1>
             <p class="hero-copy">I’m Philip — a customer support professional who enjoys untangling problems, documenting key details, and creating reliable support workflows. My experience connects empathetic written communication with technical ticket escalation and AI response evaluation.</p>
             <div class="hero-actions">
-              <a class="button primary" href="#work" data-page-link="work">View support samples ↗</a>
-              <a class="button secondary" href="#apps" data-page-link="apps">Explore live web apps</a>
+              <button class="button primary" data-page-link="work">View support samples ↗</button>
+              <button class="button secondary" data-page-link="apps">Explore live web apps</button>
             </div>
             <div class="quick-facts" aria-label="Areas of focus">
               <span class="chip">Email operations</span>
@@ -311,6 +347,23 @@
           </aside>
         </div>
       </section>
+
+      <!-- Revised Callout Disclaimer Cards for Site Visitors -->
+      <div class="wrap">
+        <div class="callout-stack">
+          <div class="callout-card">
+            <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured on this site are synthetic case studies created to illustrate operational problem-solving. No real client or private company data is used.
+          </div>
+
+          <div class="callout-card">
+            <strong>Privacy & Data Safeguards:</strong> Real customer transactions, personal financial records, and confidential user information are strictly excluded from all public work samples, demonstrations, and web tools.
+          </div>
+
+          <div class="callout-card">
+            <strong>Portfolio Integrity:</strong> All content displayed is original work created specifically for portfolio demonstration. Proprietary client material, NDA-restricted guidelines, and private screenshots are never shared or republished.
+          </div>
+        </div>
+      </div>
 
       <div class="trust-strip">
         <div class="wrap trust-grid">
@@ -368,7 +421,7 @@
           <div class="section-heading">
             <div class="section-kicker">Selected Work</div>
             <h2>Practical support & operational samples.</h2>
-            <p class="section-intro">Detailed examples illustrating how I handle customer communication, structure Jira bug escalations, and draft Knowledge Base updates.</p>
+            <p class="section-intro">Detailed examples illustrating how I handle customer communication, structure Jira bug escalations, and draft Knowledge Base updates. <em>(Note: All examples below are simulated case studies.)</em></p>
           </div>
 
           <!-- Sample 1: Email Support -->
@@ -377,7 +430,7 @@
               <h3>1. Email Support & Customer Communication</h3>
               <span class="sample-tag">Customer Email</span>
             </div>
-            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;">Scenario: Customer charged twice due to a payment gateway timeout during checkout.</p>
+            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;"><strong>Scenario:</strong> Customer charged twice due to a payment gateway timeout during checkout.</p>
             
             <div class="email-container">
               <div class="email-meta">
@@ -407,7 +460,7 @@ Support Operations Specialist</div>
               <h3>2. Engineering Escalation Ticket (Jira Format)</h3>
               <span class="sample-tag">Jira Issue</span>
             </div>
-            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;">Scenario: Reporting a repeatable checkout authentication bug affecting Safari users on iOS.</p>
+            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;"><strong>Scenario:</strong> Reporting a repeatable checkout authentication bug affecting Safari users on iOS.</p>
             
             <div class="code-block">Project: Web App Operations [OPS]
 Issue Type: Bug Escalation
@@ -437,7 +490,7 @@ Logs/Payload Attached: console_log_2026_03_12.txt</div>
               <h3>3. Knowledge Base & SOP Request</h3>
               <span class="sample-tag">KB Update</span>
             </div>
-            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;">Scenario: Drafting an internal SOP update for new subscription cancellation policy guidelines.</p>
+            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;"><strong>Scenario:</strong> Drafting an internal SOP update for new subscription cancellation policy guidelines.</p>
             
             <div class="code-block">KB Article Title: Internal SOP - Processing Partial Refunds & Subscription Adjustments
 Target Audience: Tier 1 & Tier 2 Support Agents
@@ -599,10 +652,8 @@ Agent Instructions:
   </footer>
 
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
     const themeToggle = document.getElementById('themeToggle');
-    const pageLinks = document.querySelectorAll('[data-page-link]');
+    const pageButtons = document.querySelectorAll('[data-page-link]');
     const pages = document.querySelectorAll('[data-page]');
     const backToTopBtn = document.getElementById('backToTop');
 
@@ -612,10 +663,10 @@ Agent Instructions:
       
       pages.forEach(page => page.classList.toggle('active', page.dataset.page === pageName));
       
-      document.querySelectorAll('.nav-links [data-page-link]').forEach(link => {
-        const active = link.dataset.pageLink === pageName;
-        link.classList.toggle('active', active);
-        if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
+      document.querySelectorAll('.nav-bar-container [data-page-link]').forEach(btn => {
+        const active = btn.dataset.pageLink === pageName;
+        btn.classList.toggle('active', active);
+        if (active) btn.setAttribute('aria-current', 'page'); else btn.removeAttribute('aria-current');
       });
       
       if (updateHash) {
@@ -623,17 +674,11 @@ Agent Instructions:
       }
       
       window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
-      
-      if (navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.textContent = 'Menu ☰';
-      }
     }
 
     // Page navigation event listeners
-    pageLinks.forEach(link => link.addEventListener('click', event => {
-      const pageName = link.dataset.pageLink;
+    pageButtons.forEach(btn => btn.addEventListener('click', event => {
+      const pageName = btn.dataset.pageLink;
       if (pageName) { 
         event.preventDefault(); 
         showPage(pageName); 
@@ -647,13 +692,6 @@ Agent Instructions:
         window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
       });
     }
-
-    // Mobile nav menu toggle
-    menuToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(open));
-      menuToggle.textContent = open ? 'Close ×' : 'Menu ☰';
-    });
 
     // Theme switching logic
     function setTheme(theme) {
