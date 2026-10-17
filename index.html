@@ -25,7 +25,7 @@
       --code-border: #1b2836;
       --max: 980px;
 
-      /* Compact Disclaimer Colors */
+      /* Callout Colors */
       --callout-bg: #181512;
       --callout-border: #3b2c1d;
       --callout-title: #f59e0b;
@@ -47,7 +47,6 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
 
     .wrap {
       width: min(var(--max), calc(100% - 32px));
@@ -75,8 +74,8 @@
 
     .avatar-wrapper {
       position: relative;
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       margin: 0 auto 20px;
     }
 
@@ -92,7 +91,7 @@
     .status-badge {
       position: absolute;
       bottom: 2px;
-      right: 10px;
+      right: 6px;
       background: var(--accent-green);
       color: #000;
       font-size: 0.65rem;
@@ -102,6 +101,14 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero-greeting {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
     }
 
     h1.hero-title {
@@ -123,7 +130,7 @@
     .hero-description {
       color: var(--text-muted);
       font-size: 0.92rem;
-      max-width: 680px;
+      max-width: 700px;
       margin: 0 auto 24px;
     }
 
@@ -170,7 +177,7 @@
       transform: translateY(-2px);
     }
 
-    /* Interactive Navigation Bar */
+    /* Adaptive Navigation Bar */
     .nav-pills-container {
       display: flex;
       flex-wrap: wrap;
@@ -207,7 +214,7 @@
       box-shadow: 0 0 12px var(--primary-glow);
     }
 
-    /* Tab View Visibility */
+    /* Tab Visibility */
     .tab-view {
       display: none;
       opacity: 0;
@@ -236,7 +243,7 @@
     .section-desc {
       color: var(--text-muted);
       font-size: 0.92rem;
-      max-width: 600px;
+      max-width: 620px;
       margin: 0 auto;
     }
 
@@ -346,15 +353,15 @@
     }
 
     .mindset-quote {
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-style: italic;
       color: #e2e8f0;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       border-left: 2px solid var(--primary);
       padding-left: 12px;
     }
 
-    /* Samples Formatting */
+    /* Work Samples Styling */
     .sample-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -415,6 +422,34 @@
       overflow-x: auto;
     }
 
+    /* Sheet / Data Table Simulation */
+    .data-table-container {
+      overflow-x: auto;
+      background: #080f17;
+      border: 1px solid #1a2837;
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #e2e8f0;
+    }
+
+    .data-table th, .data-table td {
+      border: 1px solid #1f3042;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    .data-table th {
+      background: #112233;
+      color: var(--primary);
+    }
+
     /* Compact Disclaimer Callout Note */
     .compact-callout {
       background: var(--callout-bg);
@@ -460,10 +495,11 @@
     <!-- Header Hero Profile -->
     <header class="hero-section">
       <div class="avatar-wrapper">
-        <img src="profile.jpg" alt="King Philip Edmar Mangi" class="avatar-img" onerror="this.src='https://via.placeholder.com/150/111d29/38bdf8?text=Philip'">
+        <img src="profile.jpg" alt="King Philip Edmar Mangi" class="avatar-img" onerror="this.src='https://via.placeholder.com/130/111d29/38bdf8?text=Philip'">
         <span class="status-badge">Active</span>
       </div>
 
+      <div class="hero-greeting">Hi, I'm Philip 👋</div>
       <h1 class="hero-title">King Philip Edmar Mangi</h1>
       
       <div class="hero-subtitle">
@@ -481,12 +517,13 @@
 
       <!-- Interactive View Selector Navigation -->
       <nav class="nav-pills-container" aria-label="Portfolio Views">
-        <button class="nav-pill active" onclick="switchTab('services')">Core Services</button>
-        <button class="nav-pill" onclick="switchTab('mindset')">How I Think</button>
-        <button class="nav-pill" onclick="switchTab('samples')">Work Case Studies</button>
-        <button class="nav-pill" onclick="switchTab('apps')">Tech & Tools Lab</button>
-        <button class="nav-pill" onclick="switchTab('ai')">AI Evaluation</button>
-        <button class="nav-pill" onclick="switchTab('credentials')">Credentials</button>
+        <button class="nav-pill active" onclick="switchTab('services', event)">Core Services</button>
+        <button class="nav-pill" onclick="switchTab('mindset', event)">How I Think</button>
+        <button class="nav-pill" onclick="switchTab('samples', event)">Email & Case Studies</button>
+        <button class="nav-pill" onclick="switchTab('data', event)">Data Quality & Sheet</button>
+        <button class="nav-pill" onclick="switchTab('apps', event)">Tech & Tools Lab</button>
+        <button class="nav-pill" onclick="switchTab('ai', event)">AI Evaluation</button>
+        <button class="nav-pill" onclick="switchTab('credentials', event)">Credentials</button>
       </nav>
     </header>
 
@@ -575,7 +612,7 @@
         </div>
       </section>
 
-      <!-- TAB 3: WORK CASE STUDIES -->
+      <!-- TAB 3: EMAIL & CASE STUDIES -->
       <section id="tab-samples" class="tab-view">
         <div class="section-header">
           <h2 class="section-title">Work Case Studies & Escalations</h2>
@@ -634,13 +671,87 @@ Expected Result: 6-digit input field appears ready for input.
 Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeError: Cannot read properties of null".</div>
         </div>
 
+        <!-- Sample 3: KB / SOP Redesign -->
+        <div class="sample-card">
+          <div class="sample-head">
+            <h3 style="margin: 0; font-size: 1rem;">3. KB Article & Internal Macro SOP Redesign</h3>
+            <span class="sample-badge">Knowledge Base & Process</span>
+          </div>
+          <div class="code-box">DOCUMENT TITLE: SOP-042: Subscription Cancellation & Refund Workflow
+
+[AGENT INTERNAL GUIDELINE]
+1. Verify user account status in CRM (Salesforce / Bliss).
+2. Check request date against 14-day refund window policy.
+3. If eligible: Trigger automated refund via Stripe API extension -> Update ticket status to "Refund Approved".
+4. If outside window: Send Retention Macro #B2 with 20% renewal discount offer.
+
+[PUBLIC HELP CENTER MACRO]
+"We're sorry to see you go! Your cancellation request for account {{User.ID}} has been processed. You will retain full access until the end of your billing cycle on {{Billing.EndDate}}."</div>
+        </div>
+
         <!-- Compact Disclaimer at Bottom -->
         <div class="compact-callout">
           <strong>Case study notice:</strong> All support tickets, customer communications, Jira logs, and workflow scenarios featured here are synthetic case studies created to illustrate operational problem-solving. No real client or private company data is used.
         </div>
       </section>
 
-      <!-- TAB 4: LIVE WEB TOOLS & APPS -->
+      <!-- TAB 4: DATA QUALITY & SHEET -->
+      <section id="tab-data" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title">Data Quality & Spreadsheet Operations</h2>
+          <p class="section-desc">Automated validation workflows, duplicate cleaning, and customer data mapping in Google Sheets & Excel.</p>
+        </div>
+
+        <div class="sample-card">
+          <div class="sample-head">
+            <h3 style="margin: 0; font-size: 1rem;">Data Cleanup Pipeline & Formula Mapping</h3>
+            <span class="sample-badge">Google Sheets / Excel</span>
+          </div>
+
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
+            Example pipeline for cleaning inconsistent customer contact lists, removing duplicate emails, extracting domain names, and standardizing telephone numbers.
+          </p>
+
+          <div class="data-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Raw Customer Name</th>
+                  <th>Raw Email Input</th>
+                  <th>Formula Applied</th>
+                  <th>Cleaned Result / Domain</th>
+                  <th>Validation Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John DOE </td>
+                  <td> JOHN.DOE@GMAIL.COM </td>
+                  <td><code>=PROPER(TRIM(A2)), =LOWER(TRIM(B2))</code></td>
+                  <td>john.doe@gmail.com</td>
+                  <td style="color: var(--accent-green);">VALID</td>
+                </tr>
+                <tr>
+                  <td>Sarah Smith</td>
+                  <td>sarah@company..com</td>
+                  <td><code>=REGEXMATCH(B3, "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")</code></td>
+                  <td>Domain Error (Syntax)</td>
+                  <td style="color: #f87171;">INVALID_EMAIL</td>
+                </tr>
+                <tr>
+                  <td>Michael Brown</td>
+                  <td>m.brown@techcorp.io</td>
+                  <td><code>=RIGHT(B4, LEN(B4)-FIND("@", B4))</code></td>
+                  <td>techcorp.io</td>
+                  <td style="color: var(--accent-green);">VALID</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: LIVE WEB TOOLS & APPS -->
       <section id="tab-apps" class="tab-view">
         <div class="section-header">
           <h2 class="section-title">Tech & Tools Lab</h2>
@@ -676,7 +787,7 @@ Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeE
         </div>
       </section>
 
-      <!-- TAB 5: AI EVALUATION & DATA -->
+      <!-- TAB 6: AI EVALUATION & DATA -->
       <section id="tab-ai" class="tab-view">
         <div class="section-header">
           <h2 class="section-title">AI Evaluation & Data Quality</h2>
@@ -709,7 +820,7 @@ Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeE
         </div>
       </section>
 
-      <!-- TAB 6: CREDENTIALS & BACKGROUND -->
+      <!-- TAB 7: CREDENTIALS & BACKGROUND -->
       <section id="tab-credentials" class="tab-view">
         <div class="section-header">
           <h2 class="section-title">Credentials & Education</h2>
@@ -742,7 +853,7 @@ Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeE
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    function switchTab(tabId) {
+    function switchTab(tabId, evt) {
       // Hide all tabs
       const tabs = document.querySelectorAll('.tab-view');
       tabs.forEach(tab => tab.classList.remove('active'));
@@ -757,8 +868,9 @@ Actual Result: Modal fails to render, throwing JS console error: "Uncaught TypeE
         targetTab.classList.add('active');
       }
 
-      // Highlight active pill
-      event.currentTarget.classList.add('active');
+      if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add('active');
+      }
     }
   </script>
 </body>
